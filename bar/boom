@@ -1,10 +1,9 @@
-Another example file. Another change.
-
+Another example file. (and another change.)
 
 This is a change.
 
 
-int f1(int x){
-
+int foo1(int x){
+	change;
 	return PI;
 }
