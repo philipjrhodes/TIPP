@@ -1,0 +1,4 @@
+Triangulate on MPIm master node run in sequential (serial)
+Parallel I/O shared file
+nunmber of tasks depend on number of cores. 
+There is one more parameter in r3.sh

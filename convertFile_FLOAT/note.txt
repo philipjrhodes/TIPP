@@ -1,0 +1,2 @@
+qHullConvert2DFile convert mydata.ver into two files mydatabin.ver and mydatabin.ver.xfdl in folder rawPointData (domain in 0,0..1,1)
+qHullConvert2DFile1 convert mydata.ver into two files mydatabin.ver and mydatabin.ver.xfdl in folder rawPointData (domain in 0,0..1e6,1e6)

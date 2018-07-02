@@ -1,0 +1,7 @@
+Triangulate on MPI
+Parallel I/O shared file
+nunmber of tasks depend on number of cores. 
+There is one more parameter in r3.sh
+
+Similar to version 06, but
+based on the data float (not double) and unsigned int (not unsigned long int)

@@ -1,0 +1,125 @@
+ Hello from: 16 of total 32
+ Hello from: 17 of total 32
+ Hello from: 18 of total 32
+ Hello from: 19 of total 32
+ Hello from: 20 of total 32
+ Hello from: 21 of total 32
+ Hello from: 22 of total 32
+ Hello from: 23 of total 32
+ Hello from: 15 of total 32
+ Hello from: 24 of total 32
+ Hello from: 5 of total 32
+ Hello from: 8 of total 32
+ Hello from: 3 of total 32
+ Hello from: 25 of total 32
+ Hello from: 26 of total 32
+ Hello from: 0 of total 32
+ Hello from: 13 of total 32
+ Hello from: 14 of total 32
+ Hello from: 9 of total 32
+ Hello from: 27 of total 32
+ Hello from: 2 of total 32
+ Hello from: 11 of total 32
+ Hello from: 28 of total 32
+ Hello from: 12 of total 32
+ Hello from: 6 of total 32
+ Hello from: 29 of total 32
+ Hello from: 10 of total 32
+ Hello from: 7 of total 32
+ Hello from: 1 of total 32
+ Hello from: 30 of total 32
+ Hello from: 4 of total 32
+ Hello from: 31 of total 32
+ Hello from: 4 of total 16
+ Hello from: 15 of total 16
+ Hello from: 9 of total 16
+ Hello from: 2 of total 16
+ Hello from: 10 of total 16
+ Hello from: 13 of total 16
+ Hello from: 7 of total 16
+ Hello from: 12 of total 16
+ Hello from: 14 of total 16
+ Hello from: 6 of total 16
+ Hello from: 5 of total 16
+ Hello from: 8 of total 16
+ Hello from: 3 of total 16
+ Hello from: 1 of total 16
+ Hello from: 0 of total 16
+ Hello from: 11 of total 16
+ Hello from: 5 of total 8
+ Hello from: 6 of total 8
+ Hello from: 1 of total 8
+ Hello from: 2 of total 8
+ Hello from: 4 of total 8
+ Hello from: 3 of total 8
+ Hello from: 7 of total 8
+ Hello from: 0 of total 8
+ Hello from: 1 of total 4
+ Hello from: 2 of total 4
+ Hello from: 3 of total 4
+ Hello from: 0 of total 4
+ Hello from: 1 of total 2
+ Hello from: 0 of total 2
+ Hello from: 0 of total 1
+Now launching 32 task MPI job
+Now launching 16 task MPI job
+Now launching 8 task MPI job
+Now launching 4 task MPI job
+Now launching 2 task MPI job
+Now launching 1 task MPI job
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@ys6102-ib>
+Subject: Job 31439: <example_job> in cluster <yellowstone> Done
+
+Job <example_job> was submitted from host <caldera05-ib> by user <sghosh> in cluster <yellowstone>.
+Job was executed on host(s) <16*ys6102-ib>, in queue <small>, as user <sghosh> in cluster <yellowstone>.
+                            <16*ys6103-ib>
+</glade/u/home/sghosh> was used as the home directory.
+</glade/scratch/sghosh/cmnguyen> was used as the working directory.
+Started at Mon Jul 31 11:05:59 2017
+Results reported on Mon Jul 31 11:06:09 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/tcsh
+#BSUB -J example_job
+#BSUB -n 32
+#BSUB -R "span[ptile=16]"
+#BSUB -P SCSG0001
+#BSUB -W 0:10
+#BSUB -o out.%J
+#BSUB -e err.%J
+#BSUB -q small
+
+source /etc/profile.d/modules.csh
+module purge
+module load intel impi
+
+setenv OMP_NUM_THREADS 16
+
+./serial
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7.07 sec.
+    Max Memory :                                 196 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Run time :                                   7 sec.
+    Turnaround time :                            14 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <err.31439> for stderr output of this job.
+

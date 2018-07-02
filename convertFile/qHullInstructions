@@ -1,0 +1,19 @@
+#if Ubuntu does not have rbox, install:
+sudo apt-get install qhull-bin
+
+#Change number of points in rbox command and path in ConvertFile and cp (last command)
+#Number of point, for ex: 1000 --> mean 1004 points, and the path should be ./data/2D/1004vertices
+#First, use rbox to create random point in square (0,0)--(1,1)
+#change input number of points in rbox command
+rbox 100 n D2 O0.5 > mydata.ver
+
+#Delaunay triagulation
+#qdelaunay s Fv TO mydata.smp <mydata.ver
+
+#Copy mydata.smp and mydata.ver from ConvertFile folder to folder in data/2D or data/3D
+#cp mydata.smp mydata.ver ../dataSources/2D/15000000vertices
+
+#Run ConvertFile to make some binary files for folders (ex: ./data/2D/104vertices) in folder dataSources/2D or dataSources/3D
+./qHullConvert2DFile ../dataSources/2D/15000000vertices
+
+
