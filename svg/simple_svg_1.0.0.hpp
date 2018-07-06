@@ -100,6 +100,7 @@ namespace svg
     struct Point
     {
         Point(double x = 0, double y = 0) : x(x), y(y) { }
+        Point(const Point &p) : x(p.x), y(p.y) { }
         double x;
         double y;
     };
@@ -147,22 +148,34 @@ namespace svg
     };
 
     // Convert coordinates in user space to SVG native space.
-    double translateX(double x, Layout const & layout)
+    double transformX(double x, Layout const & layout)
     {
         if (layout.origin == Layout::BottomRight || layout.origin == Layout::TopRight)
             return layout.dimensions.width - ((x + layout.origin_offset.x) * layout.scale);
         else
             return (layout.origin_offset.x + x) * layout.scale;
+
+//         if (layout.origin == Layout::BottomRight || layout.origin == Layout::TopRight)
+//             return layout.dimensions.width - ((layout.origin_offset.x + x*layout.scale) );
+//         else
+//             return (layout.origin_offset.x + x*layout.scale); // scale before translate
+            
     }
 
-    double translateY(double y, Layout const & layout)
+    double transformY(double y, Layout const & layout)
     {
         if (layout.origin == Layout::BottomLeft || layout.origin == Layout::BottomRight)
             return layout.dimensions.height - ((y + layout.origin_offset.y) * layout.scale);
         else
             return (layout.origin_offset.y + y) * layout.scale;
+//         if (layout.origin == Layout::BottomLeft || layout.origin == Layout::BottomRight)
+//             return layout.dimensions.height - ((layout.origin_offset.y + y*layout.scale) );
+//         else
+//             return (layout.origin_offset.y + y*layout.scale); // scale before translate
+
+
     }
-    double translateScale(double dimension, Layout const & layout)
+    double scale(double dimension, Layout const & layout)
     {
         return dimension * layout.scale;
     }
@@ -257,7 +270,7 @@ namespace svg
                 return std::string();
 
             std::stringstream ss;
-            ss << attribute("stroke-width", translateScale(width, layout)) << attribute("stroke", color.toString(layout));
+            ss << attribute("stroke-width", scale(width, layout)) << attribute("stroke", color.toString(layout));
             return ss.str();
         }
     private:
@@ -272,7 +285,7 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << attribute("font-size", translateScale(size, layout)) << attribute("font-family", family);
+            ss << attribute("font-size", scale(size, layout)) << attribute("font-family", family);
             return ss.str();
         }
     private:
@@ -311,9 +324,9 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << elemStart("circle") << attribute("cx", translateX(center.x, layout))
-                << attribute("cy", translateY(center.y, layout))
-                << attribute("r", translateScale(radius, layout)) << fill.toString(layout)
+            ss << elemStart("circle") << attribute("cx", transformX(center.x, layout))
+                << attribute("cy", transformY(center.y, layout))
+                << attribute("r", scale(radius, layout)) << fill.toString(layout)
                 << stroke.toString(layout) << emptyElemEnd();
             return ss.str();
         }
@@ -337,10 +350,10 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << elemStart("ellipse") << attribute("cx", translateX(center.x, layout))
-                << attribute("cy", translateY(center.y, layout))
-                << attribute("rx", translateScale(radius_width, layout))
-                << attribute("ry", translateScale(radius_height, layout))
+            ss << elemStart("ellipse") << attribute("cx", transformX(center.x, layout))
+                << attribute("cy", transformY(center.y, layout))
+                << attribute("rx", scale(radius_width, layout))
+                << attribute("ry", scale(radius_height, layout))
                 << fill.toString(layout) << stroke.toString(layout) << emptyElemEnd();
             return ss.str();
         }
@@ -365,10 +378,10 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << elemStart("rect") << attribute("x", translateX(edge.x, layout))
-                << attribute("y", translateY(edge.y, layout))
-                << attribute("width", translateScale(width, layout))
-                << attribute("height", translateScale(height, layout))
+            ss << elemStart("rect") << attribute("x", transformX(edge.x, layout))
+                << attribute("y", transformY(edge.y, layout))
+                << attribute("width", scale(width, layout))
+                << attribute("height", scale(height, layout))
                 << fill.toString(layout) << stroke.toString(layout) << emptyElemEnd();
             return ss.str();
         }
@@ -393,10 +406,10 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << elemStart("line") << attribute("x1", translateX(start_point.x, layout))
-                << attribute("y1", translateY(start_point.y, layout))
-                << attribute("x2", translateX(end_point.x, layout))
-                << attribute("y2", translateY(end_point.y, layout))
+            ss << elemStart("line") << attribute("x1", transformX(start_point.x, layout))
+                << attribute("y1", transformY(start_point.y, layout))
+                << attribute("x2", transformX(end_point.x, layout))
+                << attribute("y2", transformY(end_point.y, layout))
                 << stroke.toString(layout) << emptyElemEnd();
             return ss.str();
         }
@@ -431,7 +444,7 @@ namespace svg
 
             ss << "points=\"";
             for (unsigned i = 0; i < points.size(); ++i)
-                ss << translateX(points[i].x, layout) << "," << translateY(points[i].y, layout) << " ";
+                ss << transformX(points[i].x, layout) << "," << transformY(points[i].y, layout) << " ";
             ss << "\" ";
 
             ss << fill.toString(layout) << stroke.toString(layout) << emptyElemEnd();
@@ -469,7 +482,7 @@ namespace svg
 
             ss << "points=\"";
             for (unsigned i = 0; i < points.size(); ++i)
-                ss << translateX(points[i].x, layout) << "," << translateY(points[i].y, layout) << " ";
+                ss << transformX(points[i].x, layout) << "," << transformY(points[i].y, layout) << " ";
             ss << "\" ";
 
             ss << fill.toString(layout) << stroke.toString(layout) << emptyElemEnd();
@@ -494,8 +507,8 @@ namespace svg
         std::string toString(Layout const & layout) const
         {
             std::stringstream ss;
-            ss << elemStart("text") << attribute("x", translateX(origin.x, layout))
-                << attribute("y", translateY(origin.y, layout))
+            ss << elemStart("text") << attribute("x", transformX(origin.x, layout))
+                << attribute("y", transformY(origin.y, layout))
                 << fill.toString(layout) << stroke.toString(layout) << font.toString(layout)
                 << ">" << content << elemEnd("text");
             return ss.str();
