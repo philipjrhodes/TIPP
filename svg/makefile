@@ -1,4 +1,4 @@
-FLAGS = -O3 -wc++11-extensions
+FLAGS = -O3  -Wc++11-extensions
 
 run: dm
 	dm

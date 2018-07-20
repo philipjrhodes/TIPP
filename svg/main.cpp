@@ -33,6 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include<fstream>
 
 #include "simple_svg_1.0.0.hpp"
+#include "assert.h"
 
 using namespace svg;
 using namespace std;
@@ -42,7 +43,7 @@ using namespace std;
 typedef struct Triangle {
 	Triangle(int v0=-1,int v1=-2,int v2=-3): v0(v0), v1(v1), v2(v2) {}
 //	Triangle(): v0(0), v1(0), v2(0) {}
-	Triangle(const Triangle &t): v0(t.v0), v1(t.v1), v2(t.v2) { cerr << "called cc:" << endl; v0=t.v0; v1=t.v1; v2=t.v2;}
+	Triangle(const Triangle &t): v0(t.v0), v1(t.v1), v2(t.v2) { /*cerr << "called cc:" << endl;*/ v0=t.v0; v1=t.v1; v2=t.v2;}
 	Triangle& operator=(const Triangle& other) = default;
 	int v0, v1, v2;
 
@@ -55,7 +56,7 @@ void readGridName(ifstream &in, string &name){
 
 vector<Point>  readVertices(ifstream &in, int numVertices){
 
-	vector<Point> *v = new vector<Point>(numVertices);
+	vector<Point> *v = new vector<Point>();
 //	v->reserve(numVertices);
 	int l;
 	float x,y,z;
@@ -82,10 +83,10 @@ vector<Point>  readVertices(ifstream &in, int numVertices){
 
 vector<Triangle>  readTriangles(ifstream &in, int numTriangles){
 
-	vector<Triangle> *v = new vector<Triangle>(numTriangles);
+	vector<Triangle> *v = new vector<Triangle>();
 //	v->reserve(numTriangles);
 	int l,d,v0,v1,v2;
-	Triangle t(-1,-1,-1);
+	Triangle t(-1, -1, -1);
 	
 	for(int i=0; i<numTriangles; i++){
 	
@@ -95,8 +96,9 @@ vector<Triangle>  readTriangles(ifstream &in, int numTriangles){
 		t.v0=v0; t.v1=v1; t.v2=v2;
 		v->push_back(t);
 	}
-	cout << "last triangle is numbered " << l << " in the file." << endl;
 	
+	cout << "readTriangles(): last triangle is numbered " << l << " in the file." << endl;
+	cout << "readTriangles(): triangle vector has size: " << v->size() << endl;
 	return *v;
 }
 
@@ -106,12 +108,13 @@ void drawTriangles(Document &doc,const vector<Point> &vertices, const vector<Tri
 //	int numVertices = vertices.size();
 	int numTriangles = triangles.size();
 	
+	cerr<< "drawTriangles(): numTriangles == " << numTriangles << endl;
 	for(int i=0; i< numTriangles; i++){
 			
-		cerr  << "v0: " << triangles[i].v0 << " v1: "<< triangles[i].v1 << " v2: " << triangles[i].v2;
-		cerr  << "\t\tx0: " << vertices[triangles[i].v0].x << " x1: " << vertices[triangles[i].v1].x << " x2: " << vertices[triangles[i].v2].x  << endl;	
+// 		cerr  << "v0: " << triangles[i].v0 << " v1: "<< triangles[i].v1 << " v2: " << triangles[i].v2;
+// 		cerr  << "\t\tx0: " << vertices[triangles[i].v0].x << " x1: " << vertices[triangles[i].v1].x << " x2: " << vertices[triangles[i].v2].x  << endl;	
 		
-		doc << (Polygon(Stroke(.5, Color::Blue)) << vertices[triangles[i].v0] << vertices[triangles[i].v1] << vertices[triangles[i].v2]) ;	
+		doc << (Polygon(Color::White, Stroke(.5, Color::Blue)) << vertices[triangles[i].v0] << vertices[triangles[i].v1] << vertices[triangles[i].v2]) ;	
 		//cout << i << endl;
 	}
 }
