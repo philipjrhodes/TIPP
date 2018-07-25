@@ -31,91 +31,28 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 #include<iostream>
 #include<fstream>
+#include <assert.h>
 
 #include "simple_svg_1.0.0.hpp"
-#include "assert.h"
+#include "adcirc.h"
 
 using namespace svg;
 using namespace std;
 
-// Demo page shows sample usage of the Simple SVG library.
 
-typedef struct Triangle {
-	Triangle(int v0=-1,int v1=-2,int v2=-3): v0(v0), v1(v1), v2(v2) {}
-//	Triangle(): v0(0), v1(0), v2(0) {}
-	Triangle(const Triangle &t): v0(t.v0), v1(t.v1), v2(t.v2) { /*cerr << "called cc:" << endl;*/ v0=t.v0; v1=t.v1; v2=t.v2;}
-	Triangle& operator=(const Triangle& other) = default;
-	int v0, v1, v2;
-
-} Triangle;
-
-void readGridName(ifstream &in, string &name){
-
-	getline(in, name);
-}
-
-vector<Point>  readVertices(ifstream &in, int numVertices){
-
-	vector<Point> *v = new vector<Point>();
-//	v->reserve(numVertices);
-	int l;
-	float x,y,z;
-	float vScale=16, dx=80, dy=-20;
 	
-	Point p(-13,-17);
 	
-	for(int i=0; i<numVertices; i++){
-	
-		in >> l >> x >> y >> z;
-		assert(l == (i+1));
-		
-		x = (x+dx)*vScale;
-		y = (y+dy)*vScale;
-//		y = y*vScale + dy;
-		
-		p.x=x; p.y=y;
-		v->push_back(p);
-	}
-	cout << "last vertex is numbered " << l << " in the file." << endl;
-	
-	return *v;
-}
 
-vector<Triangle>  readTriangles(ifstream &in, int numTriangles){
-
-	vector<Triangle> *v = new vector<Triangle>();
-//	v->reserve(numTriangles);
-	int l,d,v0,v1,v2;
-	Triangle t(-1, -1, -1);
-	
-	for(int i=0; i<numTriangles; i++){
-	
-		in >> l >> d >> v0 >> v1 >> v2;
-		assert(l == (i+1));
-		assert(d == 3);
-		t.v0=v0; t.v1=v1; t.v2=v2;
-		v->push_back(t);
-	}
-	
-	cout << "readTriangles(): last triangle is numbered " << l << " in the file." << endl;
-	cout << "readTriangles(): triangle vector has size: " << v->size() << endl;
-	return *v;
-}
 
 
 void drawTriangles(Document &doc,const vector<Point> &vertices, const vector<Triangle> &triangles){
 
-//	int numVertices = vertices.size();
 	int numTriangles = triangles.size();
 	
 	cerr<< "drawTriangles(): numTriangles == " << numTriangles << endl;
 	for(int i=0; i< numTriangles; i++){
-			
-// 		cerr  << "v0: " << triangles[i].v0 << " v1: "<< triangles[i].v1 << " v2: " << triangles[i].v2;
-// 		cerr  << "\t\tx0: " << vertices[triangles[i].v0].x << " x1: " << vertices[triangles[i].v1].x << " x2: " << vertices[triangles[i].v2].x  << endl;	
-		
+					
 		doc << (Polygon(Color::White, Stroke(.5, Color::Blue)) << vertices[triangles[i].v0] << vertices[triangles[i].v1] << vertices[triangles[i].v2]) ;	
-		//cout << i << endl;
 	}
 }
 
@@ -135,8 +72,6 @@ int main()
 
     // Green Origin.
     Rectangle origin(Point(0,0), 1, 1, Fill(Color::Blue), Stroke(1, Color::Green));
-    
-
     
 //     border << Point(0, 0) << Point(dimensions.width, 0) << Point(dimensions.width, dimensions.height) << Point(0, dimensions.height);
 
@@ -166,8 +101,6 @@ int main()
 	
 	drawTriangles(doc, v, t);
 	
-	
-
 //     //Condensed notation, parenthesis isolate temporaries that are inserted into parents.
 //     doc << (LineChart(Dimensions(65, 5))
 //         << (Polyline(Stroke(.5, Color::Blue)) << Point(0, 0) << Point(10, 8) << Point(20, 13))

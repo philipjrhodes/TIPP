@@ -1,14 +1,17 @@
-FLAGS = -O3  -Wc++11-extensions
+FLAGS = -O3  -std=c++11
 
 run: dm
 	dm
 	bbedit  *svg
 
-dm: main.o 
-	g++ main.o -o dm 
+dm: main.o adcirc.o
+	g++ main.o adcirc.o -o dm 
 
-main.o: main.cpp  
-	g++ -c ${FLAGS} main.cpp simple_svg_1.0.0.hpp 
+main.o: main.cpp adcirc.h simple_svg_1.0.0.hpp
+	g++ ${FLAGS} -c main.cpp 
+
+adcirc.o: adcirc.cpp adcirc.h simple_svg_1.0.0.hpp
+	g++ ${FLAGS} -c adcirc.cpp
 
 clean: 
-	rm *.o *.gch
+	rm -f *.o *.gch

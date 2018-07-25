@@ -44,22 +44,22 @@ namespace svg
 {
     // Utility XML/String Functions.
     template <typename T>
-    std::string attribute(std::string const & attribute_name,
+    inline std::string attribute(std::string const & attribute_name,
         T const & value, std::string const & unit = "")
     {
         std::stringstream ss;
         ss << attribute_name << "=\"" << value << unit << "\" ";
         return ss.str();
     }
-    std::string elemStart(std::string const & element_name)
+    inline std::string elemStart(std::string const & element_name)
     {
         return "\t<" + element_name + " ";
     }
-    std::string elemEnd(std::string const & element_name)
+    inline std::string elemEnd(std::string const & element_name)
     {
         return "</" + element_name + ">\n";
     }
-    std::string emptyElemEnd()
+    inline std::string emptyElemEnd()
     {
         return "/>\n";
     }
@@ -104,7 +104,7 @@ namespace svg
         double x;
         double y;
     };
-    optional<Point> getMinPoint(std::vector<Point> const & points)
+    inline optional<Point> getMinPoint(std::vector<Point> const & points)
     {
         if (points.empty())
             return optional<Point>();
@@ -118,7 +118,7 @@ namespace svg
         }
         return optional<Point>(min);
     }
-    optional<Point> getMaxPoint(std::vector<Point> const & points)
+    inline optional<Point> getMaxPoint(std::vector<Point> const & points)
     {
         if (points.empty())
             return optional<Point>();
@@ -148,7 +148,7 @@ namespace svg
     };
 
     // Convert coordinates in user space to SVG native space.
-    double transformX(double x, Layout const & layout)
+    inline double transformX(double x, Layout const & layout)
     {
         if (layout.origin == Layout::BottomRight || layout.origin == Layout::TopRight)
             return layout.dimensions.width - ((x + layout.origin_offset.x) * layout.scale);
@@ -162,7 +162,7 @@ namespace svg
             
     }
 
-    double transformY(double y, Layout const & layout)
+    inline double transformY(double y, Layout const & layout)
     {
         if (layout.origin == Layout::BottomLeft || layout.origin == Layout::BottomRight)
             return layout.dimensions.height - ((y + layout.origin_offset.y) * layout.scale);
@@ -175,7 +175,7 @@ namespace svg
 
 
     }
-    double scale(double dimension, Layout const & layout)
+    inline double scale(double dimension, Layout const & layout)
     {
         return dimension * layout.scale;
     }
