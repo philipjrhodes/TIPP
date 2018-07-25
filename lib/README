@@ -1,0 +1,3 @@
+This lib directory is meant to be a standard location for library files, but no library files should
+be under git control, since they are machine dependent.
+
