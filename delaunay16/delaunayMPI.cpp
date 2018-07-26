@@ -232,6 +232,8 @@ if(storeTriangleList){
 	std::string currPath = generateFileName(coarsePartId, path + "delaunayResults/returnStoreTriangleIds", xCoarsePartNum*yCoarsePartNum, ".tri");
 //	std::string currPath = path + "delaunayResults/returnStoreTriangleIds.tri";
 	//store array storeTriangleIds of each processes to a single files
+	
+	// PJR: replace with gather() call, no NFS sharing.
 	MPI_File_open(row_comm, currPath.c_str(), MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
 	MPI_File_set_view(fh, storeTriangleNumOffset * 3 * sizeof(unsigned long long), MPI_UNSIGNED_LONG, MPI_UNSIGNED_LONG, "native", MPI_INFO_NULL);
 	MPI_File_write(fh, triangleIdArr, triangleNum*3, MPI_UNSIGNED_LONG, MPI_STATUS_IGNORE);
