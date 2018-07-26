@@ -1,0 +1,764 @@
+
+
+datasources: ../dataSources/500Kvertices/
+Delaunay triangulation: 8 x 8 = 64
+MPI time: 31.8302
+Management time: 181.156
+Total time: 212.986
+
+
+datasources: ../dataSources/500Kvertices/
+Delaunay triangulation: 8 x 8 = 64
+MPI time: 6.0493
+Management time: 0.262381
+Total time: 6.31169
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.57493
+MPI time: 40.9058
+Total time: 42.4807
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.48414
+MPI time: 40.7576
+Total time: 42.2418
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.37018
+MPI time: 37.9656
+Total time: 39.3358
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.49921
+MPI time: 40.4597
+Total time: 41.9589
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.50377
+MPI time: 43.943
+Total time: 45.4468
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.41683
+MPI time: 39.739
+Total time: 41.1559
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.2201
+MPI time: 39.3111
+Total time: 40.5312
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.50914
+MPI time: 41.4151
+Total time: 42.9242
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.64804
+MPI time: 36.6796
+Total time: 38.3277
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.56629
+MPI time: 38.9118
+Total time: 40.4781
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 3.74144
+MPI time: 44.1285
+Total time: 47.8699
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 3.11403
+MPI time: 38.1243
+Total time: 41.2383
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.44613
+MPI time: 44.0346
+Total time: 45.4807
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.44396
+MPI time: 37.5556
+Total time: 38.9996
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.67998
+MPI time: 40.0404
+Total time: 41.7203
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.38111
+MPI time: 40.3745
+Total time: 41.7557
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.15964
+MPI time: 41.8501
+Total time: 43.0097
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.25836
+MPI time: 40.9245
+Total time: 42.1828
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.29682
+MPI time: 39.7905
+Total time: 41.0874
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.35714
+MPI time: 39.6254
+Total time: 40.9825
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.38832
+MPI time: 37.224
+Total time: 38.6123
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 2.11478
+MPI time: 37.0479
+Total time: 39.1627
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.16371
+MPI time: 35.7457
+Total time: 36.9094
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.35409
+MPI time: 37.3522
+Total time: 38.7063
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.95871
+MPI time: 44
+Total time: 45.9587
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.62542
+MPI time: 51.5068
+Total time: 53.1323
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.3249
+MPI time: 45.5573
+Total time: 46.8822
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.21507
+MPI time: 42.4818
+Total time: 43.6969
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.42372
+MPI time: 44.2055
+Total time: 45.6293
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.13796
+MPI time: 48.6285
+Total time: 49.7664
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 4.34951
+MPI time: 35.3894
+Total time: 39.7389
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.27605
+MPI time: 40.188
+Total time: 41.4641
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.38028
+MPI time: 42.1442
+Total time: 43.5245
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.19941
+MPI time: 38.1999
+Total time: 39.3993
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.23758
+MPI time: 43.658
+Total time: 44.8955
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.29319
+MPI time: 38.8303
+Total time: 40.1235
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.31703
+MPI time: 44.4653
+Total time: 45.7823
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.28398
+MPI time: 42.3009
+Total time: 43.5849
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.30951
+MPI time: 41.4553
+Total time: 42.7648
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.10789
+MPI time: 40.1163
+Total time: 41.2242
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.14903
+MPI time: 38.3914
+Total time: 39.5404
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.27053
+MPI time: 37.8282
+Total time: 39.0987
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.22747
+MPI time: 38.496
+Total time: 39.7235
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.28715
+MPI time: 41.6832
+Total time: 42.9704
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.52821
+MPI time: 39.1578
+Total time: 40.686
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 4.39708
+MPI time: 43.9636
+Total time: 48.3607
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 4.09621
+MPI time: 35.1945
+Total time: 39.2907
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.07679
+MPI time: 41.3456
+Total time: 42.4224
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.17508
+MPI time: 37.2827
+Total time: 38.4578
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 0.912499
+MPI time: 37.2
+Total time: 38.1125
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.19365
+MPI time: 37.2905
+Total time: 38.4842
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.2273
+MPI time: 37.7602
+Total time: 38.9875
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.16831
+MPI time: 35.2106
+Total time: 36.3789
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.12458
+MPI time: 36.9429
+Total time: 38.0675
+
+
+datasources: ../dataSources/15Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.18318
+MPI time: 37.1512
+Total time: 38.3343
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.1246
+MPI time: 37.5322
+Total time: 38.6568
+
+
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 0.973004
+MPI time: 38.6387
+Total time: 39.6117
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.66552
+MPI time: 34.8409
+Total time: 36.5065
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.39207
+MPI time: 42.3522
+Total time: 43.7443
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 2.15374
+MPI time: 39.5626
+Total time: 41.7163
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 5.88979
+MPI time: 33.6225
+Total time: 39.5123
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.28893
+MPI time: 36.4699
+Total time: 37.7589
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.56338
+MPI time: 53.1607
+Total time: 54.7241
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.51251
+MPI time: 66.9561
+Total time: 68.4686
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.16902
+MPI time: 41.9431
+Total time: 43.1122
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.37905
+MPI time: 43.2811
+Total time: 44.6601
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.35249
+MPI time: 50.9829
+Total time: 52.3354
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.22961
+MPI time: 37.3407
+Total time: 38.5703
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 0.818017
+MPI time: 18.9115
+Total time: 19.7295
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 0.489833
+MPI time: 7.24314
+Total time: 7.73298
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.40151
+MPI time: 47.3858
+Total time: 48.7873
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.58774
+MPI time: 55.9525
+Total time: 57.5402
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.7705
+MPI time: 68.1734
+Total time: 69.9439
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.66892
+MPI time: 56.5875
+Total time: 58.2564
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.57756
+MPI time: 60.8078
+Total time: 62.3853
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 1.73727
+MPI time: 59.4844
+Total time: 61.2217
+
+
+datasources: ../dataSources/20Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+Master time: 2.0376
+Update time: 0.108345
+Store time: 0.26674
+MPI time: 57.3697
+Total time: 59.4073
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.071383
+Update time: 0.0963578
+Master + Update time: 0.167741
+Store time: 0.198382
+MPI time: 27.8094
+Total time: 28.1755
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0421216
+Update time: 0.0999012
+Master + Update time: 0.142023
+Store time: 0.197233
+MPI time: 35.3336
+Total time: 35.6729
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0523171
+Update time: 0.104968
+Master + Update time: 0.157285
+Store time: 0.204373
+MPI time: 11.9157
+Total time: 12.2774
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0828993
+Update time: 0.107785
+Master + Update time: 0.190684
+Store time: 0.186416
+MPI time: 11.4275
+Total time: 11.8046
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.077831
+Update time: 0.11894
+Master + Update time: 0.196771
+Store time: 0.177105
+MPI time: 10.088
+Total time: 10.4619
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0789697
+Update time: 0.11687
+Master + Update time: 0.19584
+Store time: 0.222868
+MPI time: 10.026
+Total time: 10.4447
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0782359
+Update time: 0.200069
+Master + Update time: 0.278305
+Store time: 0.297095
+MPI time: 12.1275
+Total time: 12.7029
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0494125
+Update time: 0.115422
+Master + Update time: 0.164834
+Store time: 0.280228
+MPI time: 13.8012
+Total time: 14.2462
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0494173
+Update time: 0.0947397
+Master + Update time: 0.144157
+Store time: 0.169142
+MPI time: 8.85914
+Total time: 9.17244
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0994503
+Update time: 0.139817
+Master + Update time: 0.239267
+Store time: 0.194306
+MPI time: 10.4125
+Total time: 10.8461
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0698147
+Update time: 0.0845959
+Master + Update time: 0.154411
+Store time: 0.164471
+MPI time: 11.2265
+Total time: 11.5454
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.101143
+Update time: 0.169551
+Master + Update time: 0.270694
+Store time: 0.185877
+MPI time: 10.0178
+Total time: 10.4744
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.036468
+Update time: 0.0856705
+Master + Update time: 0.122139
+Store time: 0.197501
+MPI time: 10.6326
+Total time: 10.9523
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.05531
+Update time: 0.0731819
+Master + Update time: 0.128492
+Store time: 0.220311
+MPI time: 10.5493
+Total time: 10.8981
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0496197
+Update time: 0.103269
+Master + Update time: 0.152888
+Store time: 0.171869
+MPI time: 12.0537
+Total time: 12.3785
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0762665
+Update time: 0.109265
+Master + Update time: 0.185532
+Store time: 0.179907
+MPI time: 10.0231
+Total time: 10.3885
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0752087
+Update time: 0.123932
+Master + Update time: 0.199141
+Store time: 0.168351
+MPI time: 12.2397
+Total time: 12.6071
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.204887
+Update time: 0.105445
+Master + Update time: 0.310333
+Store time: 0.00072813
+MPI time: 11.626
+Total time: 11.9371
+
+
+Multiple-Master version
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 3.30545
+Update time: 0.0987475
+Master + Update time: 3.40419
+Store time: 0.000513077
+MPI time: 8.0396
+Total time: 11.4443

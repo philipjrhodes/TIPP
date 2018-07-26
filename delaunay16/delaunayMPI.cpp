@@ -7,7 +7,7 @@ delaunayMPI::delaunayMPI(std::string srcPath){
 
 	finePartArr=NULL;
 	pointNumPartArr=NULL;
-	pointNumPartOffsetArr=NULL;
+//	pointNumPartOffsetArr=NULL;
 
 	tempCoorArr=NULL;
 	tempPointIdArr=NULL;
@@ -35,7 +35,7 @@ void delaunayMPI::processMPI(unsigned int my_rank, unsigned int pool_size, MPI_C
 	unsigned long long *idArr=NULL;//all point id of triangles for receivers
 
 	//active partition Id
-	int finePartId;
+	unsigned int finePartId;
 
 	bool i_am_the_master = false;
 	unsigned int root_process = 0;
@@ -50,7 +50,7 @@ void delaunayMPI::processMPI(unsigned int my_rank, unsigned int pool_size, MPI_C
 //	if(my_rank==MASTER_RANK) std::cout<<"***************MASTER SENDS INFO TO ALL WORKERS****************\n";
 
 	//broadcast coarsePartId from sub master (my_rank==0) to other ranks in row_comm
-	MPI_Bcast(&coarsePartId, 1, MPI_INT, 0, row_comm);
+	MPI_Bcast(&coarsePartId, 1, MPI_UNSIGNED, 0, row_comm);
 
 	//broadcast coarseLowX, coarseLowY, coarseHighX, coarseHighY from sub master (my_rank==0) to other ranks in row_comm
 	MPI_Bcast(&coarseLowX, 1, MPI_DOUBLE, 0, row_comm);
@@ -59,29 +59,30 @@ void delaunayMPI::processMPI(unsigned int my_rank, unsigned int pool_size, MPI_C
 	MPI_Bcast(&coarseHighY, 1, MPI_DOUBLE, 0, row_comm);
 
 	//broadcast xFinePartNum & yFinePartNum to all slave nodes
-	MPI_Bcast(&xFinePartNum, 1, MPI_INT, 0, row_comm);
-	MPI_Bcast(&yFinePartNum, 1, MPI_INT, 0, row_comm);
+	MPI_Bcast(&xFinePartNum, 1, MPI_UNSIGNED, 0, row_comm);
+	MPI_Bcast(&yFinePartNum, 1, MPI_UNSIGNED, 0, row_comm);
 
 	//broadcast finePartNum to all slave nodes
-	MPI_Bcast(&finePartNum, 1, MPI_INT, 0, row_comm);
+	MPI_Bcast(&finePartNum, 1, MPI_UNSIGNED, 0, row_comm);
 
 	//send number of temporary triangles of each active partition to all nodes (master , slaves)
-	MPI_Scatter(triangleSizeArr, 1, MPI_INT, &triangleSize, 1, MPI_INT, MASTER_RANK, row_comm);
+	MPI_Scatter(triangleSizeArr, 1, MPI_UNSIGNED, &triangleSize, 1, MPI_UNSIGNED, MASTER_RANK, row_comm);
 
 	//send number of offset of temporary triangles of each active partition to all nodes (master , slaves)
-	MPI_Scatter(triangleSizeOffsetArr, 1, MPI_INT, &triangleSizeOffset, 1, MPI_INT, MASTER_RANK, row_comm);
+	MPI_Scatter(triangleSizeOffsetArr, 1, MPI_UNSIGNED, &triangleSizeOffset, 1, MPI_UNSIGNED, MASTER_RANK, row_comm);
 
 	//send active finePartId to all nodes (master , slaves)
-	MPI_Scatter(finePartArr, 1, MPI_INT, &finePartId, 1, MPI_INT, MASTER_RANK, row_comm);
+	MPI_Scatter(finePartArr, 1, MPI_UNSIGNED, &finePartId, 1, MPI_UNSIGNED, MASTER_RANK, row_comm);
 
 	//send number of points and offsets in each active partition to all nodes (master , slaves)
 	//Scatter pointNumPartArr & pointNumPartOffsetArr to pointNumPartSize & pointNumPartOffsetSize from master to all nodes
 	//this command is used for readPointCoor()
-	MPI_Scatter(pointNumPartArr, 1, MPI_INT, &pointNumPartSize, 1, MPI_INT, MASTER_RANK, row_comm);
+	MPI_Scatter(pointNumPartArr, 1, MPI_UNSIGNED, &pointNumPartSize, 1, MPI_UNSIGNED, MASTER_RANK, row_comm);
 
+//	MPI_Barrier(row_comm);
 
-	if(my_rank<finePartNum)
-		std::cout<<"finePartId: " + toString(finePartId) + ", pointNumPartSize: " + toString(pointNumPartSize)<<"\n";
+//	if(my_rank<finePartNum)
+//		std::cout<<"finePartId: " + toString(finePartId) + ", pointNumPartSize: " + toString(pointNumPartSize)<<"\n";
 
 //	if(my_rank==MASTER_RANK) std::cout<<"***************MASTER SENDS ACTIVE TRIANGLES TO ALL WORKERS****************\n";
 
@@ -144,11 +145,11 @@ void delaunayMPI::processMPI(unsigned int my_rank, unsigned int pool_size, MPI_C
 
 
 //	if(my_rank==MASTER_RANK) std::cout<<"***************ALL WORKERS ARE TRIANGULATING****************\n";
-	triangulate(finePartId, my_rank);
+	triangulate(coarsePartId, finePartId, my_rank);
 
 //	if(my_rank==MASTER_RANK) std::cout<<"***************WORKERS ARE WRITING FINALIZED & BOUNDARY TRIANGLES BACK TO MASTER***************\n";
 	//srore ids of storeTriangleList from triangulate function
-	processStoreTriangles(my_rank, pool_size, row_comm, coarsePartId, xCoarsePartNum, yCoarsePartNum);
+	processStoreTriangles(my_rank, finePartId, pool_size, row_comm, coarsePartId, xCoarsePartNum, yCoarsePartNum);
 
 	//store triangleList & temporaryTriangleList from triangulate function
 	processTriangleList(my_rank, pool_size, row_comm, coarsePartId, xCoarsePartNum, yCoarsePartNum);
@@ -156,13 +157,13 @@ void delaunayMPI::processMPI(unsigned int my_rank, unsigned int pool_size, MPI_C
 	if(my_rank==MASTER_RANK){
 		delete [] finePartArr;
 		delete [] pointNumPartArr;
-		delete [] pointNumPartOffsetArr;
+//		delete [] pointNumPartOffsetArr;
 	}
 }
 
 //============================================================================
 //process storeTriangleList (tranform into array triangle Ids and send back to master node)
-void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int pool_size, MPI_Comm row_comm, unsigned int coarsePartId, unsigned int xCoarsePartNum, unsigned int yCoarsePartNum){
+void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int finePartId, unsigned int pool_size, MPI_Comm row_comm, unsigned int coarsePartId, unsigned int xCoarsePartNum, unsigned int yCoarsePartNum){
 	//number of store triangles of each process
 	unsigned int *storeTriangleNumArr = NULL;
 	//based on storeTriangleNumArr, compute storeTriangleNumOffsetArr
@@ -174,9 +175,9 @@ void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int pool_
 		storeTriangleNumArr = new unsigned int[pool_size];
 
 	unsigned int triangleNum = size(storeTriangleList);
+//if(triangleNum==0) std::cout<<"!!!!!!! coarsePartId: " + toString(coarsePartId) + ", finePartId: " + toString(finePartId) + ", triangleNum: " + toString(triangleNum) + "\n";
 
 	MPI_Gather(&triangleNum, 1, MPI_UNSIGNED, storeTriangleNumArr, 1, MPI_UNSIGNED, MASTER_RANK, row_comm);
-
 
 	if(my_rank==MASTER_RANK){//only master node
 		storeTriangleNumOffsetArr = new unsigned int[pool_size];
@@ -188,8 +189,8 @@ void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int pool_
 
 
 	//transform storeTriangleList to array of ids
-	unsigned long long *triangleIdArr;
-
+	unsigned long long *triangleIdArr=NULL;
+if(storeTriangleList){
 	triangleIdArr = new unsigned long long[triangleNum*3];
 	triangleNode *head = storeTriangleList;
 	unsigned long long index = 0;
@@ -201,10 +202,10 @@ void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int pool_
 		index++;
 		head=head->next;
 	}
-
+}
 
 //compute triangle areas for each processes and gather all numbers back to master process
-	double triangleAreas = 0;
+/*	double triangleAreas = 0;
 	double *triangleAreaArr = NULL;
 
 	if(my_rank==MASTER_RANK) //only master node
@@ -225,7 +226,7 @@ void delaunayMPI::processStoreTriangles(unsigned int my_rank, unsigned int pool_
 		std::cout<<"************* totalTriangleAreas: "<<totalTriangleAreas<<"\n";
 	}
 	delete [] triangleAreaArr;
-
+*/
 
 	removeLinkList(storeTriangleList);
 	std::string currPath = generateFileName(coarsePartId, path + "delaunayResults/returnStoreTriangleIds", xCoarsePartNum*yCoarsePartNum, ".tri");
@@ -360,6 +361,7 @@ void delaunayMPI::generateTriangles(unsigned int my_rank, unsigned int triangleN
 		point p3(coorArr[index*6+4], coorArr[index*6+5], pointIdArr[index*3+2]);
 //std::cout<<pointIdArr[index*3]<<" "<<pointIdArr[index*3+1]<<" "<<pointIdArr[index*3+2]<<"\n";
 		triangle *newTriangle = new triangle(p1, p2, p3);
+		newTriangle->computeCenterRadius();
 		triangleNode *newTriangleNode = createNewNode(newTriangle);
 		insertFront(triangleList, newTriangleNode);
 	}
@@ -412,7 +414,7 @@ void delaunayMPI::readTriangleData(unsigned int pool_size, unsigned int coarsePa
 	}
 
 	//fourth line is the offset array of previous line (triangle size for each partition)
-	triangleSizeOffsetArr = new unsigned long int[pool_size];
+	triangleSizeOffsetArr = new unsigned int[pool_size];
 	for(int i=0; i<pool_size; i++) triangleSizeOffsetArr[i]=0;
 	for(int i=0; i<finePartNum; i++){
 		triangleInfoFile >> strItem;
@@ -507,7 +509,7 @@ boundingBox delaunayMPI::findPart(unsigned int partIndex, point lowPoint, point 
 //input: an array of point (coorPointArr)
 //output: a list of triangles which are triangulated
 //==============================================================================
-void delaunayMPI::triangulate(unsigned int finePartId, unsigned int my_rank){
+void delaunayMPI::triangulate(unsigned int coarsePartId, unsigned int finePartId, unsigned int my_rank){
 
 	if((pointCoorArr==NULL) || (my_rank>=finePartNum)) return;
 	unsigned int count=0;
@@ -638,7 +640,7 @@ void delaunayMPI::triangulate(unsigned int finePartId, unsigned int my_rank){
 		removeLinkList(polygon);
 	}
 	delete [] pointCoorArr;
-	std::cout<<"done triangulation partId = " + toString(finePartId) + ", rank = " + toString(my_rank) + ", storeTriangleSize: " + toString(size(storeTriangleList)) + ", triangleSize: " + toString(size(triangleList)) + ", tempTriangleSize: " + toString(size(temporaryTriangleList)) + ", bad triangles:" + toString(count) + ", from node " + processor_name <<std::endl;
+	std::cout<<"coarsePartId = " + toString(coarsePartId) + ", finePartId = " + toString(finePartId) + ", rank = " + toString(my_rank) + ", storeTriangleSize: " + toString(size(storeTriangleList)) + ", triangleSize: " + toString(size(triangleList)) + ", tempTriangleSize: " + toString(size(temporaryTriangleList)) + ", bad triangles:" + toString(count) + ", from node " + processor_name <<std::endl;
 }
 
 //===========================================================================

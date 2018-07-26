@@ -138,7 +138,8 @@ public:
 	void updateConflictPartitions();
 
 	//deliver triangles to active partitions
-	void deliverTriangles();
+	void deliverTriangles(double &masterTime, double &storeTime);
+	void storeToTriangleIds(unsigned long long *triangleIdArr, unsigned int triangleNum);
 
 	//number of active partition left over in activePartSet
 	unsigned int activePartitionNumber();
@@ -150,13 +151,14 @@ public:
 	//Assume if total number of active partitions is 20, but number of core available is 6,
 	//then each time send job to MPI, we only sent 6 tasks, list of sending : 6, 6, 6, 2
 	//Output is the total time to run MPI
-	void prepareDataForDelaunayMPI(int coreNum);
+	void prepareDataForDelaunayMPI(unsigned int coreNum, double &masterTime, double &updateTime);
 	void storeActivePartitions(int *activePartIdArr, int activePartNum, unsigned int totalTriangleSize);
 	void storeActivePartitionInfo(int activePartNum, int *activePartIdArr, int *activePartSizeArr, int *activePartSizeOffsetArr);
 
 	//add return_triangles from MPI to returnAllTriangleIds.tri and returnAllTriangleCoors.tri
 	//and merge to current triangleArr in memory
 	void addReturnTriangles();
+	void addReturnStoreTriangles();
 	void addFile(std::string path, std::string fileName1, std::string fileName2);
 
 	//get returned triangles which are processed from MPI, remove those triangles that are delivered, 

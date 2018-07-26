@@ -1,3 +1,5 @@
+For demo only (to draw some figures use drawDomain.cpp)
+
 - Multiple master
 
 - demo for visualization

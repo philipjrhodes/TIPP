@@ -21,7 +21,9 @@
 
 #The last parameter is the domain size
 
-mpiexec -n 16 -f machinefile ./delaunay2DMain "../dataSources/10Kvertices/" 1
+#mpiexec -n 16 -f machinefile ./delaunay2DMain "../dataSources/10Kvertices/" 1
+#mpiexec -n 16 -f machinefile ./delaunay2DMain "../dataSources/15Kvertices/" 1
+mpiexec -n 22 -f machinefile ./delaunay2DMain "../dataSources/20Kvertices/" 1
 
 
 #4 means domainSize

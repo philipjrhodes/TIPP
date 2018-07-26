@@ -33,13 +33,13 @@ mpic++ -std=gnu++11 linkList.cpp common.cpp point.cpp edge.cpp triangle.cpp grid
 #The last parameter is the domain size
 
 
-#mpiexec -n 4 -f machinefile ./delaunay2DMain "../dataSources/100vertices/" 1
+mpiexec -n 4 -f machinefile ./delaunay2DMain "../dataSources/100vertices/" 1
 
 #mpiexec -n 4 -f machinefile ./delaunay2DMain "../dataSources/1Kvertices/" 2
 
 #mpiexec -n 4 -f machinefile ./delaunay2DMain "../dataSources/4Kvertices/" 2
 
-mpiexec -n 3 -f machinefile ./delaunay2DMain "../dataSources/2Kvertices/" 1
+#mpiexec -n 3 -f machinefile ./delaunay2DMain "../dataSources/2Kvertices/" 1
 
 #mpiexec -n 16 -f machinefile ./delaunay2DMain "../dataSources/10Kvertices/" 1
 

@@ -14,9 +14,6 @@ g++ -std=gnu++11 common.cpp point.cpp distribute.cpp distributedMain.cpp -o dist
 #rm ../dataSources/1Kvertices/delaunayResults/*.*
 #./distribute 2 0.5 4 4 "../dataSources/1Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/1Kvertices/delaunayResults/" 1000 20
 
-rm ../dataSources/2Kvertices/delaunayResults/*.*
-./distribute 1 0.25 4 4 "../dataSources/2Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/2Kvertices/delaunayResults/" 1000 20
-
 #rm ../dataSources/4Kvertices/delaunayResults/*.*
 #./distribute 2 0.5 4 4 "../dataSources/4Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/4Kvertices/delaunayResults/" 1000 20
 
@@ -30,8 +27,8 @@ rm ../dataSources/2Kvertices/delaunayResults/*.*
 
 
 
-#rm ../dataSources/10Kvertices/delaunayResults/*.*
-#./distribute 1 0.125 8 8 "../dataSources/10Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/10Kvertices/delaunayResults/" 10000 25
+rm ../dataSources/10Kvertices/delaunayResults/*.*
+./distribute 1 0.125 8 8 "../dataSources/10Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/10Kvertices/delaunayResults/" 10000 25
 
 #rm ../dataSources/100Kvertices/delaunayResults/*.*
 #./distribute 8 8 "../dataSources/100Kvertices/rawPointData/" "mydatabin.ver.xfdl" "mydatabin.ver" "../dataSources/100Kvertices/delaunayResults/" 10000 100

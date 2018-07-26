@@ -126,7 +126,7 @@ void delaunayPartition(unsigned int world_rank, unsigned int world_size, unsigne
 			c->updateConflictPartitions();
 			c->deliverTriangles();
 			if(c->unfinishedPartNum()<=0) delaunayStop = true;
-//delaunayStop = true;
+delaunayStop = true;
 			activePartStop = false;
 		}
 		//sychronize all processes in a group
@@ -147,9 +147,10 @@ void delaunayPartition(unsigned int world_rank, unsigned int world_size, unsigne
 				//then we have to process Delaunay MPI for the last shift in current stage.
 				currActivePartNum = c->activePartitionNumber();
 				if(currActivePartNum<=0) activePartStop = true;
-//activePartStop = true;
+activePartStop = true;
 				std::cout<<"Number of active partitions leftover: "<<currActivePartNum<<"\n";
 			}
+
 			//sychronize all processes
 			MPI_Barrier(row_comm);
 

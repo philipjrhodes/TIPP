@@ -526,13 +526,9 @@ void drawReturnTriangles(std::string path){
 
 	//fill triangleCoorArr from triangleIdArr and pointCoorArr
 	for(int triangleId=0; triangleId<triangleNum; triangleId++){
-//std::cout<<triangleIdArr[triangleId*3]<<" "<<triangleIdArr[triangleId*3+1]<<" "<<triangleIdArr[triangleId*3+2]<<"\n";
 		triangleCoorArr[triangleId*6] = pointCoorArr[triangleIdArr[triangleId*3]*2];
 		triangleCoorArr[triangleId*6+1] = pointCoorArr[triangleIdArr[triangleId*3]*2+1];
 
-//		if(!insideBoundingBox(point(triangleCoorArr[triangleId*6], triangleCoorArr[triangleId*6+1]), bb)){
-//			std::cout<<"point "<<triangleCoorArr[triangleId*6]<<" "<<triangleCoorArr[triangleId*6]<<" is outside the partition "<<"\n";
-//		}
 		triangleCoorArr[triangleId*6+2] = pointCoorArr[triangleIdArr[triangleId*3+1]*2];
 		triangleCoorArr[triangleId*6+3] = pointCoorArr[triangleIdArr[triangleId*3+1]*2+1];
 
@@ -618,7 +614,10 @@ void drawAllInteriorBoundary(std::string path){
 		boundingBox bb = findPart(coarsePartId, point(0.0, 0.0), point(1.0, 1.0), xCoarsePartNum, yCoarsePartNum);
 		d->drawGridLines(bb.getLowPoint(), bb.getHighPoint(), xCoarsePartNum, yCoarsePartNum, 4);
 
-/*		fileStr = generateFileName(coarsePartId, path + "delaunayResults/returnAllStoreTriangleIds", xCoarsePartNum*yCoarsePartNum, ".tri");
+
+
+		//comment out this part if you do not want to draw the interior
+		fileStr = generateFileName(coarsePartId, path + "delaunayResults/returnAllStoreTriangleIds", xCoarsePartNum*yCoarsePartNum, ".tri");
 		readTriangleIds(triangleIdArr, triangleNum, fileStr);
 
 		//read fullPointPart.ver to pointCoorArr
@@ -633,12 +632,16 @@ void drawAllInteriorBoundary(std::string path){
 		delete [] triangleCoorArr;
 		delete [] triangleIdArr;
 		delete [] pointCoorArr;
-*/
+
+
+
+
 		//draw boundary triangles of a coarse partition
 		fileStr = generateFileName(coarsePartId, path + "delaunayResults/boundaryTriangles", xCoarsePartNum*yCoarsePartNum, ".tri");
 		triangle *triangleArr;
 		readTriangles(triangleArr, triangleNum, fileStr);
-		double *triangleCoorArr = new double[triangleNum*6];
+//		double *triangleCoorArr = new double[triangleNum*6];
+		triangleCoorArr = new double[triangleNum*6];
 		readCoorsFromTriangleArr(triangleArr, triangleNum, triangleCoorArr);
 
 		d->drawCoordinateTriangles(triangleCoorArr, triangleNum, 2);//GREEN
@@ -672,12 +675,14 @@ void drawNewDomainTrianglesInNextStage(std::string path){
 	delete [] triangleArr;
 
 
+
+	//you can comment out this part if you do not need to draw the boundary triangles return from coarse partitions
 	//draw returned triangles (bounadry triangles)
 	unsigned int activePartArr[] = {0, 2, 8, 10};
 	for(int i=0; i<4; i++){
 		unsigned int coarsePartId = activePartArr[i];
 		boundingBox bb = findPart(coarsePartId, point(0.0, 0.0), point(1.0, 1.0), xCoarsePartNum, yCoarsePartNum);
-		d->drawGridLines(bb.getLowPoint(), bb.getHighPoint(), xCoarsePartNum, yCoarsePartNum, 4);
+//		d->drawGridLines(bb.getLowPoint(), bb.getHighPoint(), xCoarsePartNum, yCoarsePartNum, 4);
 
 		//draw boundary triangles of a coarse partition
 		fileStr = generateFileName(coarsePartId, path + "delaunayResults/boundaryTriangles", xCoarsePartNum*yCoarsePartNum, ".tri");
@@ -686,7 +691,7 @@ void drawNewDomainTrianglesInNextStage(std::string path){
 		double *triangleCoorArr = new double[triangleNum*6];
 		readCoorsFromTriangleArr(triangleArr, triangleNum, triangleCoorArr);
 
-		d->drawCoordinateTriangles(triangleCoorArr, triangleNum, 1);//BLUE
+		d->drawCoordinateTriangles(triangleCoorArr, triangleNum, 2);//GREEN
 
 		delete [] triangleCoorArr;
 		delete [] triangleArr;
@@ -703,20 +708,46 @@ int main(int argc, char **argv){
 	else{
 		std::string path = argv[1];
 
-		//change (scale = 450; originalX = 20; originalY = 20;) in drawMesh.cpp
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawTriangleArr(path);
+
+		//draw init triangle for the first domain
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawDomainTriangles(path);
+
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawDomainActivePartitions(path);
+
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawInitTrianglesAllCoarseParts(path);
+
+		//You need to type "return", right after the while loop "while(!activePartStop){ ...}" in delaunay2DMain.cpp (line 153)
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawActiveFineParts(path);
 
-		//change (scale = 1300; originalX = -580; originalY = -580;) in drawMesh.cpp
-//		drawInitTrianglesOneCoarsePart(path);
-//		drawOneActiveFineParts(path);
-//		drawReturnTriangles(path);
-//		drawOneInteriorBoundary(10, path);
+		//You need to remove "return" in delaunay2DMain.cpp
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
 //		drawAllInteriorBoundary(path);
-		drawNewDomainTrianglesInNextStage(path);
+
+		//You need to remove "return" in delaunay2DMain.cpp
+		//change (scale = 350; originalX = 20; originalY = 20;) in drawMesh.cpp
+//		drawNewDomainTrianglesInNextStage(path);
+
+
+
+		//change (scale = 1000; originalX = -450; originalY = -450;) in drawMesh.cpp
+//		drawInitTrianglesOneCoarsePart(path);
+
+		//change (scale = 1000; originalX = -450; originalY = -450;) in drawMesh.cpp
+//		drawOneActiveFineParts(path);
+
+		//You need to move "return" from line 153 to 168, right after the c->addReturnTriangles() in delaunay2DMain.cpp
+		//change (scale = 1000; originalX = -450; originalY = -450;) in drawMesh.cpp
+//		drawReturnTriangles(path);
+
+		//change (scale = 1000; originalX = -450; originalY = -450;) in drawMesh.cpp
+		drawOneInteriorBoundary(10, path);
+		
 	}
 
 	return 0;

@@ -23,6 +23,8 @@ int main (int argc, char** argv){
 	delaunayMPI *pMPI = new delaunayMPI(domainSize, path);
 
 	double masterTime = 0;
+	double updateTime = 0;
+	double storeTime = 0;
 	double amountTime = 0;
 	double currentTime = GetWallClockTime();	
 	double overAllTime;
@@ -41,7 +43,8 @@ int main (int argc, char** argv){
 	MPI_Comm_size(MPI_COMM_WORLD, &pool_size);
 	coreNum = pool_size;
 
-	if(my_rank==MASTER_RANK){	
+	if(my_rank==MASTER_RANK){
+		currentTime = GetWallClockTime();
 		d = new domain(0.0,0.0, domainSize, domainSize, path);
 		d->loadInitPoints();
 		amountTime = GetWallClockTime()-currentTime;
@@ -71,6 +74,7 @@ int main (int argc, char** argv){
 	unsigned int activePartNum;
 	while(!delaunayStop){
 		if(my_rank==MASTER_RANK){
+			currentTime = GetWallClockTime();
 			d->generateIntersection();
 			d->generateConflictPartitions();
 //			d->printConflictPartitions();
@@ -120,12 +124,14 @@ int main (int argc, char** argv){
 
 			if(my_rank==MASTER_RANK){
 				currentTime = GetWallClockTime();
-				d->collectStoreTriangleIds();
-				d->addReturnTriangles();
-
+				d->addReturnStoreTriangles();
 				amountTime = GetWallClockTime()-currentTime;
-				masterTime += amountTime;
-//				d->printTriangleArray();
+				storeTime += amountTime;
+
+				currentTime = GetWallClockTime();
+				d->addReturnTriangles();
+				amountTime = GetWallClockTime()-currentTime;
+				updateTime += amountTime;
 			}
 
 			//sychronize all processes
@@ -135,7 +141,7 @@ int main (int argc, char** argv){
 			currentTime = GetWallClockTime();
 			d->updateTriangleArr();
 			amountTime = GetWallClockTime()-currentTime;
-			masterTime += amountTime;
+			updateTime += amountTime;
 			stage++;
 		}
 		//sychronize all processes
@@ -148,7 +154,7 @@ int main (int argc, char** argv){
 		d->storeAllTriangles();
 
 		amountTime = GetWallClockTime()-currentTime;
-		masterTime += amountTime;
+		storeTime += amountTime;
 
 		std::cout<<"number of undelivered triangles left: "<<d->unDeliveredTriangleNum()<<"\n";
 		overAllTime = MPI_Wtime()-overAllTime;
@@ -156,7 +162,9 @@ int main (int argc, char** argv){
 		std::cout<<"datasources: "<<path<<std::endl;
 		std::cout<<"Delaunay triangulation: "<<d->xPartNum<<" x "<<d->yPartNum<<" = "<<d->xPartNum*d->yPartNum<<std::endl;
 		std::cout<<"Master time: "<<masterTime<<"\n";
-		std::cout<<"MPI time: "<<overAllTime - masterTime<<"\n";
+		std::cout<<"Update time: "<<updateTime<<"\n";
+		std::cout<<"Store time: "<<storeTime<<"\n";
+		std::cout<<"MPI time: "<<overAllTime - (masterTime + updateTime + storeTime)<<"\n";
 		std::cout<<"Total time: "<<overAllTime<<"\n";
 
 		//Write to result file (result.txt) in current folder
@@ -165,7 +173,9 @@ int main (int argc, char** argv){
 		resultFile<<"\n\ndatasources: "<<path<<"\n";
 		resultFile<<"Delaunay triangulation: "<<d->xPartNum<<" x "<<d->yPartNum<<" = "<<d->xPartNum*d->yPartNum<<"\n";
 		resultFile<<"Master time: "<<masterTime<<"\n";
-		resultFile<<"MPI time: "<<overAllTime - masterTime<<"\n";
+		resultFile<<"Update time: "<<updateTime<<"\n";
+		resultFile<<"Store time: "<<storeTime<<"\n";
+		resultFile<<"MPI time: "<<overAllTime - (masterTime + updateTime + storeTime)<<"\n";
 		resultFile<<"Total time: "<<overAllTime<<"\n";
 		resultFile.close();
 	}

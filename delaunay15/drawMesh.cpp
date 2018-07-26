@@ -25,15 +25,23 @@ The different color codes are
 
 drawMesh::drawMesh(){
 
-
-	scale = 450;
+	scale = 350;
 	originalX = 20;
 	originalY = 20;
 
-//	scale = 1300;
-//	originalX = -580;
-//	originalY = -580;
+	scale = 1000;
+	originalX = -450;
+	originalY = -450;
 
+
+/*	scale = 450;
+	originalX = 20;
+	originalY = 20;
+
+	scale = 1300;
+	originalX = -580;
+	originalY = -580;
+*/
 
 	driver = DETECT; // autotect
 	mode = 0;

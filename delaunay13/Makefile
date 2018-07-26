@@ -1,55 +1,67 @@
-CXX = g++
-
-EXE = domainDelaunay
-BUILD_DIR = build
+CXX = mpic++
+EXE = TIPP
+BUILD_DIR = ./build
 
 SRC = $(wildcard *.cpp) $(wildcard **/*.cpp)
-OBJ = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SRC))
-#OBJ = $($(BUILD_DIR)/%.o)
-
-
-#CXXFLAGS = -std=c++11 -Wall -Wextra -Wfatal-errors -pedantic -w -Winline -fno-rtti -ggdb -D_GLIBCXX_DEBUG -lsfml-graphics -lsfml-window -lsfml-system
-CXXFLAGS = -std=c++11 -Wall -pg 
+#OBJ = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SRC))
+OBJ = $($(BUILD_DIR)/%.o)
+#CXXFLAGS = -std=gnu++11 -Wall -pg
+CXXFLAGS = -std=gnu++11 -O3 -w
 all: $(EXE)
 
-$(EXE): $(BUILD_DIR)/domainMain.o $(BUILD_DIR)/domain.o $(BUILD_DIR)/partition.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/point.o $(BUILD_DIR)/common.o
-	$(CXX) $(CXXFLAGS) -o $(EXE)  $< 
+#$(EXE): $(BUILD_DIR)/*.o
+#	$(CXX) $(CXXFLAGS) -o $@ $^
 
-domainMain.o: domainMain.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(EXE): $(BUILD_DIR)/delaunay2DMain.o $(BUILD_DIR)/delaunayMPI.o $(BUILD_DIR)/domain.o $(BUILD_DIR)/partition.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/common.o $(BUILD_DIR)/point.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-domain.o: domain.cpp	
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/delaunay2DMain.o: delaunay2DMain.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
-partition.o: partition.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/delaunayMPI.o: delaunayMPI.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS) 
 
-triangle.o: triangle.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/domain.o: domain.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-boundingBox.o: boundingBox.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/partition.o: partition.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-gridBound.o: gridBound.cpp 
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/triangle.o: triangle.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-gridElement.o: gridElement.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/boundingBox.o: boundingBox.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-edge.o: edge.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/gridBound.o: gridBound.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-linkList.o: linkList.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/gridElement.o: gridElement.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-point.o: point.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/edge.o: edge.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-common.o: common.cpp
-	$(CXX) $(CXXFLAGS) -o $(BUILD_DIR)/$@ -c $<
+$(BUILD_DIR)/linkList.o: linkList.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+$(BUILD_DIR)/common.o: common.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+$(BUILD_DIR)/point.o: point.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 dir:
 	mkdir -p $(BUILD_DIR)
 
 clean:
-	rm -rf $(EXE) $(BUILD_DIR)
+	rm -rf $(EXE) $(BUILD_DIR)/*o
+
+
+#	mpic++ -o build/delaunay2DMain.o -c  delaunay2DMain.cpp
+#	mpic++ -o build/delaunayMPI.o -c  delaunayMPI.cpp
+#	mpic++ -o build/domain.o -c  domain.cpp
+#	mpic++ -o build/coarsePartition.o -c  coarsePartition.cpp
+#mpic++ -o build/coarsePartition.o -c  coarsePartition.cpp
+
+#mpic++ -std=gnu++11 linkList.cpp common.cpp point.cpp edge.cpp triangle.cpp gridElement.cpp gridBound.cpp boundingBox.cpp partition.cpp domain.cpp delaunayMPI.cpp coarsePartition.cpp delaunay2DMain.cpp -o delaunay2DMain

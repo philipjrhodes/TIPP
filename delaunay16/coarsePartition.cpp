@@ -31,11 +31,6 @@ coarsePartition::coarsePartition(unsigned int color, unsigned int partId, unsign
 //std::cout<<"groupId: " + toString(groupId) + ", activeCoarsePartNum: "+ toString(activeCoarsePartNum) + ", initTriangleNum: " + toString(initTriangleNum)<<std::endl;
 
 	partArr = new partition[xFinePartNum*yFinePartNum];
-
-/*	//remove triangleIds.tri
-	std::string delCommand = "rm " + path + "delaunayResults/triangleIds.tri";
-	system(delCommand.c_str());
-*/
 }
 
 //===================================================================
@@ -118,22 +113,26 @@ void coarsePartition::loadInitTriangles(){
 	FILE *f1 = fopen(fileStr.c_str(), "rb");
 	if(!f1){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f1);
 		return;
 	}
 	double *tempCoorArr = new double[initTriangleNum*6];
 	fread(tempCoorArr, sizeof(double), initTriangleNum*6, f1);
 	fclose(f1);
+	removeFile(fileStr);
 
 	//read all point ids of triangles
 	fileStr = generateFileName(groupId, path + "delaunayResults/tempPointIdCoarseParts", activeCoarsePartNum, ".tri");
 	FILE *f2 = fopen(fileStr.c_str(), "rb");
 	if(!f2){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f2);
 		return;
 	}
 	unsigned long long *tempPointIdArr = new unsigned long long[initTriangleNum*3];
 	fread(tempPointIdArr, sizeof(unsigned long long), initTriangleNum*3, f2);
 	fclose(f2);
+	removeFile(fileStr);
 
 	//create a list of triangles
 	for(int index=0; index<initTriangleNum; index++){
@@ -142,6 +141,7 @@ void coarsePartition::loadInitTriangles(){
 		point p3(tempCoorArr[index*6+4], tempCoorArr[index*6+5], tempPointIdArr[index*3+2]);
 //std::cout<<tempPointIdArr[index*3]<<" "<<tempPointIdArr[index*3+1]<<" "<<tempPointIdArr[index*3+2]<<"\n";
 		triangle *newTriangle = new triangle(p1, p2, p3);
+		newTriangle->computeCenterRadius();
 		triangleNode *newTriangleNode = createNewNode(newTriangle);
 		insertFront(triangleList, newTriangleNode);
 	}
@@ -413,7 +413,7 @@ if((partitionEletIdx<0)||(partitionEletIdx>=xFinePartNum*yFinePartNum)){
 
 	}
 
-std::cout<<"====================================================\n";
+//std::cout<<"====================================================\n";
 
 }
 
@@ -487,14 +487,14 @@ void coarsePartition::printConflictPartitions(){
 void coarsePartition::updateConflictPartitions(){
 	if(currActiveList.empty()) return;
 
-	std::cout<<"list of partitions that are finished: [";
+//	std::cout<<"list of fine partitions that are finished of coarsePartId: "<<coarsePartId<<" is [";
 	//remove lists that are finished in conflictPartList
 	for (std::list<unsigned int>::iterator it=currActiveList.begin(); it != currActiveList.end(); ++it){
 		int finishId = *it;
-		std::cout<<finishId<<" ";
+//		std::cout<<finishId<<" ";
 		conflictPartList[finishId].clear();
 	}
-	std::cout<<"]"<<std::endl;
+//	std::cout<<"]"<<std::endl;
 
 	//remove finished partition in each list of conflictPartList
 
@@ -557,8 +557,8 @@ unsigned int coarsePartition::generateActivePartitions(){
 				activePartArr[activePartId] = true;
 		}
 	}
-std::cout<<"first active partition Id: "<<activePartId<<"\n";
-std::cout<<"unfinished Size: "<<unFinishSize<<"\n";
+//std::cout<<"first active partition Id: "<<activePartId<<"\n";
+//std::cout<<"unfinished Size: "<<unFinishSize<<"\n";
 	//got the first active partition
 	currActiveList.push_back(activePartId);
 
@@ -598,10 +598,11 @@ std::cout<<"unfinished Size: "<<unFinishSize<<"\n";
 
 
 	//print a current list of active partitions
-	std::cout<<"list of current active partitions: [";//currActiveList
+	std::string msg ="<<<<<<<list of current fine active partitions of coarse partition " + toString(coarsePartId) + " is [";//currActiveList
 	for(int i=0; i<xFinePartNum*yFinePartNum; i++)
-		if((partArr[i].active)&&(!partArr[i].finish)) std::cout<<i<<" ";
-	std::cout<<"]\n";
+		if((partArr[i].active)&&(!partArr[i].finish)) msg = msg + " " + toString(i) + " ";
+	msg = msg + "]\n";
+	std::cout<<msg;
 
 	//clean up and update
 	for(int i=0; i<xFinePartNum*yFinePartNum; i++)
@@ -611,12 +612,12 @@ std::cout<<"unfinished Size: "<<unFinishSize<<"\n";
 			else partArr[i].active = true;
 		}
 
-	//print a current list of unfinished partitions
-	std::cout<<"list of unfinished partitions: [";
+/*	//print a current list of unfinished partitions
+	std::cout<<"list of unfinished fine partitions: [";
 	for(int i=0; i<xFinePartNum*yFinePartNum; i++)
 		if(!partArr[i].finish) std::cout<<i<<" ";
 	std::cout<<"]\n\n";
-
+*/
 
 
 	//clear all item in active partition set
@@ -710,6 +711,7 @@ std::cout<<"Number of active partitions: "<<activePartSet.size()<<"\n";
 	FILE *f = fopen(fileStr.c_str(), "a");
 	if(!f){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f);
 		return;
 	}
 	fwrite(storeTrangleIdArr, storeTrangleIdSize, sizeof(unsigned long long), f);
@@ -731,6 +733,7 @@ std::cout<<"Number of active partitions: "<<activePartSet.size()<<"\n";
 	f = fopen(fileStr.c_str(), "a");
 	if(!f){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f);
 		return;
 	}
 	fwrite(boundaryTrangleArr, boundaryTrangleSize, sizeof(triangle), f);
@@ -820,7 +823,7 @@ void coarsePartition::prepareDataForDelaunayMPI(unsigned int coreNum){
 	//store coordinates and pointId array to tempCoor.tri and tempPointId.tri
 	storeActivePartitions(activePartIdArr, currActivePartNum, totalTriangleSize);
 
-	std::cout<<"total active TriangleSize: "<<totalTriangleSize<<"\n";
+//	std::cout<<"total active TriangleSize: "<<totalTriangleSize<<"\n";
 	//update activePartSizeOffsetArr based on activePartSizeArr
 	activePartSizeOffsetArr[0]=0;
 	for(unsigned int i=1; i<currActivePartNum; i++)
@@ -843,7 +846,7 @@ void coarsePartition::prepareDataForDelaunayMPI(unsigned int coreNum){
 //activePartNum numer of current active partitions
 //totalTriangleSize is number of triangles in all current active partitions (activePartNum)
 void coarsePartition::storeActivePartitions(unsigned int *activePartIdArr, unsigned int activePartNum, unsigned int totalTriangleSize){
-std::cout<<"totalTriangleSize: " <<totalTriangleSize<<"\n";
+//std::cout<<"totalTriangleSize: " <<totalTriangleSize<<"\n";
 	//total triangles belong to all active partitions
 	//tempTriangleArr will be send to nodes using MPI
 	double *tempCoorArr;
@@ -896,7 +899,7 @@ std::cout<<tempPointIdArr[triangleIndex*3]<<" "<<tempPointIdArr[triangleIndex*3+
 //		std::cout<<"\n\n";
 	}
 
-std::cout<<"number of triangles sends to MPI nodes: "<<totalTriangleSize<<"\n";
+//std::cout<<"number of triangles sends to MPI nodes: "<<totalTriangleSize<<"\n";
 
 	//store tempCoorArr to file tempCoorFineParts.tri
 //	std::string fileStr = path + "delaunayResults/tempCoorFineParts.tri";
@@ -904,6 +907,7 @@ std::cout<<"number of triangles sends to MPI nodes: "<<totalTriangleSize<<"\n";
 	FILE *f1 = fopen(fileStr.c_str(), "wb");
 	if(!f1){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f1);
 		return;
 	}
 	fwrite(tempCoorArr, totalTriangleSize*6, sizeof(double), f1);
@@ -915,6 +919,7 @@ std::cout<<"number of triangles sends to MPI nodes: "<<totalTriangleSize<<"\n";
 	FILE *f2 = fopen(fileStr2.c_str(), "wb");
 	if(!f2){
 		std::cout<<"not exist "<<fileStr2<<std::endl;
+		fclose(f2);
 		return;
 	}
 	fwrite(tempPointIdArr, totalTriangleSize*3, sizeof(unsigned long long), f2);
@@ -1071,7 +1076,7 @@ void coarsePartition::updateTriangleArr(){
 	triangleArrSize = triangleNum + count;
 //	triangleArrSize = triangleNum;
 
-std::cout<<"number of triangle after delaunay: "<<triangleArrSize<<"\n";
+//std::cout<<"number of triangle after delaunay: "<<triangleArrSize<<"\n";
 
 	//clean currActiveList
 	if(!currActiveList.empty()) currActiveList.clear();
@@ -1154,11 +1159,13 @@ void coarsePartition::storeAllTriangles(){
 	FILE *f = fopen(fileStr.c_str(), "a");
 	if(!f){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f);
 		return;
 	}
 	fwrite(tempPointIdArr, storedTriangleSize*3, sizeof(unsigned long long), f);
 	fclose(f);
 	delete [] tempPointIdArr;
+	insideTriangleList.clear();
 
 
 	//process boundaryTriangleList: store triangle Ids to boundaryTrianglesXX.tri
@@ -1175,11 +1182,13 @@ void coarsePartition::storeAllTriangles(){
 	f = fopen(fileStr.c_str(), "a");
 	if(!f){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f);
 		return;
 	}
 	fwrite(tempTriangledArr, boundaryTriangleSize, sizeof(triangle), f);
 	fclose(f);
 	delete [] tempTriangledArr;
+	boundaryTriangleList.clear();
 }
 
 
@@ -1206,8 +1215,8 @@ coarsePartition::~coarsePartition(){
 	delete [] pointPartInfoArr;
 
 	//remove temporary files
-	std::string delCommand = "rm " + path + "delaunayResults/temp*";
-	system(delCommand.c_str());
+//	std::string delCommand = "rm " + path + "delaunayResults/temp*";
+//	system(delCommand.c_str());
 }
 
 //=========================================================================================
@@ -1308,6 +1317,7 @@ void coarsePartition::readTriangleIds(unsigned long long *&triangleIdArr, unsign
 	FILE *f = fopen(fileStr.c_str(), "rb");
 	if(!f){
 		std::cout<<"not exist "<<fileStr<<std::endl;
+		fclose(f);
 		return;
 	}
 

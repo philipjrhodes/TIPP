@@ -3208,62 +3208,13 @@ Total time: 1.18344
 
 datasources: ../dataSources/100vertices/
 Delaunay triangulation: 4 x 4 = 16
-Master time: 0.648397
-MPI time: -0.0335505
-Total time: 0.614847
+Master time: 0.680055
+MPI time: 0.405716
+Total time: 1.08577
 
 
-datasources: ../dataSources/10Kvertices/
-Delaunay triangulation: 8 x 8 = 64
-Master time: 1.85504
-MPI time: 1.97737
-Total time: 3.8324
-
-
-datasources: ../dataSources/1Kvertices/
+datasources: ../dataSources/100vertices/
 Delaunay triangulation: 4 x 4 = 16
-Master time: 0.777891
-MPI time: -0.100349
-Total time: 0.677542
-
-
-datasources: ../dataSources/2Kvertices/
-Delaunay triangulation: 8 x 8 = 64
-Master time: 0.696678
-MPI time: 0.0293536
-Total time: 0.726032
-
-
-datasources: ../dataSources/2Kvertices/
-Delaunay triangulation: 8 x 8 = 64
-Master time: 0.782879
-MPI time: 0.10886
-Total time: 0.89174
-
-
-datasources: ../dataSources/10Kvertices/
-Delaunay triangulation: 8 x 8 = 64
-Master time: 2.16659
-MPI time: 2.0947
-Total time: 4.26129
-
-
-datasources: ../dataSources/10Kvertices/
-Delaunay triangulation: 8 x 8 = 64
-Master time: 1.98282
-MPI time: 2.47047
-Total time: 4.45329
-
-
-datasources: ../dataSources/2Kvertices/
-Delaunay triangulation: 4 x 4 = 16
-Master time: 0.398037
-MPI time: -0.125847
-Total time: 0.27219
-
-
-datasources: ../dataSources/2Kvertices/
-Delaunay triangulation: 4 x 4 = 16
-Master time: 0.397181
-MPI time: 0.145357
-Total time: 0.542538
+Master time: 0.515792
+MPI time: 0.455471
+Total time: 0.971263

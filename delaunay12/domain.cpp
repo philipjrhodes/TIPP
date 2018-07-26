@@ -671,9 +671,12 @@ std::cout<<"unfinished Size: "<<unFinishSize<<"\n";
 //deliver triangles to active partitions. For each triangle, find in the list of partitions that are 
 //intersected with that triangle, if exist a partition Id belong to the active partition list (currActiveList)
 //then set that triangle belong to the active partition. Each triangle belong to one active partition
-void domain::deliverTriangles(){
+void domain::deliverTriangles(double &masterTime, double &storeTime){
 	std::set<int>::iterator t;
+	masterTime = 0;
+	storeTime = 0;
 
+	double currentTime = GetWallClockTime();
 //std::cout<<"Number of triangles after initial delaunay: "<<size(triangleList)<<"\n";
 std::cout<<"Number of active partitions: "<<activePartSet.size()<<"\n";
 
@@ -699,14 +702,13 @@ std::cout<<"Number of active partitions: "<<activePartSet.size()<<"\n";
 				}
 			}
 	}
-
+	masterTime += GetWallClockTime()-currentTime;
 	//store all point ids of triangleId in storeTriangleList to file
 	unsigned int size = storeTriangleIdList.size();
 	if(size==0){
-//std::cout<<"triangleIdList is empty\n";
 		return;
 	}
-	
+	currentTime = GetWallClockTime();
 	unsigned long long *data;
 	try {
 		data = new unsigned long long[size*3];
@@ -723,14 +725,26 @@ std::cout<<"Number of active partitions: "<<activePartSet.size()<<"\n";
 		data[index*3+2] = triangleArr[id].p3.getId();
 		index++;
 	}
+	masterTime += GetWallClockTime()-currentTime;
+
+	currentTime = GetWallClockTime();
+	//store data to file
+	storeToTriangleIds(data, size);
+	delete [] data;
+	storeTime += GetWallClockTime()-currentTime;
+}
+//=========================================================================================
+void domain::storeToTriangleIds(unsigned long long *triangleIdArr, unsigned int triangleNum){
 	//store data to file
 	std::string fileStr = path + "delaunayResults/triangleIds.tri";
 	FILE *f = fopen(fileStr.c_str(), "a");
-	fwrite(data, size*3, sizeof(unsigned long long), f);
+	if(f==NULL){
+		std::cout<<"can not open file "<<fileStr<<"\n";
+		exit(1);
+	}
+	fwrite(triangleIdArr, triangleNum*3, sizeof(unsigned long long), f);
 	fclose(f);
-	delete [] data;
 }
-
 //=========================================================================================
 //number of active partition left over in activePartSet
 unsigned int domain::activePartitionNumber(){
@@ -744,10 +758,15 @@ unsigned int domain::activePartitionNumber(){
 //Assume if total number of active partitions is 20, but number of core available is 6,
 //then each time send job to MPI, we only sent 6 tasks, list of sending : 6, 6, 6, 2
 //Output is the total time to run MPI
-void domain::prepareDataForDelaunayMPI(int coreNum){
+void domain::prepareDataForDelaunayMPI(unsigned int coreNum, double &masterTime, double &updateTime){
 	int *activePartIdArr;
 	int *activePartSizeArr;
 	int *activePartSizeOffsetArr;
+
+	double currentTime, amountTime;
+	masterTime = 0;
+	updateTime = 0;
+	currentTime = GetWallClockTime();
 
 	int totalActivePartNum = activePartSet.size();
 	//activePartNum is current number of active partitions sending to MPI (slave nodes)
@@ -808,6 +827,11 @@ void domain::prepareDataForDelaunayMPI(int coreNum){
 	for(unsigned int index=0; index<currActivePartNum; index++){
 		activePartSet.erase(activePartIdArr[index]);
 	}
+
+	amountTime = GetWallClockTime()-currentTime;
+	masterTime += amountTime;
+
+	currentTime = GetWallClockTime();
 //std::cout<<"------------ Number of active partition left over: "<<activePartSet.size()<<" ----------\n";
 	//store coordinates and pointId array to tempCoor.tri and tempPointId.tri
 	storeActivePartitions(activePartIdArr, currActivePartNum, totalTriangleSize);
@@ -820,6 +844,9 @@ void domain::prepareDataForDelaunayMPI(int coreNum){
 
 	//store info of active partitions to tempTriangles.xfdl
 	storeActivePartitionInfo(currActivePartNum, activePartIdArr, activePartSizeArr, activePartSizeOffsetArr);
+
+	amountTime = GetWallClockTime()-currentTime;
+	updateTime += amountTime;
 
 	delete [] activePartIdArr;
 	delete [] activePartSizeArr;
@@ -976,12 +1003,29 @@ void domain::addFile(std::string path, std::string fileName1, std::string fileNa
 	system(command.c_str());
 }
 
+/*
 //=========================================================================================
 //add return_triangles from MPI to returnAllTriangleIds.tri and returnAllTriangleCoors.tri
 //and merge to current triangleArr in memory
 void domain::addReturnTriangles(){
 	//add triangles in returnStoreTriangleIds.tri to file triangleIds.tri, 
 	addFile(path, "returnStoreTriangleIds.tri", "triangleIds.tri");
+	//add triangles in returnTriangleIds.tri to file returnAllTriangleIds.tri, 
+	addFile(path, "returnTriangleIds.tri", "returnAllTriangleIds.tri");
+	//and add returnTriangleCoors.tri to file returnAllTriangleCoors.tri
+	addFile(path, "returnTriangleCoors.tri", "returnAllTriangleCoors.tri");
+}
+*/
+
+//=========================================================================================
+//add return_triangles from MPI to returnAllTriangleIds.tri and returnAllTriangleCoors.tri
+//and merge to current triangleArr in memory
+void domain::addReturnStoreTriangles(){
+	//add triangles in returnStoreTriangleIds.tri to file triangleIds.tri, 
+	addFile(path, "returnStoreTriangleIds.tri", "triangleIds.tri");
+	std::cout<<"Add " + path + "returnStoreTriangleIds.tri to triangleIds.tri\n";
+}
+void domain::addReturnTriangles(){
 	//add triangles in returnTriangleIds.tri to file returnAllTriangleIds.tri, 
 	addFile(path, "returnTriangleIds.tri", "returnAllTriangleIds.tri");
 	//and add returnTriangleCoors.tri to file returnAllTriangleCoors.tri

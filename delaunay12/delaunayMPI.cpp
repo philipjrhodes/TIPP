@@ -73,8 +73,8 @@ void delaunayMPI::processMPI(int my_rank, int pool_size){
 
 //	MPI_Barrier(MPI_COMM_WORLD);
 
-	if(my_rank<partNum)
-		std::cout<<"partId: "<<partId<<", pointNumPartSize: "<<pointNumPartSize<<", pointNumPartOffsetSize: "<<pointNumPartOffsetSize<<"\n";
+//	if(my_rank<partNum)
+//		std::cout<<"partId: "<<partId<<", pointNumPartSize: "<<pointNumPartSize<<", pointNumPartOffsetSize: "<<pointNumPartOffsetSize<<"\n";
 
 	if(my_rank==MASTER_RANK) std::cout<<"***************MASTER SENDS ACTIVE TRIANGLES TO ALL WORKERS****************\n";
 

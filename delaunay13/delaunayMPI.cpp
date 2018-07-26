@@ -164,12 +164,12 @@ void delaunayMPI::processStoreTriangles(int my_rank, int pool_size){
 	unsigned int storeTriangleNumOffset;
 
 
-//	if(my_rank==MASTER_RANK) //only master node
-//		storeTriangleNumArr = new unsigned int[pool_size];
+	if(my_rank==MASTER_RANK) //only master node
+		storeTriangleNumArr = new unsigned int[pool_size];
 
 	unsigned int triangleNum = size(storeTriangleList);
 
-/*	MPI_Gather(&triangleNum, 1, MPI_UNSIGNED, storeTriangleNumArr, 1, MPI_UNSIGNED, MASTER_RANK, MPI_COMM_WORLD);
+	MPI_Gather(&triangleNum, 1, MPI_UNSIGNED, storeTriangleNumArr, 1, MPI_UNSIGNED, MASTER_RANK, MPI_COMM_WORLD);
 
 
 	if(my_rank==MASTER_RANK){//only master node
@@ -179,7 +179,7 @@ void delaunayMPI::processStoreTriangles(int my_rank, int pool_size){
 			storeTriangleNumOffsetArr[i] = storeTriangleNumOffsetArr[i-1] + storeTriangleNumArr[i-1];
 	}
 	MPI_Scatter(storeTriangleNumOffsetArr, 1, MPI_UNSIGNED, &storeTriangleNumOffset, 1, MPI_UNSIGNED, MASTER_RANK, MPI_COMM_WORLD);
-*/
+
 
 	//transform storeTriangleList to array of ids
 	unsigned long long *triangleIdArr;
@@ -196,7 +196,9 @@ void delaunayMPI::processStoreTriangles(int my_rank, int pool_size){
 		head=head->next;
 	}
 
-/*
+
+
+
 //compute triangle areas for each processes and gather all numbers back to master process
 	double triangleAreas = 0;
 	double *triangleAreaArr = NULL;
@@ -219,28 +221,18 @@ void delaunayMPI::processStoreTriangles(int my_rank, int pool_size){
 		std::cout<<"************* totalTriangleAreas: "<<totalTriangleAreas<<"\n";
 	}
 	delete [] triangleAreaArr;
-*/
+
+
 
 
 	removeLinkList(storeTriangleList);
-
-/*	std::string currPath = path + "delaunayResults/returnStoreTriangleIds.tri";
+	std::string currPath = path + "delaunayResults/returnStoreTriangleIds.tri";
 	//store array storeTriangleIds of each processes to a single files
 	MPI_File_open(MPI_COMM_WORLD, currPath.c_str(), MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
 	MPI_File_set_view(fh, storeTriangleNumOffset * 3 * sizeof(unsigned long long), MPI_UNSIGNED_LONG, MPI_UNSIGNED_LONG, "native", MPI_INFO_NULL);
 	MPI_File_write(fh, triangleIdArr, triangleNum*3, MPI_UNSIGNED_LONG, MPI_STATUS_IGNORE);
 	MPI_File_close(&fh);
-*/
-
-	std::string currPath = path + "delaunayResults/returnStoreTriangleIds" + toString(my_rank) + ".tri";
-	FILE *f = fopen(currPath.c_str(), "w");
-	if(!f){
-		std::cout<<"can not write currPath to disk\n";
-		fclose(f);
-	}
-	fwrite(triangleIdArr, triangleNum*3, sizeof(unsigned long int), f);
-	fclose(f);
-
+	
 	delete [] triangleIdArr;
 
 	if(my_rank==MASTER_RANK){ //only master node
@@ -264,7 +256,6 @@ void delaunayMPI::processTriangleList(int my_rank, int pool_size){
 
 	//only master node
 	if(my_rank==MASTER_RANK) triangleNumArr = new int[pool_size];
-
 	unsigned int triangleNum = size(triangleList);
 
 	MPI_Gather(&triangleNum, 1, MPI_INT, triangleNumArr, 1, MPI_INT, MASTER_RANK, MPI_COMM_WORLD);
@@ -318,7 +309,6 @@ void delaunayMPI::processTriangleList(int my_rank, int pool_size){
 	MPI_File_write(fh, pointCoorArr, triangleNum*6, MPI_DOUBLE, MPI_STATUS_IGNORE);
 	MPI_File_close(&fh);
 
-
 	//release memory
 	delete [] triangleIdArr;
 	delete [] pointCoorArr;
@@ -364,6 +354,7 @@ void delaunayMPI::generateTriangles(int my_rank, int triangleNum, double *coorAr
 		point p3(coorArr[index*6+4], coorArr[index*6+5], pointIdArr[index*3+2]);
 //std::cout<<pointIdArr[index*3]<<" "<<pointIdArr[index*3+1]<<" "<<pointIdArr[index*3+2]<<"\n";
 		triangle *newTriangle = new triangle(p1, p2, p3);
+		newTriangle->computeCenterRadius();
 		triangleNode *newTriangleNode = createNewNode(newTriangle);
 		insertFront(triangleList, newTriangleNode);
 	}
