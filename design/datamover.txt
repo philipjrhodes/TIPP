@@ -19,14 +19,13 @@ class DataMover
             // on master, sends data into array
             // on worker, receives data from array
        
-        gather( array, offset, numelements, element size)
+        gather( array, offset, numelements, element size) // offset should be > 32 bits
         scatter(array, offset, numelements, element size)
         
     
     data members:
         MasterID
         myID
-        
 }
 
 NFSDataMover extends DataMover{
