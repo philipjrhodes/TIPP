@@ -39,6 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <fstream>
 
 #include <iostream>
+#include "Point.h"
 
 namespace svg
 {
@@ -64,30 +65,31 @@ namespace svg
         return "/>\n";
     }
 
-    // Quick optional return type.  This allows functions to return an invalid
-    //  value if no good return is possible.  The user checks for validity
-    //  before using the returned value.
-    template <typename T>
-    class optional
-    {
-    public:
-        optional<T>(T const & type)
-            : valid(true), type(type) { }
-        optional<T>() : valid(false), type(T()) { }
-        T * operator->()
-        {
-            // If we try to access an invalid value, an exception is thrown.
-            if (!valid)
-                throw std::exception();
-
-            return &type;
-        }
-        // Test for validity.
-        bool operator!() const { return !valid; }
-    private:
-        bool valid;
-        T type;
-    };
+// 
+//     Quick optional return type.  This allows functions to return an invalid
+//      value if no good return is possible.  The user checks for validity
+//      before using the returned value.
+//     template <typename T>
+//     class optional
+//     {
+//     public:
+//         optional<T>(T const & type)
+//             : valid(true), type(type) { }
+//         optional<T>() : valid(false), type(T()) { }
+//         T * operator->()
+//         {
+//             If we try to access an invalid value, an exception is thrown.
+//             if (!valid)
+//                 throw std::exception();
+// 
+//             return &type;
+//         }
+//         Test for validity.
+//         bool operator!() const { return !valid; }
+//     private:
+//         bool valid;
+//         T type;
+//     };
 
     struct Dimensions
     {
@@ -97,41 +99,41 @@ namespace svg
         double height;
     };
 
-    struct Point
-    {
-        Point(double x = 0, double y = 0) : x(x), y(y) { }
-        Point(const Point &p) : x(p.x), y(p.y) { }
-        double x;
-        double y;
-    };
-    inline optional<Point> getMinPoint(std::vector<Point> const & points)
-    {
-        if (points.empty())
-            return optional<Point>();
-
-        Point min = points[0];
-        for (unsigned i = 0; i < points.size(); ++i) {
-            if (points[i].x < min.x)
-                min.x = points[i].x;
-            if (points[i].y < min.y)
-                min.y = points[i].y;
-        }
-        return optional<Point>(min);
-    }
-    inline optional<Point> getMaxPoint(std::vector<Point> const & points)
-    {
-        if (points.empty())
-            return optional<Point>();
-
-        Point max = points[0];
-        for (unsigned i = 0; i < points.size(); ++i) {
-            if (points[i].x > max.x)
-                max.x = points[i].x;
-            if (points[i].y > max.y)
-                max.y = points[i].y;
-        }
-        return optional<Point>(max);
-    }
+//     struct Point
+//     {
+//         Point(double x = 0, double y = 0) : x(x), y(y) { }
+//         Point(const Point &p) : x(p.x), y(p.y) { }
+//         double x;
+//         double y;
+//     };
+//     inline optional<Point> getMinPoint(std::vector<Point> const & points)
+//     {
+//         if (points.empty())
+//             return optional<Point>();
+// 
+//         Point min = points[0];
+//         for (unsigned i = 0; i < points.size(); ++i) {
+//             if (points[i].x < min.x)
+//                 min.x = points[i].x;
+//             if (points[i].y < min.y)
+//                 min.y = points[i].y;
+//         }
+//         return optional<Point>(min);
+//     }
+//     inline optional<Point> getMaxPoint(std::vector<Point> const & points)
+//     {
+//         if (points.empty())
+//             return optional<Point>();
+// 
+//         Point max = points[0];
+//         for (unsigned i = 0; i < points.size(); ++i) {
+//             if (points[i].x > max.x)
+//                 max.x = points[i].x;
+//             if (points[i].y > max.y)
+//                 max.y = points[i].y;
+//         }
+//         return optional<Point>(max);
+//     }
 
     // Defines the dimensions, scale, origin, and origin offset of the document.
     struct Layout

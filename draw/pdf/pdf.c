@@ -18,7 +18,7 @@
 #include <string.h>
 #include <setjmp.h>
 #include "hpdf.h"
-#include "adcirc.h"
+
 
 
 jmp_buf env;
@@ -37,54 +37,58 @@ error_handler  (HPDF_STATUS   error_no,
     longjmp(env, 1);
 }
 
+// void
+// draw_line  (HPDF_Page    page,
+//             float        x,
+//             float        y,
+//             const char  *label)
+// {
+//     HPDF_Page_BeginText (page);
+//     HPDF_Page_MoveTextPos (page, x, y - 10);
+//     HPDF_Page_ShowText (page, label);
+//     HPDF_Page_EndText (page);
+// 
+//     HPDF_Page_MoveTo (page, x, y - 15);
+//     HPDF_Page_LineTo (page, x + 220, y - 15);
+//     HPDF_Page_Stroke (page);
+// }
+// 
+// void
+// draw_line2  (HPDF_Page    page,
+//              float       x,
+//              float       y,
+//              const char  *label)
+// {
+//     HPDF_Page_BeginText (page);
+//     HPDF_Page_MoveTextPos (page, x, y);
+//     HPDF_Page_ShowText (page, label);
+//     HPDF_Page_EndText (page);
+// 
+//     HPDF_Page_MoveTo (page, x + 30, y - 25);
+//     HPDF_Page_LineTo (page, x + 160, y - 25);
+//     HPDF_Page_Stroke (page);
+// }
+// 
+// void
+// draw_rect (HPDF_Page     page,
+//            double        x,
+//            double        y,
+//            const char   *label)
+// {
+//     HPDF_Page_BeginText (page);
+//     HPDF_Page_MoveTextPos (page, x, y - 10);
+//     HPDF_Page_ShowText (page, label);
+//     HPDF_Page_EndText (page);
+// 
+//     HPDF_Page_Rectangle(page, x, y - 40, 220, 25);
+// }
+
+HPDF_Doc  pdf;
+HPDF_Font font;
+HPDF_Page page;
+
 void
-draw_line  (HPDF_Page    page,
-            float        x,
-            float        y,
-            const char  *label)
-{
-    HPDF_Page_BeginText (page);
-    HPDF_Page_MoveTextPos (page, x, y - 10);
-    HPDF_Page_ShowText (page, label);
-    HPDF_Page_EndText (page);
-
-    HPDF_Page_MoveTo (page, x, y - 15);
-    HPDF_Page_LineTo (page, x + 220, y - 15);
-    HPDF_Page_Stroke (page);
-}
-
-void
-draw_line2  (HPDF_Page    page,
-             float       x,
-             float       y,
-             const char  *label)
-{
-    HPDF_Page_BeginText (page);
-    HPDF_Page_MoveTextPos (page, x, y);
-    HPDF_Page_ShowText (page, label);
-    HPDF_Page_EndText (page);
-
-    HPDF_Page_MoveTo (page, x + 30, y - 25);
-    HPDF_Page_LineTo (page, x + 160, y - 25);
-    HPDF_Page_Stroke (page);
-}
-
-void
-draw_rect (HPDF_Page     page,
-           double        x,
-           double        y,
-           const char   *label)
-{
-    HPDF_Page_BeginText (page);
-    HPDF_Page_MoveTextPos (page, x, y - 10);
-    HPDF_Page_ShowText (page, label);
-    HPDF_Page_EndText (page);
-
-    HPDF_Page_Rectangle(page, x, y - 40, 220, 25);
-}
-
-void
-draw_triangle (HPDF_Page     page,
+draw_triangle (
            double        x0,
            double        y0,
            double        x1,
@@ -100,19 +104,15 @@ draw_triangle (HPDF_Page     page,
     HPDF_Page_LineTo(page, x2, y2);
     HPDF_Page_LineTo(page, x0, y0);
     
-    HPDF_Page_Stroke (page);
+    HPDF_Page_ClosePathStroke (page);
 }
 
-HPDF_Doc  pdf;
-HPDF_Font font;
-HPDF_Page page;
-char filename[256];
 
-int init_page(char *fname){
+int createPDF(){
 	const char* page_title = "Triangle Example";
 
-    strcpy (filename, fname);
-    strcat (filename, ".pdf");
+//     strcpy (filename, fname);
+//     strcat (filename, ".pdf");
 
     pdf = HPDF_New (error_handler, NULL);
     if (!pdf) {
@@ -156,14 +156,44 @@ int init_page(char *fname){
     HPDF_Page_EndText (page);
 
     HPDF_Page_SetFontAndSize (page, font, 10);
+    
+    return 0;
+}
+
+int endsWithPDF(const char * s1){
+
+	int len = strlen(s1);
+	
+	return 0 == strncmp(s1 + len - 4, ".pdf", 4); 
+}
+
+int savePDF(const char* fname){
+	char filename[256] = {'\0'};
+	
+	strncpy(filename, fname, 256);
+	
+	if (!endsWithPDF(filename)) {
+		printf("Added .pdf suffix. \n");
+		strncat (filename, ".pdf", 4);
+	}
+	
+    /* save the document to a file */
+    HPDF_SaveToFile (pdf, filename);
+
+    /* clean up */
+    HPDF_Free (pdf);
+    
+    return 0;
 }
 
 
-int main (int argc, char **argv)
-{
 
-    init_page("dmpdf");    
-    draw_triangle(page, 100, 100, 150,150, 100,200);
+
+// int main (int argc, char **argv)
+// {
+// 
+//     init_page("dmpdf");    
+//     draw_triangle(page, 100, 100, 150,150, 100,200);
     
 
     /* Draw verious widths of lines. */
@@ -388,12 +418,12 @@ int main (int argc, char **argv)
 //     HPDF_Page_CurveTo (page, x1, y1, x2, y2, x3, y3);
 //     HPDF_Page_Stroke (page);
 
-    /* save the document to a file */
-    HPDF_SaveToFile (pdf, filename);
-
-    /* clean up */
-    HPDF_Free (pdf);
-
-    return 0;
-}
+//     //save the document to a file */
+//     HPDF_SaveToFile (pdf, filename);
+// 
+//     clean up */
+//     HPDF_Free (pdf);
+// 
+//     return 0;
+// }
 

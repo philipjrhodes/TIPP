@@ -5,7 +5,7 @@
 #include "adcirc.h"
 
 using namespace std;
-using namespace svg;
+//using namespace svg;
 
 // reads the name of the grid given at the top of the file.
 void readGridName(ifstream &in, string &name){
@@ -24,7 +24,7 @@ vector<Point>  readVertices(ifstream &in, int numVertices){
 //	v->reserve(numVertices);
 	int l;
 	float x,y,z;
-	float vScale=16, dx=80, dy=-20;
+//	float vScale=16, dx=80, dy=-20;
 	
 	Point p(BOGUS,BOGUS);
 	v->push_back(p); // compensate for 1-based vertex indexing in file.
@@ -34,11 +34,11 @@ vector<Point>  readVertices(ifstream &in, int numVertices){
 		in >> l >> x >> y >> z;
 		assert(l == (i+1));
 		
-		x = (x+dx)*vScale;
-		y = (y+dy)*vScale;
+//		x = (x+dx)*vScale;
+//		y = (y+dy)*vScale;
 //		y = y*vScale + dy;
 		
-		p.x=x; p.y=y;
+		p.x = x; p.y = y;
 		v->push_back(p);
 	}
 	cout << "last vertex is numbered " << l << " in the file." << endl;
