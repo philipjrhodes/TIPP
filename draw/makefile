@@ -1,12 +1,10 @@
 # Makefile for PDF version of mesh drawing code.
 
-#SHELL = /bin/csh
-
-#DRAW_DIR = ${HOME}/git/TIPP/draw
-DRAW_DIR = ${PWD}
+TIPP_DIR = ${PWD}/..
+DRAW_DIR = ${TIPP_DIR}/draw
 ADCIRC_DIR = ${DRAW_DIR}/adcirc
 
-INCLUDEDIRS = -I${ADCIRC_DIR} -I.
+INCLUDEDIRS = -I${ADCIRC_DIR} -I${DRAW_DIR} -I${TIPP_DIR}/include
 LIBS = -lhpdfs -lz
 LIBDIRS = -L${HOME}/git/TIPP/lib 
 
@@ -18,7 +16,7 @@ run: dmp nc_inundation_v6c.grd
 	 open dmpdf.pdf
 
 dmp: dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o
-	g++ ${FLAGS} dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o -o dmp 
+	g++ ${CPPFLAGS} dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o -o dmp 
 
 dmp.o: dmp.cpp Canvas.h PDFCanvas.h ${ADCIRC_DIR}/adcirc.h Point.h Triangle.h
 	g++ ${CPPFLAGS} -c dmp.cpp
