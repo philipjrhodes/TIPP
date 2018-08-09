@@ -15,7 +15,7 @@ run: dmp nc_inundation_v6c.grd
 	 ./dmp
 	 #open dmpdf.pdf
 
-dmp: dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o
+dmp: dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o ${TIPP_DIR}/lib/libhpdfs.a
 	g++ ${CPPFLAGS} dmp.o PDFCanvas.o Canvas.o ${ADCIRC_DIR}/adcirc.o ${LIBS} -o dmp 
 
 dmp.o: dmp.cpp Canvas.h PDFCanvas.h ${ADCIRC_DIR}/adcirc.h Point.h Triangle.h
@@ -29,6 +29,9 @@ Canvas.o: Canvas.cpp Canvas.h Point.h Triangle.h
 	 
 ${ADCIRC_DIR}/adcirc.o:
 	${MAKE} -C ${ADCIRC_DIR}
+	
+${TIPP_DIR}/lib/libhpdfs.a:
+	${MAKE} -C ${DRAW_DIR}/pdf
 
 nc_inundation_v6c.grd:
 	ln -s ${ADCIRC_DIR}/nc_inundation_v6c.grd

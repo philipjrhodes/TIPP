@@ -8,9 +8,7 @@ ${TIPP_DIR}/lib/libhpdfs.a:
 	make && \
 	make install prefix=${TIPP_DIR} && \
 	ln -s ${TIPP_DIR}/lib/libhpdf.a  ${TIPP_DIR}/lib/libhpdfs.a
-
-pdf.o: pdf.c pdf.h
-	gcc -c pdf.c
 	
 clean: 
-	rm -f pdf.o
+	${MAKE} -C libharu clean 
+	rm -f pdf.o ${TIPP_DIR}/lib/libhpdf*
