@@ -1,5 +1,5 @@
 #include "Canvas.h"
-
+#include <string.h>
 
 Canvas::Canvas() {
   

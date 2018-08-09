@@ -1,9 +1,7 @@
 #include "PDFCanvas.h"
-//#include "pdf.h"
 #include "hpdf.h"
-//#include <setjmp.h>
 
-using namespace std;
+//using namespace std;
 
 void error_handler (HPDF_STATUS error_no, HPDF_STATUS detail_no, void *user_data)
 {
@@ -92,7 +90,7 @@ void PDFCanvas::strokefill(){
 			break;
 			
 		default:
-			cerr << "invalid drawStyle\n" << endl;	
+			std::cerr << "invalid drawStyle\n" << std::endl;	
 	}		
 }
 
@@ -141,11 +139,11 @@ void PDFCanvas::drawRect(
 		strokefill();
 }
 
-void PDFCanvas::drawTriangles(const vector<Point> &vertices, const vector<Triangle> &triangles){
+void PDFCanvas::drawTriangles(const std::vector<Point> &vertices, const std::vector<Triangle> &triangles){
 
 	int numTriangles = triangles.size();
 	
-	cerr << "drawTriangles(): numTriangles == " << numTriangles << endl;
+	std::cerr << "drawTriangles(): numTriangles == " << numTriangles << std::endl;
 	for(int i=0; i< numTriangles; i++){
 					
 		drawTriangle(	vertices[triangles[i].v0].x, vertices[triangles[i].v0].y, 
