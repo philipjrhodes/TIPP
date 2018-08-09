@@ -1,5 +1,12 @@
-libharu is a library for creating pdf files.  It should be useful for visualizing large meshes.
 
+If the libharu directory is empty, then please rerun the git clone command, but add --recurse-submodules, so the libharu repo is properly cloned.
+
+e.g.  
+
+cd ~/git
+git clone git@github.com:philipjrhodes/TIPP.git --recurse-submodules
+
+libharu is a library for creating pdf files.  It should be useful for visualizing large meshes.
 The project is at git@github.com:libharu/libharu.git
 
 
