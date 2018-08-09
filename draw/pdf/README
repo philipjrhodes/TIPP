@@ -1,4 +1,7 @@
 
+libharu is a library for creating pdf files.  It should be useful for visualizing large meshes.
+The project is at git@github.com:libharu/libharu.git
+
 If the libharu directory is empty, then please rerun the git clone command, but add --recurse-submodules, so the libharu repo is properly cloned.
 
 e.g.  
@@ -6,7 +9,12 @@ e.g.
 cd ~/git
 git clone git@github.com:philipjrhodes/TIPP.git --recurse-submodules
 
-libharu is a library for creating pdf files.  It should be useful for visualizing large meshes.
-The project is at git@github.com:libharu/libharu.git
 
+OSX:
+The makefile in the pdf directory will work on OSX without modification, but needs some extra packages to be installed. The brew package manager is helpful here: https://brew.sh .  Once brew is installed, run
 
+ brew install autoconf automake libtool libpng
+
+and the makefile should work. An alternative is to use cmake, but the makefile doesn't use that tool.
+
+ 
