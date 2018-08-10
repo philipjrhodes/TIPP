@@ -1,0 +1,16 @@
+TIPP binary format:
+
+vertex file: extension .ver
+	double type
+	x0y0x1y1....xkyk
+
+triangle file: extension .tri
+
+	long long int  (8 bytes?)
+	v00v01v02v10v11v12 ...
+
+keep reading until EOF
+
+reader code in drawDomain.cpp
+
+
