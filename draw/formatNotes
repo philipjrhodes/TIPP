@@ -13,4 +13,5 @@ keep reading until EOF
 
 reader code in drawDomain.cpp
 
+Could add stroke width for drawing thick lines.
 

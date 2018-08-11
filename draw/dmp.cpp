@@ -58,20 +58,20 @@ int main (int argc, char **argv)
  
  	c->setMapping(v);
  	
- 	c->setStrokeColor(1, 0, 0);
- 	c->setFillColor(0.9, 0.9, 1);
- 	
- 	c->drawRect(200,600, 100,100);
- 	c->drawRect(200,500, 100,100);
- 	c->drawRect(100,500, 100,100);
- 	c->drawRect(100,600, 100,100);
-
- 	
- 	c->enableFill();
- 	c->drawCircle(300,400, 100);
- 	
- 	c->setStrokeColor(0, 0, 0);
- 	c->disableFill();
+ // 	c->setStrokeColor(1, 0, 0);
+//  	c->setFillColor(0.9, 0.9, 1);
+//  	
+//  	c->drawRect(200,600, 100,100);
+//  	c->drawRect(200,500, 100,100);
+//  	c->drawRect(100,500, 100,100);
+//  	c->drawRect(100,600, 100,100);
+// 
+//  	
+//  	c->enableFill();
+//  	c->drawCircle(300,400, 100);
+//  	
+//  	c->setStrokeColor(0, 0, 0);
+//  	c->disableFill();
   	c->drawTriangles(v, t);	
     
 	c->saveToFile("dmpdf.pdf");
