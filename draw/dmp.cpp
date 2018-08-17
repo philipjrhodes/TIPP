@@ -73,6 +73,7 @@ int main (int argc, char **argv)
  	
  	c->setStrokeColor(0, 0, 0);
  	c->disableFill();
+
   	c->drawTriangles(v, t);	
     
 	c->saveToFile("dmpdf.pdf");
