@@ -16,11 +16,6 @@ PDFCanvas::PDFCanvas(	const std::string page_title,
 						double lx, 	double ly, 
     					double ux, 	double uy ){
     					
-//PDFCanvas::PDFCanvas(){
-
-
-
-//	const char* page_title = "Triangle Example";
 
     this->pdf = HPDF_New (error_handler, NULL);
     if (!this->pdf) {
@@ -35,7 +30,6 @@ PDFCanvas::PDFCanvas(	const std::string page_title,
     
     HPDF_Page_SetSize(this->page, HPDF_PAGE_SIZE_LETTER, HPDF_PAGE_PORTRAIT);
 
-    /* print the lines of the page. */
     HPDF_Page_SetLineWidth (this->page, 0.01);
     
     double width  = HPDF_Page_GetWidth(this->page);
@@ -92,6 +86,11 @@ void PDFCanvas::strokefill(){
 		default:
 			std::cerr << "invalid drawStyle\n" << std::endl;	
 	}		
+}
+
+void PDFCanvas::setStrokeWidth(double w){
+
+	HPDF_Page_SetLineWidth (this->page, w);
 }
 
 void PDFCanvas::drawTriangle(
@@ -164,16 +163,6 @@ double PDFCanvas::getPageHeight(){
 }
 
 
-
-// void PDFCanvas::copyNameWithExtension(std::string fname, std::string extension){ // TODO: rename copyNameWithExtension
-// 
-// 	this->filename = fname;
-// 	
-// 	if (!hasCorrectExtension(filename.c_str(), extension)) {
-// 		this->filename += extension;
-// 	}
-// 	
-// }
 
 int PDFCanvas::saveToFile(std::string fname){
 
