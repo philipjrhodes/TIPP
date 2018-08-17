@@ -36,7 +36,9 @@ class Canvas {
     	
     	// Color used for outline of shapes.
     	virtual void setStrokeColor(double r, double g, double b)=0;
-    		
+ 
+ 		//Width of lines
+ 		virtual void setStrokeWidth(double w)=0;  		
     		
 		virtual void drawTriangle(
 			double        x0,

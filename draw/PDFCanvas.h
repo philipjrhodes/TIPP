@@ -21,6 +21,9 @@ class PDFCanvas: public Canvas {
     	// Color used for outline of shapes.
     	virtual void setStrokeColor(double r, double g, double b);
 
+ 		//Width of lines
+ 		virtual void setStrokeWidth(double w);  		
+
    		
 		virtual void drawTriangle(
 			double        x0,
