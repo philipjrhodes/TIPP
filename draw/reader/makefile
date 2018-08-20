@@ -1,10 +1,10 @@
 TIPP_DIR := $(shell git rev-parse --git-dir | xargs dirname)
 DRAW_DIR = ${TIPP_DIR}/draw
 READER_DIR = ${DRAW_DIR}/reader
-PDF_DIR = ${DRAW_DIR}/pdf
+
 
 INCLUDEDIRS = -I${READER_DIR} -I${DRAW_DIR} -I${TIPP_DIR}/include
-LIBS = -lhpdfs -lz -lcanvas
+LIBS = -lcanvas -lhpdfs -lz 
 LIBDIRS =  -L${READER_DIR} -L${DRAW_DIR} -L${TIPP_DIR}/lib
 
 FLAGS = -O0 -g  ${INCLUDEDIRS}
