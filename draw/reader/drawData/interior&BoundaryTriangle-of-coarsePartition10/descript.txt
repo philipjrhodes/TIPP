@@ -1,0 +1,5 @@
+- Figure 7f, interior triangle of coarse partition 10
+- file returnAllStoreTriangleIds10.tri contain all triangle Ids (unsinged long long) of many interior triangles (for example: [115 22 49] [18 1000 90] ...) of coarse partition 10
+- file boundaryTriangles10.tri contain all triangle Ids (unsinged long long) of many boundary triangles of coarse partition 10
+- file fullPointPart.ver contains all coordinates (double) of all point Ids (0.5234 0.456) (0.3456 0.765) ...
+- The range of xk, yk is in [0..1]. You may need to zoom out.

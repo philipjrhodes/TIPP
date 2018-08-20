@@ -1,0 +1,53 @@
+TIPP_DIR := $(shell git rev-parse --git-dir | xargs dirname)
+DRAW_DIR = ${TIPP_DIR}/draw
+READER_DIR = ${DRAW_DIR}/reader
+
+
+INCLUDEDIRS = -I. -I${DRAW_DIR}
+LIBS = -lhpdfs -lz -lcanvas
+LIBDIRS =  -L${READER_DIR} -L${DRAW_DIR} -L${TIPP_DIR}/lib
+
+FLAGS = -O0 -g  ${INCLUDEDIRS}
+CPPFLAGS = ${FLAGS} -std=c++11
+
+run: rd
+	./rd
+	open reader.pdf
+
+valgrind: rd
+	valgrind --track-origins=yes rd
+
+rd: main.o libreader.a libcanvas
+	g++ main.o libreader.a ${LIBDIRS}  ${LIBS} -o rd
+	# dsymutil rd  #mac
+
+main.o: main.cpp TIPPList.hpp
+	g++ $(CPPFLAGS) -c main.cpp
+
+.PHONY:lib
+lib: libreader.a
+
+libreader.a: ListReader.o point.o edge.o triangle.o boundingBox.o TIPPList.hpp
+	ar rvs libreader.a  ListReader.o point.o edge.o triangle.o boundingBox.o
+
+.PHONY:libcanvas
+libcanvas:
+	${MAKE} -C ${DRAW_DIR} lib
+	
+ListReader.o: ListReader.h ListReader.cpp TIPPList.hpp
+	g++ $(CPPFLAGS) -c ListReader.cpp
+	
+point.o: point.cpp point.h
+	g++ $(CPPFLAGS) -c point.cpp
+
+edge.o: edge.cpp edge.h
+	g++ $(CPPFLAGS) -c edge.cpp
+
+triangle.o: triangle.cpp triangle.h
+	g++ $(CPPFLAGS) -c triangle.cpp
+
+boundingBox.o: boundingBox.cpp boundingBox.h
+	g++ $(CPPFLAGS) -c boundingBox.cpp
+
+clean:
+	rm -f  *.o rd

@@ -1,8 +1,11 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
+#include <vector>
 #include <assert.h>
 
 #include "adcirc.h"
+#include "point.h"
+#include "triangle.h"
 
 using namespace std;
 //using namespace svg;
@@ -18,25 +21,21 @@ void readGridName(ifstream &in, string &name){
 	coordinates. This method adds a bogus vertex at the beginning of the vector to account for
 	the 1-based indexing of vertices in the file. 
 */
-vector<Point>  readVertices(ifstream &in, int numVertices){
+vector<point>  readVertices(ifstream &in, int numVertices){
 
-	vector<Point> *v = new vector<Point>();
+	vector<point> *v = new vector<point>(); //TODO: just declare as local. copy constructor should handle it.
 //	v->reserve(numVertices);
 	int l;
 	float x,y,z;
-//	float vScale=16, dx=80, dy=-20;
 	
-	Point p(BOGUS,BOGUS);
-	v->push_back(p); // compensate for 1-based vertex indexing in file.
+	point p(BOGUS,BOGUS);
+	//v->push_back(p); // compensate for 1-based vertex indexing in file. TODO: fix this.
 	
 	for(int i=0; i<numVertices; i++){
 	
 		in >> l >> x >> y >> z;
 		assert(l == (i+1));
 		
-//		x = (x+dx)*vScale;
-//		y = (y+dy)*vScale;
-//		y = y*vScale + dy;
 		
 		p.x = x; p.y = y;
 		v->push_back(p);
@@ -49,29 +48,64 @@ vector<Point>  readVertices(ifstream &in, int numVertices){
 /** Read the specified number of triangles from the file into a vector. Each triangle is a triplet of
 	vertex indices.  
 */
-vector<Triangle>  readTriangles(ifstream &in, int numTriangles){
+// vector<triangle>  readTriangles(ifstream &in, int numtriangles){
+// 
+// 	vector<triangle> *v = new vector<triangle>();
+// //	v->reserve(numtriangles);
+// 	int l,n,v0,v1,v2;
+// //	triangle t(BOGUS, BOGUS, BOGUS);
+// 	triangle t;
+// 	
+// 	for(int i=0; i<numtriangles; i++){
+// 	
+// 		in >> l >> n >> v0 >> v1 >> v2;
+// 		assert(l == (i+1));
+// 		assert(n == 3);
+// 
+// 		//t.v0=v0-1; t.v1=v1-1; t.v2=v2-1;
+// 		//t.v0=v0; t.v1=v1; t.v2=v2;
+// 		
+// 		
+// 		v->push_back(t);
+// 	}
+// 	
+// 	cout << "readtriangles(): last triangle is numbered " << l << " in the file." << endl;
+// 	cout << "readtriangles(): triangle vector has size: " << v->size() << endl;
+// 	return *v;
+// }
 
-	vector<Triangle> *v = new vector<Triangle>();
-//	v->reserve(numTriangles);
+
+/** Read the specified number of triangles from the file into a vector. Each triangle is a triplet of
+	vertex indices.  
+*/
+vector<triangle>  readTriangles(ifstream &in, int numtriangles, vector<point> points){
+
+	vector<triangle> *v = new vector<triangle>();
+//	v->reserve(numtriangles);
 	int l,n,v0,v1,v2;
-	Triangle t(BOGUS, BOGUS, BOGUS);
+//	triangle t(BOGUS, BOGUS, BOGUS);
+	triangle t;
 	
-	for(int i=0; i<numTriangles; i++){
+	for(int i=0; i<numtriangles; i++){
 	
 		in >> l >> n >> v0 >> v1 >> v2;
 		assert(l == (i+1));
 		assert(n == 3);
 
 		//t.v0=v0-1; t.v1=v1-1; t.v2=v2-1;
-		t.v0=v0; t.v1=v1; t.v2=v2;
+		//t.v0=v0; t.v1=v1; t.v2=v2;
+		
+		t.p1 = points[v0-1];
+		t.p2 = points[v1-1];
+		t.p3 = points[v2-1];
+		
 		v->push_back(t);
 	}
 	
-	cout << "readTriangles(): last triangle is numbered " << l << " in the file." << endl;
-	cout << "readTriangles(): triangle vector has size: " << v->size() << endl;
+	cout << "readtriangles(): last triangle is numbered " << l << " in the file." << endl;
+	cout << "readtriangles(): triangle vector has size: " << v->size() << endl;
 	return *v;
 }
-
 
 
 

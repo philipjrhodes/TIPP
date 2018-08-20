@@ -1,0 +1,139 @@
+#include "Triangle.h"
+#include "Edge.h"
+
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+class Node{
+	public: 
+        Node(){
+            data = NULL;
+            next = NULL;
+        }
+        
+    protected:
+        void * data = NULL;
+        Node * next = NULL;
+        
+    friend class TIPPList;
+};
+
+
+
+struct edgeNode: public Node{
+//	edge *ed;
+//	edgeNode *next;
+	edgeNode(edge &e){
+		data = &e;
+	}
+
+    int equals(edge &e){
+        
+        return e == *((edge *) data);
+    }
+
+	~edgeNode(){
+		delete (edge *) data;
+	}
+};
+
+
+struct triangleNode: public Node{
+// 	triangle *tri;
+// 	triangleNode *next;
+
+	triangleNode(triangle &t){
+		data = &t;
+	}
+
+    int equals(triangle &t){
+        
+        return t == *((triangle *) data);
+    }
+
+
+	~triangleNode(){
+		delete (triangle *) data;
+	}
+};
+
+class TIPPList{
+
+    public: 
+        TIPPList() { head = NULL; }
+        
+        void insertFront(Node &newNode);
+        
+        void insertFront(Node * newNode);
+        
+        void insertFront(triangle &t);
+        
+        void insertFront(edge &e);
+        
+        void removeNode(Node *prev, Node*cur);
+
+        Node * extractNode(Node *prev, Node*cur);
+        
+        void printLinkList();
+        
+        void deleteElement(triangle &t);
+        
+        void deleteElement(edge &t);
+       
+        unsigned long long int size();
+        
+        void addLinkList(TIPPList &l);
+       
+       
+        ~TIPPList();
+        
+    protected:
+        Node * head;
+        
+    
+    private:
+    
+};
+
+
+
+
+
+// 
+// edgeNode *createNewNode(edge *e);
+// 
+// void insertFront(edgeNode *&head, edgeNode *newNode);
+// 
+// void removeNode(edgeNode *&head, edgeNode *&preP, edgeNode *&currP);
+// 
+// edgeNode *extractNode(edgeNode *&head, edgeNode *preP, edgeNode *&currP);
+// 
+// void printLinkList(edgeNode *head);
+// 
+// void deleteElement(edgeNode *&head, edge *t);
+// 
+// void removeLinkList(edgeNode *&head);
+// 
+// unsigned long long int size(edgeNode *head);
+// 
+// 
+// 
+// triangleNode *createNewNode(triangle *t);
+// 
+// void insertFront(triangleNode *&head, triangleNode *newNode);
+// 
+// void removeNode(triangleNode *&head, triangleNode *&preP, triangleNode *&currP);
+// 
+// triangleNode *extractNode(triangleNode *&head, triangleNode *preP, triangleNode *&currP);
+// 
+// void printLinkList(triangleNode *head);
+// 
+// void deleteElement(triangleNode *&head, triangle *t);
+// 
+// void removeLinkList(triangleNode *&head);
+// 
+// unsigned long long int size(triangleNode *head);
+// 
+// void addLinkList(triangleNode *&tempTriangleList, triangleNode *&triangleList);
+
+#endif
