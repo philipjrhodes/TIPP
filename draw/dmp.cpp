@@ -17,16 +17,17 @@
 
 
 //TODO: get rid of C stuff
-#include <stdlib.h>
-#include <stdio.h>  
-#include <string.h>
-#include <setjmp.h>
+// #include <stdlib.h>
+// #include <stdio.h>  
+// #include <string.h>
+// #include <setjmp.h>
 
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
+#include <vector>
 
-#include "Point.h"
-#include "Triangle.h"
+#include "point.h"
+#include "triangle.h"
 
 #include "PDFCanvas.h"
 #include "adcirc.h"
@@ -47,8 +48,8 @@ int main (int argc, char **argv)
 	cout << "gridfile title:" << name << endl;
 	cout << "numVertices=" << numVertices << "   numTriangles=" << numTriangles << endl;
 
-	vector<Point> v = readVertices(in, numVertices);
- 	vector<Triangle> t = readTriangles(in, numTriangles);
+	std::vector<point> v = readVertices(in, numVertices);
+ 	std::vector<triangle> t = readTriangles(in, numTriangles, v);
 
 
 

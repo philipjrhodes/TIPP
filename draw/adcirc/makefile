@@ -2,10 +2,14 @@
 
 TIPP_DIR := $(shell git rev-parse --git-dir | xargs dirname)
 DRAW_DIR = $(TIPP_DIR)/draw
+ADCIRC_DIR = ${DRAW_DIR}/adcirc
+READER_DIR = $(TIPP_DIR)/draw/reader
 
-FLAGS = -O3  -std=c++11 -I${DRAW_DIR}
+INCLUDEDIRS = -I${ADCIRC_DIR} -I${READER_DIR}
+FLAGS = -O0  ${INCLUDEDIRS}
+CPPFLAGS = ${FLAGS} -std=c++11
 
-adcirc.o: adcirc.cpp adcirc.h ${DRAW_DIR}/Point.h
+adcirc.o: adcirc.cpp adcirc.h ${READER_DIR}/point.h ${READER_DIR}/triangle.h
 	g++ ${FLAGS} -c adcirc.cpp
 
 clean: 

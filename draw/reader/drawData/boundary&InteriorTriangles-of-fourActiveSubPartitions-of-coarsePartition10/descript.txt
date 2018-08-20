@@ -1,0 +1,8 @@
+Figure 7e
+- file returnAllTriangleCoors10.tri contains boundary triangles of fine partitions (0,2,8,10) in coarse partition 10
+- file returnAllTriangleCoors10.tri includes all coordinates (double) of many triangles: [x1 y1 x2 y2 x3 y3] [x1 y1 x2 y2 x3 y3] ...
+
+- file returnAllStoreTriangleIds10.tri contains interior triangles of fine partitions (0,2,8,10) in coarse partition 10
+- file returnAllStoreTriangleIds10.tri  contain all triangle Ids (unsinged long long) of many interior triangles (for example: [115 22 49] [18 1000 90] ...) of coarse partition 10. In order to read their coordinate, we need to read fullPointPart.ver
+- - file fullPointPart.ver contains all coordinates (double) of all point Ids (0.5234 0.456) (0.3456 0.765) ...
+- The range of xk, yk is in [0..1]. You may need to zoom out

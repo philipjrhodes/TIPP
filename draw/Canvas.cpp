@@ -26,18 +26,45 @@ void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy,
 // 	}
 }
 
-void Canvas::setMapping(const std::vector<Point> &vertices){
+void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy){
 
-	optional<Point> min = getMinPoint(vertices);
-	optional<Point> max = getMaxPoint(vertices);
+	this->lx = vminx;
+	this->ly = vminy;
 	
-	printf("min.x = %lf, min.y= %lf  max.x = %lf, max.y= %lf\n",min->x, min->y, max->x, max->y);
+	double pageWidth=this->getPageWidth();
+    double pageHeight=this->getPageHeight();
+
+	this->xratio = (pageWidth  - 2 * (this->margin)) / (vmaxx - this->lx) ;
+	this->yratio = (pageHeight - 2 * (this->margin)) / (vmaxy - this->ly) ;
+}
+
+
+void Canvas::setMapping(const std::vector<point> &vertices){
+
+	optional<point> min = getMinPoint(vertices);
+	optional<point> max = getMaxPoint(vertices);
+	
+	printf("Canvas::setMapping(vector<point>):min.x = %lf, min.y= %lf  max.x = %lf, max.y= %lf\n",min->x, min->y, max->x, max->y);
 	
     double width=this->getPageWidth();
     double height=this->getPageHeight();
 	
 	setMapping(min->x, min->y, max->x, max->y, width, height);
 }
+
+void Canvas::setMapping(const std::vector<triangle> &triangles){
+
+	optional<point> min = getMinPoint(triangles); //TODO: add boundingBox method for triangle vector
+	optional<point> max = getMaxPoint(triangles);
+	
+	printf("Canvas::setMapping(vector<triangle>):min.x = %lf, min.y= %lf  max.x = %lf, max.y= %lf\n",min->x, min->y, max->x, max->y);
+	
+    double width=this->getPageWidth();
+    double height=this->getPageHeight();
+	
+	setMapping(min->x, min->y, max->x, max->y, width, height);
+}
+
 
 
 void Canvas::mapToPage(double x, double y, double &px, double &py){

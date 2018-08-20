@@ -13,8 +13,8 @@
 #include <limits>
 #include <math.h>
 
-double max = std::numeric_limits<double>::max();
-double inf = std::numeric_limits<double>::infinity();
+double max = std::numeric_limits<double>::max();  // TODO: make this uppercase
+double inf = std::numeric_limits<double>::infinity(); // TODO: make this uppercase
 
 
 triangle::triangle(const point &_p1, const point &_p2, const point &_p3){

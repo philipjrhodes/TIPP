@@ -1,8 +1,8 @@
 #ifndef CANVAS_H
 #define CANVAS_H
 #include <string>
-#include "Point.h"
-#include "Triangle.h"
+#include "point.h"
+#include "triangle.h"
 
 /* A Canvas is an abstraction for a graphics file.
 	window space -- rectangular subregion of vertex space
@@ -17,10 +17,21 @@ class Canvas {
 		// Set the mapping between the window (vertex) space and page space.
      	void setMapping( double vminx, double vminy, double vmaxx, double vmaxy, double pageWidth, double pageHeight);
         
+        // Set the mapping between the window (vertex) space and default page space.
+        void setMapping( double vminx, double vminy, double vmaxx, double vmaxy);
+        
+        
         // Set the mapping between the window space and page space. Computes
         // the window bounds by finding min and max vertex x and y coordinates
         // in the given list of vertices.
-        void setMapping(const std::vector<Point> &vertices);
+        void setMapping(const std::vector<point> &vertices);
+
+        // Set the mapping between the window space and page space. Computes
+        // the window bounds by finding min and max vertex x and y coordinates
+        // of the points contained directly in the triangles.
+        void setMapping(const std::vector<triangle> &triangles);
+
+
         
         virtual inline void enableFill(){ drawStyle |= FILL;};
         
@@ -60,9 +71,12 @@ class Canvas {
 			double height)=0;
 
 		virtual void drawTriangles(
-			const std::vector<Point> &vertices,
-			const std::vector<Triangle> &triangles)=0;
-         
+			const std::vector<point> &vertices,
+			const std::vector<triangle> &triangles)=0;
+			
+         virtual void drawTriangles(
+            const std::vector<triangle> &triangles)=0;
+        
        
         virtual double getPageWidth()  = 0;
         virtual double getPageHeight() = 0;
