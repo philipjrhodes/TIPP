@@ -29,18 +29,20 @@ class ListReader{
         
         virtual ~ListReader(){
         
-            
         }  
         
-    protected:
         
+    protected:
         
         // Read triangles that were written as triplets of indices, along with a separate vertex file.
         void readTrianglesWithSeparatePointsFile();
         
         // read triangles that were written out completely using fwrite(), meaning they already have points.
-        void readTrianglesWithSingleFile();
+        // This method may not be portable, due to differences in padding, etc. 
+        void readTrianglesWithFread();
 
+        // read "flattened" triangles consisting of coordinates for each vertex of each triangle.
+        void readFlattenedTriangles();
 
     
         std::string vertexFileName;

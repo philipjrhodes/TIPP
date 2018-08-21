@@ -58,14 +58,9 @@ void ListReader::readPoints(){ // array
 
 // read triangles that were written out completely using fwrite(), meaning they already have points.
 void ListReader::readTriangles(){
-
-    FILE * tfile = fopen(triangleFileName.c_str(), "rb");
-    unsigned long long int * buffer = (unsigned long long int *) malloc( 3 * sizeof(unsigned long long int)); 
-    unsigned long long int index=0; 
-    int numread;
     
     if(vertexFileName == ""){
-        this->readTrianglesWithSingleFile();
+        this->readFlattenedTriangles();
     } else {
         this->readTrianglesWithSeparatePointsFile();
     }
@@ -107,7 +102,8 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
 
 
 // read triangles that were written out completely using fwrite(), meaning they already have points.
-void ListReader::readTrianglesWithSingleFile(){
+// This method may not be portable, due to differences in padding, etc. 
+void ListReader::readTrianglesWithFread(){
 
     FILE * tfile = fopen(triangleFileName.c_str(), "rb");
     
@@ -129,6 +125,58 @@ void ListReader::readTrianglesWithSingleFile(){
         std::cout << "ListReader::readTrianglesWithSingleFile(): Successfully read " << numread << " triangles." << std::endl;
     }
     this->numTriangles = numread;
+}
+
+
+// read "flattened" triangles consisting of coordinates for each vertex of each triangle.
+void ListReader::readFlattenedTriangles(){
+
+    FILE * tfile = fopen(triangleFileName.c_str(), "rb");
+    
+    const int triangleDoubles = 3 * 2;
+    const int triangleBytes = triangleDoubles * sizeof(double);
+    
+    // Deduce number of triangles represented in the file.
+    fseek(tfile, 0, SEEK_END); // seek to end of file
+    int nTriangles = ftell(tfile) / triangleBytes; // get current file pointer
+    fseek(tfile, 0, SEEK_SET); // seek back to beginning of file
+ 
+    double * coords = (double *) malloc( nTriangles * triangleBytes );  
+    if( NULL == coords){
+        std::cerr << "ListReader::readFlattenedTriangles(): coords malloc failed" << std::endl;
+    }
+    
+    
+    this->trianglesArray = (triangle *) malloc( nTriangles * triangleBytes);
+    if( NULL == this->trianglesArray){
+        std::cerr << "ListReader::readFlattenedTriangles(): trianglesArray malloc failed" << std::endl;
+    }
+    
+    
+    int numread = fread(this->trianglesArray, triangleBytes, nTriangles, tfile);
+    
+    if( numread != nTriangles){
+        std::cerr << "ListReader::readFlattenedTriangles(): fread failed" << std::endl;
+    } else {
+        std::cout << "ListReader::readFlattenedTriangles(): Successfully read " << numread << " triangles." << std::endl;
+    }
+    this->numTriangles = numread;
+    
+    triangle t;
+    //Now that we have coords for each vertex, let's give them to the triangles.
+    for(int i=0; i<nTriangles; i++){
+    
+        t.p1.x = coords[i * 6 + 0];
+        t.p1.y = coords[i * 6 + 1];
+        
+        t.p2.x = coords[i * 6 + 2];
+        t.p2.y = coords[i * 6 + 3];
+
+        t.p3.x = coords[i * 6 + 4];
+        t.p3.y = coords[i * 6 + 5];
+        
+        this->trianglesArray[i] = t;
+    }
 }
 
 
