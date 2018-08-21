@@ -1,3 +1,4 @@
 [submodule "draw/pdf/libharu"]
 	path = draw/pdf/libharu
 	url = git@github.com:libharu/libharu.git
+	ignore = dirty

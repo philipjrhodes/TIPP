@@ -3,8 +3,8 @@ DRAW_DIR = ${TIPP_DIR}/draw
 READER_DIR = ${DRAW_DIR}/reader
 
 
-INCLUDEDIRS = -I. -I${DRAW_DIR}
-LIBS = -lhpdfs -lz -lcanvas
+INCLUDEDIRS = -I${READER_DIR} -I${DRAW_DIR} -I${TIPP_DIR}/include
+LIBS = -lcanvas -lhpdfs -lz 
 LIBDIRS =  -L${READER_DIR} -L${DRAW_DIR} -L${TIPP_DIR}/lib
 
 FLAGS = -O0 -g  ${INCLUDEDIRS}
@@ -50,4 +50,4 @@ boundingBox.o: boundingBox.cpp boundingBox.h
 	g++ $(CPPFLAGS) -c boundingBox.cpp
 
 clean:
-	rm -f  *.o rd
+	rm -f  *.o libreader.a rd

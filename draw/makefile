@@ -6,8 +6,8 @@ ADCIRC_DIR = ${DRAW_DIR}/adcirc
 READER_DIR = ${DRAW_DIR}/reader
 
 INCLUDEDIRS = -I${READER_DIR} -I${ADCIRC_DIR} -I${DRAW_DIR} -I${TIPP_DIR}/include
-LIBS = -lhpdfs -lz -lreader
-LIBDIRS = -L. -L${READER_DIR} -L${TIPP_DIR}/lib 
+LIBS = -lreader -lhpdfs -lz 
+LIBDIRS = -I${DRAW_DIR} -L${READER_DIR} -L${TIPP_DIR}/lib 
 
 FLAGS = -O0 -Wno-unused-command-line-argument  ${INCLUDEDIRS}
 CPPFLAGS = ${FLAGS} -std=c++11
