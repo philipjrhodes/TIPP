@@ -11,7 +11,7 @@ FLAGS = -O0 -g  ${INCLUDEDIRS}
 CPPFLAGS = ${FLAGS} -std=c++11
 
 run: rd
-	./rd
+	./rd drawData/initTrianglesDomain/domainTriangles.tri
 	open reader.pdf
 
 valgrind: rd

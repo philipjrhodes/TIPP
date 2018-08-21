@@ -147,13 +147,13 @@ void ListReader::readFlattenedTriangles(){
     }
     
     
-    this->trianglesArray = (triangle *) malloc( nTriangles * triangleBytes);
+    this->trianglesArray = (triangle *) malloc( nTriangles * sizeof(triangle));
     if( NULL == this->trianglesArray){
         std::cerr << "ListReader::readFlattenedTriangles(): trianglesArray malloc failed" << std::endl;
     }
     
     
-    int numread = fread(this->trianglesArray, triangleBytes, nTriangles, tfile);
+    int numread = fread(coords, triangleBytes, nTriangles, tfile);
     
     if( numread != nTriangles){
         std::cerr << "ListReader::readFlattenedTriangles(): fread failed" << std::endl;
@@ -177,6 +177,8 @@ void ListReader::readFlattenedTriangles(){
         
         this->trianglesArray[i] = t;
     }
+    
+    free(coords);
 }
 
 
