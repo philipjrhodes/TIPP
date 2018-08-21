@@ -169,7 +169,7 @@ void PDFCanvas::drawTriangles(const std::vector<triangle> &triangles){
     for(int i=0; i< numTriangles; i++){
 //    for(int i=0; i < 1; i++){
         
-        std::cout << "drawTriangles()[no vertices]: (" << triangles[i].p1.x << " " << triangles[i].p1.y << ") (" << triangles[i].p2.x << " " <<  triangles[i].p2.y << ") (" << triangles[i].p3.x << " " <<  triangles[i].p3.y << ")" << std::endl;
+//         std::cout << "drawTriangles()[no vertices]: (" << triangles[i].p1.x << " " << triangles[i].p1.y << ") (" << triangles[i].p2.x << " " <<  triangles[i].p2.y << ") (" << triangles[i].p3.x << " " <<  triangles[i].p3.y << ")" << std::endl;
                     
         drawTriangle(   triangles[i].p1.x, triangles[i].p1.y, 
                         triangles[i].p2.x, triangles[i].p2.y,
