@@ -161,10 +161,10 @@ inline optional<point> getMaxPoint(std::vector<triangle> const & triangles)
         maxX = triangles[i].getMaxX();
         maxY = triangles[i].getMaxY();
         
-        if (maxX < max.x)
+        if (maxX > max.x)
                 max.x = maxX;
                 
-        if (maxY < max.y)
+        if (maxY > max.y)
                 max.y = maxY;
     }
     

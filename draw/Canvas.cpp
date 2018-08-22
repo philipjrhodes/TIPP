@@ -31,8 +31,8 @@ void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy)
 	this->lx = vminx;
 	this->ly = vminy;
 	
-	double pageWidth=this->getPageWidth();
-    double pageHeight=this->getPageHeight();
+	double pageWidth  = this->getPageWidth();
+    double pageHeight = this->getPageHeight();
 
 	this->xratio = (pageWidth  - 2 * (this->margin)) / (vmaxx - this->lx) ;
 	this->yratio = (pageHeight - 2 * (this->margin)) / (vmaxy - this->ly) ;
@@ -51,6 +51,7 @@ void Canvas::setMapping(const std::vector<point> &vertices){
 	
 	setMapping(min->x, min->y, max->x, max->y, width, height);
 }
+
 
 void Canvas::setMapping(const std::vector<triangle> &triangles){
 

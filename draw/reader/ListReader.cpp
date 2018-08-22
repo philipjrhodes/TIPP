@@ -74,25 +74,52 @@ void ListReader::readTriangles(){
 void ListReader::readTrianglesWithSeparatePointsFile(){
 
     FILE * tfile = fopen(triangleFileName.c_str(), "rb");
-    unsigned long long int * buffer = (unsigned long long int *) malloc( 3 * sizeof(unsigned long long int)); 
-    unsigned long long int index=0; 
-    int numread;
     
-    if( NULL == buffer){
-        std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): malloc failed" << std::endl;
-        exit(1);
-    }
+    // Deduce number of triangles represented in the file.
+    fseek(tfile, 0, SEEK_END); // seek to end of file
+    int nTriangles = ftell(tfile) / (3 * sizeof(unsigned long long int) ); // get current file pointer
+    fseek(tfile, 0, SEEK_SET); // seek back to beginning of file
+    
 
     if(NULL == this->points){
         std::cout << "ListReader::readTrianglesWithSeparatePointsFile(): calling readPoints()" << std::endl;
         this->readPoints();
     }
     
-    while ( 3 == (numread = fread(buffer, sizeof(unsigned long long int), 3, tfile)) ){
+//     while ( 3 == (numread = fread(buffer, sizeof(unsigned long long int), 3, tfile)) ){
+//     
+//         triangle t( points[buffer[0]], points[buffer[1]], points[buffer[2]]);
+//         this->triangles.insertFront(t);
+//     }
     
-        triangle t( points[buffer[0]], points[buffer[1]], points[buffer[2]]);
-        this->triangles.insertFront(t);
+    unsigned long long int  * vertexIndices = (unsigned long long int *) malloc( nTriangles * 3 * sizeof(unsigned long long int));
+    
+    if( NULL == vertexIndices){
+        std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): malloc failed" << std::endl;
+        exit(1);
     }
+    
+    int numread = fread(vertexIndices, 3 * sizeof(unsigned long long int) , nTriangles, tfile);
+
+    if( numread != nTriangles){
+        std::cerr << "ListReader::readFlattenedTriangles(): fread failed" << std::endl;
+    } else {
+        std::cout << "ListReader::readFlattenedTriangles(): Successfully read " << numread << " triangles." << std::endl;
+    }
+    this->numTriangles = numread;
+        
+    
+    triangle t;
+    //Now that we have points, let's give them to the triangles.
+    for(int i=0; i<nTriangles; i++){
+    
+        t.p1 = points[ vertexIndices[3 * i + 0]];
+        t.p2 = points[ vertexIndices[3 * i + 1]];
+        t.p3 = points[ vertexIndices[3 * i + 2]];
+         
+        this->trianglesArray[i] = t;
+    }
+
     
     assert(numread == 0); // should be no "spare change"
 }
@@ -141,15 +168,15 @@ void ListReader::readFlattenedTriangles(){
     int nTriangles = ftell(tfile) / triangleBytes; // get current file pointer
     fseek(tfile, 0, SEEK_SET); // seek back to beginning of file
  
-    double * coords = (double *) malloc( nTriangles * triangleBytes );  
-    if( NULL == coords){
-        std::cerr << "ListReader::readFlattenedTriangles(): coords malloc failed" << std::endl;
-    }
-    
-    
     this->trianglesArray = (triangle *) malloc( nTriangles * sizeof(triangle));
     if( NULL == this->trianglesArray){
         std::cerr << "ListReader::readFlattenedTriangles(): trianglesArray malloc failed" << std::endl;
+    }
+
+ 
+    double * coords = (double *) malloc( nTriangles * triangleBytes );  
+    if( NULL == coords){
+        std::cerr << "ListReader::readFlattenedTriangles(): coords malloc failed" << std::endl;
     }
     
     

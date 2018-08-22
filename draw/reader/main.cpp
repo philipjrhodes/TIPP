@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "PDFCanvas.h"
 #include "TIPPList.hpp"
 #include "triangle.h"
@@ -8,9 +9,17 @@
 
 using namespace std;
 
-int main(){
+void usage(){
+    cout << "Usage: rd filename.tri filename.ver" << endl;
+    exit(1);
+}
 
-    ListReader r("drawData/initTrianglesDomain/domainTriangles.tri");
+int main(int argc, char * argv[]){
+
+    if (argc != 3)
+        usage();
+    //"drawData/initTrianglesDomain/domainTriangles.tri"
+    ListReader r(argv[1], argv[2]);
     
     r.readTriangles();
     
@@ -34,11 +43,11 @@ int main(){
     cout << "triangle vector has length " << tvec.size() << endl;
      cout << "triangle[0] " << tvec[0] << endl;
     
-    Canvas *c = new PDFCanvas("drawData/initTrianglesDomain/domainTriangles.tri");
+    Canvas *c = new PDFCanvas(argv[1]);
  
  	
- 	//c->setMapping(tvec);
- 	c->setMapping(0,0,1,1);
+ 	c->setMapping(tvec);
+ 	//c->setMapping(0,0,1,1);
  	
  	c->setStrokeColor(1, 0, 0);
  	c->setFillColor(0.9, 0.9, 1);
