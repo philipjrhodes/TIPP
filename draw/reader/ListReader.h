@@ -10,9 +10,10 @@ class ListReader{
 
     public:
 
+
         // if vFileName is ommitted or set to "", then we assume the triangle file
         // contains complete points.
-        ListReader(std::string tFileName, std::string vFileName ="" ){ 
+        ListReader(std::string tFileName="", std::string vFileName ="" ){ 
         
             vertexFileName = vFileName;
             triangleFileName = tFileName;

@@ -9,17 +9,27 @@
 
 using namespace std;
 
+
 void usage(){
-    cout << "Usage: rd filename.tri filename.ver" << endl;
+    cout << "Usage: rd filename.tri [filename.ver]" << endl;
     exit(1);
 }
 
-int main(int argc, char * argv[]){
 
-    if (argc != 3)
+int main(int argc, char * argv[]){
+    
+    ListReader r;
+    
+    if (argc == 2) {
+    	r = ListReader(argv[1]);
+    } else if (argc == 3) {
+        r = ListReader(argv[1], argv[2]);
+    } else
         usage();
+
+
     //"drawData/initTrianglesDomain/domainTriangles.tri"
-    ListReader r(argv[1], argv[2]);
+    //ListReader r(argv[1], argv[2]);
     
     r.readTriangles();
     
