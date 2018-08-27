@@ -1,5 +1,6 @@
 #ifndef PDFCANVAS_H
 #define PDFCANVAS_H
+
 #include <string>
 #include <vector>
 

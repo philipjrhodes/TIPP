@@ -9,7 +9,7 @@ Canvas::Canvas() {
 	
 	this->xratio = 1.0;
 	this->yratio = 1.0;
-	this->margin = 5;
+	this->margin = 15;
 }
 
 void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy, double pageWidth, double pageHeight){
@@ -20,10 +20,13 @@ void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy,
 	this->xratio = (pageWidth  - 2 * (this->margin)) / (vmaxx - this->lx) ;
 	this->yratio = (pageHeight - 2 * (this->margin)) / (vmaxy - this->ly) ;
 	
-// 	if(this->xratio < this->yratio){
-// 	
-// 		this->xratio = this->yratio;
-// 	}
+	if(this->xratio > this->yratio){
+	
+		this->xratio = this->yratio;
+	} else {
+	
+	    this->yratio = this->xratio;
+	}
 }
 
 void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy){

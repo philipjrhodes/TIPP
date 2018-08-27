@@ -1,5 +1,6 @@
 #ifndef CANVAS_H
 #define CANVAS_H
+
 #include <string>
 #include "point.h"
 #include "triangle.h"

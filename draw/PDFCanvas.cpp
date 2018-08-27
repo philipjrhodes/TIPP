@@ -10,7 +10,7 @@
 
 void error_handler (HPDF_STATUS error_no, HPDF_STATUS detail_no, void *user_data)
 {
-    printf ("ERROR: error_no=%04X, detail_no=%d\n",
+    printf ("ERROR: error_no=0x%04X, detail_no=%d\n",
       (unsigned int) error_no, (int) detail_no);
     throw std::exception (); /* throw exception on error */
 }
@@ -46,7 +46,7 @@ PDFCanvas::PDFCanvas(   const std::string page_title,
     
     HPDF_Page_Rectangle (this->page, this->margin, this->margin, width-2*(this->margin), height-2*(this->margin));
     HPDF_Page_Clip (this->page);
-    HPDF_Page_Stroke (this->page);
+    HPDF_Page_EndPath(this->page); // instead of drawing the rectangle.
 
     /* print the title of the page (with positioning center). */
     HPDF_Page_SetFontAndSize (this->page, this->font, 12);
@@ -160,7 +160,7 @@ void PDFCanvas::drawTriangles(const std::vector<point> &vertices, const std::vec
 //     }
 }
 
-// Assumes points within triangles are valid.
+// Assumes points within triangle objects are valid.
 void PDFCanvas::drawTriangles(const std::vector<triangle> &triangles){
 
     int numTriangles = triangles.size();
