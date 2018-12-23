@@ -1,5 +1,7 @@
 # Makefile for PDF version of mesh drawing code.
 
+
+
 TIPP_DIR := $(shell git rev-parse --git-dir | xargs dirname)
 DRAW_DIR = ${TIPP_DIR}/draw
 ADCIRC_DIR = ${DRAW_DIR}/adcirc
@@ -9,7 +11,7 @@ INCLUDEDIRS = -I${READER_DIR} -I${ADCIRC_DIR} -I${DRAW_DIR} -I${TIPP_DIR}/includ
 LIBS = -lreader -lhpdfs -lz 
 LIBDIRS = -I${DRAW_DIR} -L${READER_DIR} -L${TIPP_DIR}/lib 
 
-FLAGS = -O0 -Wno-unused-command-line-argument  ${INCLUDEDIRS}
+FLAGS = -g -O0 -Wno-unused-command-line-argument  ${INCLUDEDIRS}
 CPPFLAGS = ${FLAGS} -std=c++11
 
 run: dmp nc_inundation_v6c.grd

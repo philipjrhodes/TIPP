@@ -46,9 +46,15 @@ void ListReader::readPoints(){ // array
     int nPoints = ftell(vfile)/(sizeof(point)); // get current file pointer
     fseek(vfile, 0, SEEK_SET); // seek back to beginning of file
 
-    std::cout << "ListReader::readPoints(): reading " << nPoints << " from the file."  << std::endl;
+    std::cout << "ListReader::readPoints(): reading " << nPoints << " points from the file."  << std::endl;
         
     this->points = (point *) malloc( nPoints * sizeof(point)); 
+    
+    if( NULL == this->points){
+        std::cerr << "ListReader::readPoints(): malloc failed." << std::endl;
+        exit(1);
+    }
+
     
     int numread = fread(this->points, sizeof(point), nPoints, vfile);
     assert(numread == nPoints);
@@ -102,12 +108,19 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
     int numread = fread(vertexIndices, 3 * sizeof(unsigned long long int) , nTriangles, tfile);
 
     if( numread != nTriangles){
-        std::cerr << "ListReader::readFlattenedTriangles(): fread failed" << std::endl;
+        std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): fread failed" << std::endl;
     } else {
-        std::cout << "ListReader::readFlattenedTriangles(): Successfully read " << numread << " triangles." << std::endl;
+        std::cout << "ListReader::readTrianglesWithSeparatePointsFile(): Successfully read " << numread << " triangles." << std::endl;
     }
     this->numTriangles = numread;
         
+ 
+	this->trianglesArray = (triangle *) malloc( this->numTriangles * sizeof(triangle)); 
+    
+    if( NULL == this->trianglesArray){
+        std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): malloc failed" << std::endl;
+    }
+       
     
     triangle t;
     //Now that we have points, let's give them to the triangles.
@@ -122,6 +135,7 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
 
     
     assert(numread == 0); // should be no "spare change"
+    std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): done." << std::endl;
 }
 
 
