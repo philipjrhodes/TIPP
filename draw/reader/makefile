@@ -11,7 +11,8 @@ FLAGS = -O0 -g  ${INCLUDEDIRS}
 CPPFLAGS = ${FLAGS} -std=c++11
 
 run: rd
-	./rd drawData/initTrianglesDomain/domainTriangles.tri ""
+	./rd drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/returnAllStoreTriangleIds10.tri drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/fullPointPart.ver
+	#./rd drawData/initTrianglesDomain/domainTriangles.tri ""
 	open reader.pdf
 
 valgrind: rd
@@ -21,7 +22,7 @@ rd: main.o libreader.a libcanvas
 	g++ main.o libreader.a ${LIBDIRS}  ${LIBS} -o rd
 	# dsymutil rd  #mac
 
-main.o: main.cpp TIPPList.hpp
+main.o: main.cpp TIPPList.hpp 
 	g++ $(CPPFLAGS) -c main.cpp
 
 .PHONY:lib

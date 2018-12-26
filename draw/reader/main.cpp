@@ -51,17 +51,17 @@ int main(int argc, char * argv[]){
     std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
     
     cout << "triangle vector has length " << tvec.size() << endl;
-     cout << "triangle[0] " << tvec[0] << endl;
+    cout << "triangle[0] " << tvec[0] << endl;
     
-    Canvas *c = new PDFCanvas(argv[1]);
+    Canvas *c = new PDFCanvas(argv[1], 1); //flipping y axis
  
  	
  	c->setMapping(tvec);
  	//c->setMapping(0,0,1,1);
  	
- 	c->setStrokeColor(1, 0, 0);
- 	c->setFillColor(0.9, 0.9, 1);
- 	c->setStrokeWidth(2.0);
+ //	c->setStrokeColor(1, 0, 0);
+ //	c->setFillColor(0.9, 0.9, 1);
+ //	c->setStrokeWidth(2.0);
  	
 //  	c->drawRect(200,600, 100,100);
 //  	c->drawRect(200,500, 100,100);
@@ -70,11 +70,18 @@ int main(int argc, char * argv[]){
 
 	c->setStrokeWidth(0.01);
  	
- 	c->enableFill();
+// 	c->enableFill();
 //  	c->drawCircle(300,400, 100);
  	
- 	c->setStrokeColor(0, 0, 0);
- 	c->disableFill();
+#if 0  // shaded
+ 	c->enableFill();
+ 	c->setStrokeColor(0.5,0.5,0.5);
+ 	c->setFillColor(0.95, 0.95, 1);
+#else 
+    c->disableFill();
+    c->setStrokeColor(0,0,0);
+#endif 
+ 	
 
   	c->drawTriangles(tvec);	
     

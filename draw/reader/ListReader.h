@@ -37,6 +37,10 @@ class ListReader{
         
         // Read triangles that were written as triplets of indices, along with a separate vertex file.
         void readTrianglesWithSeparatePointsFile();
+ 
+        // Read Points that were written as pairs of doubles.
+        void readPointsAsDoubles();
+
         
         // read triangles that were written out completely using fwrite(), meaning they already have points.
         // This method may not be portable, due to differences in padding, etc. 

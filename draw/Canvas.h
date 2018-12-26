@@ -13,7 +13,9 @@
 class Canvas {
    public:
    		
-   		Canvas();
+   		// Constructor. If flipYAxis is true, then the vertex space origin will map to
+   		// the upper left of the page.
+   		Canvas(int flipYAxis);
 
 		// Set the mapping between the window (vertex) space and page space.
      	void setMapping( double vminx, double vminy, double vmaxx, double vmaxy, double pageWidth, double pageHeight);
@@ -31,6 +33,10 @@ class Canvas {
         // the window bounds by finding min and max vertex x and y coordinates
         // of the points contained directly in the triangles.
         void setMapping(const std::vector<triangle> &triangles);
+        
+        
+        //void flipYAxis();
+        
         
         virtual inline void enableFill(){ drawStyle |= FILL;};
         
@@ -92,6 +98,7 @@ class Canvas {
 
 		int drawStyle=STROKE;
     	
+    	int yAxisFlipped = 0;
 
 		void mapToPage(double x, double y, double &px, double &py);
 		

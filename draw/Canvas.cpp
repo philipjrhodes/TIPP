@@ -1,7 +1,7 @@
 #include "Canvas.h"
 #include <string.h>
 
-Canvas::Canvas() {
+Canvas::Canvas(int flipYAxis) {
   
   	// These defaults should be reset by child classes. 				
 	this->lx = 0.0;
@@ -10,6 +10,8 @@ Canvas::Canvas() {
 	this->xratio = 1.0;
 	this->yratio = 1.0;
 	this->margin = 15;
+	
+	this->yAxisFlipped = flipYAxis;
 }
 
 void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy, double pageWidth, double pageHeight){
@@ -26,6 +28,12 @@ void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy,
 	} else {
 	
 	    this->yratio = this->xratio;
+	}
+	
+	if(this->yAxisFlipped){
+	
+	    this->ly = vmaxy;
+	    this->yratio *= -1;
 	}
 }
 
@@ -69,12 +77,25 @@ void Canvas::setMapping(const std::vector<triangle> &triangles){
 	setMapping(min->x, min->y, max->x, max->y, width, height);
 }
 
+// void Canvas::flipYAxis(){
+// 
+//     this->yAxisFlipped = 1; 
+//     double ux = this->ly + (pageWidth  - 2 * (this->margin)) / yratio;
+//     this->ly = ux;
+// }
 
 
 void Canvas::mapToPage(double x, double y, double &px, double &py){
 
 	px = margin + (x - this->lx) * xratio;
-	py = margin + (y - this->ly) * yratio;
+	
+// 	if(this->yAxisFlipped){
+// 	
+// 	    py = margin + (this->ly - y) * yratio;    
+// 	} else {
+	
+	    py = margin + (y - this->ly) * yratio;
+//	}
 }
 
 int Canvas::hasCorrectExtension(const char * s1, const char * extension){

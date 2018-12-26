@@ -42,6 +42,13 @@ void ListReader::readPoints(){ // array
     
     FILE * vfile = fopen(vertexFileName.c_str(), "rb");
     
+    if(!vfile){
+    
+        std::cerr << "Couldn't open file: " << vertexFileName << std::endl;
+        exit(1);
+    }
+
+    
     fseek(vfile, 0, SEEK_END); // seek to end of file
     int nPoints = ftell(vfile)/(sizeof(point)); // get current file pointer
     fseek(vfile, 0, SEEK_SET); // seek back to beginning of file
@@ -60,6 +67,60 @@ void ListReader::readPoints(){ // array
     assert(numread == nPoints);
     fclose(vfile);  
 }
+
+void ListReader::readPointsAsDoubles(){ // array
+
+    if (vertexFileName == ""){
+    
+        std::cerr << "ListReader::readPointsAsDoubles(): no vertex file given."  << std::endl;
+        exit(1);
+    }
+    
+    FILE * vfile = fopen(vertexFileName.c_str(), "rb");
+    
+    if(!vfile){
+    
+        std::cerr << "Couldn't open file: " << vertexFileName << std::endl;
+        exit(1);
+    }
+
+    
+    
+    
+    fseek(vfile, 0, SEEK_END); // seek to end of file
+    int nPoints = ftell(vfile)/(2 * sizeof(double)); // get current file pointer
+    fseek(vfile, 0, SEEK_SET); // seek back to beginning of file
+
+    std::cout << "ListReader::readPointsAsDoubles(): reading " << nPoints << " points from the file."  << std::endl;
+        
+    this->points = (point *) malloc( nPoints * sizeof(point)); 
+    
+    if( NULL == this->points){
+        std::cerr << "ListReader::readPointsAsDoubles(): this->points malloc failed." << std::endl;
+        exit(1);
+    }
+    
+    double * buffer = (double *) malloc( nPoints * 2 * sizeof(double)); 
+    
+    if( NULL == buffer){
+        std::cerr << "ListReader::readPointsAsDoubles(): buffer malloc failed." << std::endl;
+        exit(1);
+    }
+    
+    int numread = fread(buffer, 2 * sizeof(double), nPoints, vfile);
+    assert(numread == nPoints);
+    
+    for(int i=0; i<nPoints; i++){
+    
+        this->points[i].x = buffer[2 * i + 0];
+        this->points[i].y = buffer[2 * i + 1];
+    }
+    
+    free(buffer);
+    buffer = NULL;
+    fclose(vfile);  
+}
+
 
 
 // read triangles that were written out completely using fwrite(), meaning they already have points.
@@ -81,15 +142,23 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
 
     FILE * tfile = fopen(triangleFileName.c_str(), "rb");
     
+    if(!tfile){
+    
+        std::cerr << "Couldn't open file: " << triangleFileName << std::endl;
+        exit(1);
+    }
+    
     // Deduce number of triangles represented in the file.
     fseek(tfile, 0, SEEK_END); // seek to end of file
     int nTriangles = ftell(tfile) / (3 * sizeof(unsigned long long int) ); // get current file pointer
     fseek(tfile, 0, SEEK_SET); // seek back to beginning of file
     
+    
 
     if(NULL == this->points){
-        std::cout << "ListReader::readTrianglesWithSeparatePointsFile(): calling readPoints()" << std::endl;
-        this->readPoints();
+        std::cout << "ListReader::readTrianglesWithSeparatePointsFile(): calling readPointsAsDoubles()" << std::endl;
+        this->readPointsAsDoubles();
+        
     }
     
 //     while ( 3 == (numread = fread(buffer, sizeof(unsigned long long int), 3, tfile)) ){
@@ -125,8 +194,9 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
     triangle t;
     //Now that we have points, let's give them to the triangles.
     for(int i=0; i<nTriangles; i++){
+        //std::cerr << vertexIndices[3 * i + 0] << " " <<  vertexIndices[3 * i + 1]  << " " << vertexIndices[3 * i + 2] << std::endl;
     
-        t.p1 = points[ vertexIndices[3 * i + 0]];
+        t.p1 = points[ vertexIndices[3 * i + 0]];  
         t.p2 = points[ vertexIndices[3 * i + 1]];
         t.p3 = points[ vertexIndices[3 * i + 2]];
          
@@ -134,7 +204,7 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
     }
 
     
-    assert(numread == 0); // should be no "spare change"
+   
     std::cerr << "ListReader::readTrianglesWithSeparatePointsFile(): done." << std::endl;
 }
 
@@ -147,6 +217,13 @@ void ListReader::readTrianglesWithSeparatePointsFile(){
 void ListReader::readTrianglesWithFread(){
 
     FILE * tfile = fopen(triangleFileName.c_str(), "rb");
+
+    if(!tfile){
+    
+        std::cerr << "Couldn't open file: " << triangleFileName << std::endl;
+        exit(1);
+    }
+    
     
     fseek(tfile, 0, SEEK_END); // seek to end of file
     int nTriangles = ftell(tfile)/(sizeof(triangle)); // get current file pointer
@@ -155,15 +232,15 @@ void ListReader::readTrianglesWithFread(){
     this->trianglesArray = (triangle *) malloc( nTriangles * sizeof(triangle)); 
     
     if( NULL == this->trianglesArray){
-        std::cerr << "ListReader::readTrianglesWithSingleFile(): malloc failed" << std::endl;
+        std::cerr << "ListReader::readTrianglesWithFread(): malloc failed" << std::endl;
     }
     
     int numread = fread(this->trianglesArray, sizeof(triangle), nTriangles, tfile);
     
     if( numread != nTriangles){
-        std::cerr << "ListReader::readTrianglesWithSingleFile(): fread failed" << std::endl;
+        std::cerr << "ListReader::readTrianglesWithFread(): fread failed" << std::endl;
     } else {
-        std::cout << "ListReader::readTrianglesWithSingleFile(): Successfully read " << numread << " triangles." << std::endl;
+        std::cout << "ListReader::readTrianglesWithFread(): Successfully read " << numread << " triangles." << std::endl;
     }
     this->numTriangles = numread;
 }
@@ -173,6 +250,13 @@ void ListReader::readTrianglesWithFread(){
 void ListReader::readFlattenedTriangles(){
 
     FILE * tfile = fopen(triangleFileName.c_str(), "rb");
+    
+    if(!tfile){
+    
+        std::cerr << "Couldn't open file: " << triangleFileName << std::endl;
+        exit(1);
+    }
+
     
     const int triangleDoubles = 3 * 2;
     const int triangleBytes = triangleDoubles * sizeof(double);

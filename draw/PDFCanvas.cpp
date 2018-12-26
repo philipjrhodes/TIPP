@@ -18,8 +18,9 @@ void error_handler (HPDF_STATUS error_no, HPDF_STATUS detail_no, void *user_data
 
 
 PDFCanvas::PDFCanvas(   const std::string page_title,   
+                        int flipYAxis,
                         double lx,  double ly, 
-                        double ux,  double uy ){
+                        double ux,  double uy): Canvas(flipYAxis){
                         
 
     this->pdf = HPDF_New (error_handler, NULL);
