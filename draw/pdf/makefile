@@ -11,13 +11,13 @@ TIPP_DIR := $(shell git rev-parse --git-dir | xargs dirname)
 
 ${TIPP_DIR}/lib/libhpdfs.a:
 	cd libharu; \
-	cmake -DCMAKE_INSTALL_PREFIX=$TIPP_DIR . && \
+	cmake -DCMAKE_INSTALL_PREFIX=${TIPP_DIR} . && \
 	#./buildconf.sh && \
 	#./configure && \
 	make && \
 	#make install prefix=${TIPP_DIR} && \
 	make install  && \
-	ln -s ${TIPP_DIR}/lib/libhpdf.a  ${TIPP_DIR}/lib/libhpdfs.a
+	#ln -s ${TIPP_DIR}/lib/libhpdf.a  ${TIPP_DIR}/lib/libhpdfs.a
 	
 clean: 
 	${MAKE} -C libharu clean 
