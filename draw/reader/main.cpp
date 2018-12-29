@@ -73,13 +73,19 @@ int main(int argc, char * argv[]){
 // 	c->enableFill();
 //  	c->drawCircle(300,400, 100);
  	
-#if 0  // shaded
+#ifdef DARK  // shaded
  	c->enableFill();
- 	c->setStrokeColor(0.5,0.5,0.5);
- 	c->setFillColor(0.95, 0.95, 1);
-#else 
-    c->disableFill();
-    c->setStrokeColor(0,0,0);
+ 	c->setStrokeColor(0.0 , 0.0, 0.0);
+ 	c->setFillColor(0.9, 0.9, 0.93);
+ 	
+#elif defined(LIGHT)
+    c->enableFill();
+    c->setFillColor(0.995, 0.995, 0.995);
+    c->setStrokeColor(0.6 , 0.6, 0.6);
+#else
+    //c->enableFill();
+    c->setFillColor(0.995, 0.995, 0.995);
+    c->setStrokeColor(0 , 0, 0);
 #endif 
  	
 
