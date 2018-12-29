@@ -34,7 +34,7 @@ libcanvas.a: PDFCanvas.o Canvas.o
 	ar rvs libcanvas.a PDFCanvas.o Canvas.o
 
 .PHONY:lib
-lib: libcanvas.a ${TIPP_DIR}/lib/libhpdfs.a
+lib: ${TIPP_DIR}/lib/libhpdfs.a libcanvas.a
 
 .PHONY:libinstall
 libinstall: libcanvas.a
