@@ -12,7 +12,6 @@ CPPFLAGS = ${FLAGS} -std=c++11
 
 
 run: rd
-	#./rd drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/returnAllStoreTriangleIds10.tri drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/fullPointPart.ver
 	./rd drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/returnAllStoreTriangleIds10.tri drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/fullPointPart.ver
 	open reader.pdf
 
@@ -29,13 +28,13 @@ valgrind: rd
 
 all: rd rd_dark rd_light
 
-rd_dark: maindark.o libreader.a libcanvas
+rd_dark: libreader.a libcanvas maindark.o 
 	g++ maindark.o libreader.a ${LIBDIRS}  ${LIBS} -o rd_dark
 
-rd_light: mainlight.o libreader.a libcanvas
+rd_light: libcanvas libreader.a mainlight.o 
 	g++ mainlight.o libreader.a ${LIBDIRS}  ${LIBS} -o rd_light
 	
-rd: main.o libreader.a libcanvas
+rd: libcanvas libreader.a main.o 
 	g++ main.o libreader.a ${LIBDIRS}  ${LIBS} -o rd
 	# dsymutil rd  #mac
 
