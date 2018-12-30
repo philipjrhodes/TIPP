@@ -1,7 +1,8 @@
 #include "Canvas.h"
 #include <string.h>
 
-Canvas::Canvas(int flipYAxis) {
+//Canvas::Canvas(int flipYAxis): windowMin(1,1), windowMax(-1,-1) { // max and min should initially be out of order.
+Canvas::Canvas(int flipYAxis): windowMin(0,0), windowMax(1,1) { 
   
   	// These defaults should be reset by child classes. 				
 	this->lx = 0.0;
@@ -10,8 +11,9 @@ Canvas::Canvas(int flipYAxis) {
 	this->xratio = 1.0;
 	this->yratio = 1.0;
 	this->margin = 15;
-	
+		
 	this->yAxisFlipped = flipYAxis;
+	
 }
 
 void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy, double pageWidth, double pageHeight){
@@ -47,6 +49,13 @@ void Canvas::setMapping( double vminx, double vminy, double vmaxx, double vmaxy)
 
 	this->xratio = (pageWidth  - 2 * (this->margin)) / (vmaxx - this->lx) ;
 	this->yratio = (pageHeight - 2 * (this->margin)) / (vmaxy - this->ly) ;
+	
+	if(this->yAxisFlipped){
+	
+	    this->ly = vmaxy;
+	    this->yratio *= -1;
+	}
+
 }
 
 
@@ -77,25 +86,40 @@ void Canvas::setMapping(const std::vector<triangle> &triangles){
 	setMapping(min->x, min->y, max->x, max->y, width, height);
 }
 
-// void Canvas::flipYAxis(){
-// 
-//     this->yAxisFlipped = 1; 
-//     double ux = this->ly + (pageWidth  - 2 * (this->margin)) / yratio;
-//     this->ly = ux;
-// }
+
+void Canvas::updateMapping(const std::vector<triangle> &triangles){
+
+	optional<point> min = getMinPoint(triangles); //TODO: add boundingBox method for triangle vector
+	optional<point> max = getMaxPoint(triangles);
+	
+	if(this->windowMin.x >  this->windowMax.x){ // first call for this method.
+	
+	    this->windowMin = min.unbox();
+	    this->windowMax = max.unbox();
+	} else {
+	    
+	    this->windowMin.x = (min->x < this->windowMin.x) ? min->x : this->windowMin.x;
+	    this->windowMin.y = (min->y < this->windowMin.y) ? min->y : this->windowMin.y;	    
+	    
+	    this->windowMax.x = (max->x > this->windowMax.x) ? max->x : this->windowMax.x;
+	    this->windowMax.y = (max->y > this->windowMax.y) ? max->y : this->windowMax.y;
+	}
+	
+	printf("Canvas::updateMapping(vector<triangle>):min->x = %lf, min->y= %lf  max->x = %lf,  max->y= %lf\n",min->x, min->y, max->x, max->y);	
+	printf("Canvas::updateMapping(vector<triangle>):windowMin.x = %lf, windowMin.y= %lf  windowMax.x = %lf, windowMax.y= %lf\n",windowMin.x, windowMin.y, windowMax.x, windowMax.y);
+	
+    double width=this->getPageWidth();
+    double height=this->getPageHeight();
+	
+	setMapping(windowMin.x, windowMin.y, windowMax.x, windowMax.y, width, height);
+}
+
 
 
 void Canvas::mapToPage(double x, double y, double &px, double &py){
 
 	px = margin + (x - this->lx) * xratio;
-	
-// 	if(this->yAxisFlipped){
-// 	
-// 	    py = margin + (this->ly - y) * yratio;    
-// 	} else {
-	
-	    py = margin + (y - this->ly) * yratio;
-//	}
+	py = margin + (y - this->ly) * yratio;
 }
 
 int Canvas::hasCorrectExtension(const char * s1, const char * extension){

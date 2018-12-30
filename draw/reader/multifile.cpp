@@ -1,0 +1,188 @@
+#include <iostream>
+#include <stdlib.h>
+#include <vector>
+#include "PDFCanvas.h"
+#include "TIPPList.hpp"
+#include "triangle.h"
+#include "point.h"
+#include "edge.h"
+#include "ListReader.h"
+
+using namespace std;
+
+
+void usage(){
+    cout << "Usage: mfd  { file1.tri [file2.ver] {DARK | LIGHT | OUTLINE} }+" << endl;
+    exit(1);
+}
+
+enum DrawStyle { DARK, LIGHT, OUTLINE, INVALID};
+
+DrawStyle toStyle(string s){
+
+    if(s.compare("DARK") == 0)
+        return DrawStyle::DARK;
+        
+    if(s.compare("LIGHT") == 0)
+        return DrawStyle::LIGHT;
+        
+    if(s.compare("OUTLINE") == 0)
+        return DrawStyle::OUTLINE;
+    
+    return DrawStyle::INVALID;
+}
+
+int hasExtension(const char * s1, const char * extension){
+
+    int len = strlen(s1);
+    int extLen = strlen(extension);
+        
+    return 0 == strncmp(s1 + len - extLen, extension, extLen); 
+}
+
+struct arginfo {
+    
+    string tFileName;
+    string vFileName;
+    
+    DrawStyle style;
+};
+
+vector<arginfo> * parseArgs(int argc, char * argv[]){
+
+    if(argc < 3 )
+        usage();
+
+    vector<arginfo> * v = new vector<arginfo>();
+    arginfo ai;
+    // triplets  tri [ver] style 
+    int i=1;
+    while(i<argc){
+        ai.tFileName.assign(""); 
+        ai.vFileName.assign("");
+        ai.style = DrawStyle::INVALID;
+        
+        if(hasExtension(argv[i],"tri")){
+            ai.tFileName = argv[i];  //std::cerr << ai.tFileName << std::endl;
+            i++;
+        } else {
+            std::cerr << argv[i] << " Expected filename ending in .tri" << std::endl;
+            exit(1);
+        }
+
+        DrawStyle style = toStyle(argv[i]); // maybe didn't specify .ver file?
+        if( DrawStyle::INVALID == style){
+            if( hasExtension(argv[i],"ver")){
+                ai.vFileName=argv[i];
+                i++; 
+            } else {
+                std::cerr << argv[i] << " Expected filename ending in .ver or {DARK | LIGHT | OUTLINE}" << std::endl;
+                exit(1);
+            }
+        }  
+        
+        if( i >= argc){
+        
+            std::cerr << "Missing argument: Expected {DARK | LIGHT | OUTLINE}" << std::endl;
+            exit(1);
+        }
+
+        style = toStyle(argv[i]);
+        if(DrawStyle::INVALID == style){
+            std::cerr << argv[i] << " Expected {DARK | LIGHT | OUTLINE}" << std::endl;
+            exit(1);
+        } else {
+            ai.style = style;  
+            i++;  
+        }
+        
+        v->push_back(ai);
+        std::cerr << "Added arginfo " << std::endl;
+    }
+
+    return v;
+}
+
+// mf  foo.tri [bar.ver] DARK  baz.tri  LIGHT 
+int main(int argc, char * argv[]){
+    
+    vector<arginfo> * v = parseArgs(argc, argv);
+      
+    Canvas *c = new PDFCanvas("multiple files", 1); //flipping y axis
+ 
+    for(arginfo i: *v){
+    
+        ListReader *r;
+        
+        if (i.vFileName.empty()){
+        
+            cerr << "calling ListReader(i.tFileName)" << endl;
+            r = new ListReader(i.tFileName);
+        } else {
+            cerr << "calling ListReader(i.tFileName, i.vFileName)" << endl;
+            r = new ListReader(i.tFileName, i.vFileName);
+        }    
+        r->readTriangles();
+        
+        int numElements=0;    
+        triangle * tarr = r->getTriangleArray(numElements);
+    
+        if(NULL == tarr){
+        
+            cerr << "triangle array is empty." << endl;
+            exit(1);
+        }
+    
+        std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
+    
+        cout << "triangle vector has length " << tvec.size() << endl;
+        cout << "triangle[0] " << tvec[0] << endl;
+     
+        c->updateMapping(tvec);
+   
+        switch(i.style){
+        
+            case DrawStyle::DARK:
+                c->enableFill();
+                c->enableStroke();
+                c->setStrokeWidth(0.01);
+                c->setStrokeColor(0.0 , 0.0, 0.0);
+                c->setFillColor(0.9, 0.9, 1.0);     
+                break;
+            
+            case DrawStyle::LIGHT:
+                c->enableFill();
+                c->enableStroke();
+                c->setStrokeWidth(0.01);
+                c->setFillColor(0.995, 0.995, 0.995);
+                c->setStrokeColor(0.6, 0.6, 0.6);           
+                break;
+
+            case DrawStyle::OUTLINE:
+                c->disableFill();
+                c->enableStroke();
+                c->setStrokeWidth(0.01);
+                c->setStrokeColor(0 , 0, 0);
+                break;
+    
+            default:
+                std::cerr << "Found Illegal style." << std::endl;
+                break;
+        }
+        
+        c->drawTriangles(tvec);
+        
+        delete(r);
+    }  
+    
+    c->saveToFile("reader.pdf");
+    
+	delete c;
+    std::cerr << "main Done." << std::endl;
+
+    return 0;
+     
+}
+
+
+

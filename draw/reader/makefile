@@ -22,13 +22,15 @@ rundark: rd_dark
 runlight: rd_light
 	./rd_light drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/returnAllStoreTriangleIds10.tri drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/fullPointPart.ver
 	open reader.pdf
-	
+
+.PHONY:valgrind	
 valgrind: rd
-	valgrind --track-origins=yes rd
+	valgrind  --undef-value-errors=no ./rd drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/returnAllStoreTriangleIds10.tri drawData/boundaryAndInteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10/fullPointPart.ver
+	#--track-origins=yes
 
 all: rd rd_dark rd_light
 
-rd_dark: libreader.a libcanvas maindark.o 
+rd_dark: libcanvas libreader.a  maindark.o 
 	g++ maindark.o libreader.a ${LIBDIRS}  ${LIBS} -o rd_dark
 
 rd_light: libcanvas libreader.a mainlight.o 
@@ -37,6 +39,13 @@ rd_light: libcanvas libreader.a mainlight.o
 rd: libcanvas libreader.a main.o 
 	g++ main.o libreader.a ${LIBDIRS}  ${LIBS} -o rd
 	# dsymutil rd  #mac
+
+mfd: libcanvas libreader.a multifile.o 
+	g++ multifile.o libreader.a ${LIBDIRS}  ${LIBS} -o mfd
+
+multifile.o: multifile.cpp TIPPList.hpp 
+	g++ $(CPPFLAGS) -c multifile.cpp
+
 
 main.o: main.cpp TIPPList.hpp 
 	g++ $(CPPFLAGS) -c main.cpp

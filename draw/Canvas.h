@@ -34,15 +34,19 @@ class Canvas {
         // of the points contained directly in the triangles.
         void setMapping(const std::vector<triangle> &triangles);
         
-        
-        //void flipYAxis();
+        // Update the mapping between the window space and page space. Computes
+        // the window bounds by finding min and max vertex x and y coordinates
+        // of the points contained directly in the triangles, as well as the
+        // max and min values resulting from previous calls to this method. 
+        void updateMapping(const std::vector<triangle> &triangles);
+      
         
         
         virtual inline void enableFill(){ drawStyle |= FILL;};
         
         virtual void disableFill(){ drawStyle &= ~FILL;};
         
-        virtual void enableStroke() { drawStyle = STROKE;};
+        virtual void enableStroke() { drawStyle |= STROKE;};
         
         virtual void disableStroke(){ drawStyle &= ~STROKE;};
         
@@ -92,6 +96,9 @@ class Canvas {
     protected:
     
     	double lx, ly, xratio, yratio, margin;
+    	
+    	point windowMin, windowMax; 
+    	
     	std::string filename;
 		
 		enum DRAWSTYLE {FILL=1, STROKE=2};

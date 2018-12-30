@@ -43,21 +43,25 @@ inline std::ostream &operator << (std::ostream &str, point const &p){
 template <typename T>
 class optional
 {
-public:
-        optional<T>(T const & type)
-                : valid(true), type(type) { }
-        optional<T>() : valid(false), type(T()) { }
-        T * operator->()
-        {
-                // If we try to access an invalid value, an exception is thrown.
-                if (!valid)
-                        throw std::exception();
+    public:
+        optional<T>(T const & type): valid(true), type(type) { }
+                
+        optional<T>(): valid(false), type(T()) { }
+        
+        T * operator->(){
+            // If we try to access an invalid value, an exception is thrown.
+            if (!valid)
+                throw std::exception();
 
-                return &type;
+            return &type;
         }
+        
+        T & unbox() { return type;}
+        
         // Test for validity.
         bool operator!() const { return !valid; }
-private:
+                
+    private:
         bool valid;
         T type;
 };
