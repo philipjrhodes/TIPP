@@ -39,6 +39,7 @@ class Canvas {
         // of the points contained directly in the triangles, as well as the
         // max and min values resulting from previous calls to this method. 
         void updateMapping(const std::vector<triangle> &triangles);
+        void updateMapping(const std::vector<triangle> *triangles);
       
         
         
@@ -85,6 +86,10 @@ class Canvas {
 			
          virtual void drawTriangles(
             const std::vector<triangle> &triangles)=0;
+            
+          virtual void drawTriangles(
+            const std::vector<triangle> *triangles)=0;
+
         
        
         virtual double getPageWidth()  = 0;

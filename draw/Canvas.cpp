@@ -1,8 +1,8 @@
 #include "Canvas.h"
 #include <string.h>
 
-//Canvas::Canvas(int flipYAxis): windowMin(1,1), windowMax(-1,-1) { // max and min should initially be out of order.
-Canvas::Canvas(int flipYAxis): windowMin(0,0), windowMax(1,1) { 
+Canvas::Canvas(int flipYAxis): windowMin(1,1), windowMax(-1,-1) { // max and min should initially be out of order.
+//Canvas::Canvas(int flipYAxis): windowMin(0,0), windowMax(1,1) { 
   
   	// These defaults should be reset by child classes. 				
 	this->lx = 0.0;
@@ -114,6 +114,10 @@ void Canvas::updateMapping(const std::vector<triangle> &triangles){
 	setMapping(windowMin.x, windowMin.y, windowMax.x, windowMax.y, width, height);
 }
 
+void Canvas::updateMapping(const std::vector<triangle> * triangles){
+    
+    this->updateMapping( *triangles);
+}
 
 
 void Canvas::mapToPage(double x, double y, double &px, double &py){

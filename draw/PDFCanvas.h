@@ -13,11 +13,11 @@ class PDFCanvas: public Canvas {
    public:
    
         PDFCanvas(  
-                        const std::string page_title="",
-                        int flipYAxis=0,    
-                        double lx=0,    double ly=0, 
-                        double ux=1,    double uy=1
-                        );
+            const std::string page_title="",
+            int flipYAxis=0,    
+            double lx=0,    double ly=0, 
+            double ux=1,    double uy=1
+        );
  
         // Color used for interior of shapes.
         virtual void setFillColor(double r, double g, double b);
@@ -54,6 +54,10 @@ class PDFCanvas: public Canvas {
             
         virtual void drawTriangles(
             const std::vector<triangle> &triangles);
+            
+        virtual void drawTriangles(
+            const std::vector<triangle> *triangles);
+
 
         virtual double getPageWidth();
         

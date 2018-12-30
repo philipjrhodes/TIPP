@@ -46,6 +46,8 @@ struct arginfo {
     string vFileName;
     
     DrawStyle style;
+    
+    std::vector<triangle> * triangles;
 };
 
 vector<arginfo> * parseArgs(int argc, char * argv[]){
@@ -61,6 +63,7 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
         ai.tFileName.assign(""); 
         ai.vFileName.assign("");
         ai.style = DrawStyle::INVALID;
+        ai.triangles = NULL;
         
         if(hasExtension(argv[i],"tri")){
             ai.tFileName = argv[i];  //std::cerr << ai.tFileName << std::endl;
@@ -103,43 +106,56 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
     return v;
 }
 
-// mf  foo.tri [bar.ver] DARK  baz.tri  LIGHT 
+// mfd  foo.tri [bar.ver] DARK  baz.tri  LIGHT 
 int main(int argc, char * argv[]){
     
     vector<arginfo> * v = parseArgs(argc, argv);
       
     Canvas *c = new PDFCanvas("multiple files", 1); //flipping y axis
  
-    for(arginfo i: *v){
+    // for each set of files, read the triangles into a vector and
+    // update the Canvas mapping, but don't draw the triangles. We
+    // want to compute the min/max over all the triangles in all
+    // the files before drawing.
+    for(arginfo &i: *v){
     
         ListReader *r;
         
         if (i.vFileName.empty()){
         
-            cerr << "calling ListReader(i.tFileName)" << endl;
+            //cerr << "calling ListReader(i.tFileName)" << endl;
             r = new ListReader(i.tFileName);
         } else {
-            cerr << "calling ListReader(i.tFileName, i.vFileName)" << endl;
+            //cerr << "calling ListReader(i.tFileName, i.vFileName)" << endl;
             r = new ListReader(i.tFileName, i.vFileName);
         }    
         r->readTriangles();
         
         int numElements=0;    
         triangle * tarr = r->getTriangleArray(numElements);
-    
+       
         if(NULL == tarr){
         
             cerr << "triangle array is empty." << endl;
             exit(1);
         }
+                
     
-        std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
+        //std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
+        i.triangles = new std::vector<triangle>(tarr, tarr + numElements);
+        cout << "triangle vector has length " << i.triangles->size() << endl;
+        cout << "triangle[0] " << (*(i.triangles))[0] << endl;
+      
+        c->updateMapping(i.triangles);
+          
+        delete(r);
+    }  
     
-        cout << "triangle vector has length " << tvec.size() << endl;
-        cout << "triangle[0] " << tvec[0] << endl;
-     
-        c->updateMapping(tvec);
-   
+    
+    // Draw the triangles read in the loop above. The canvas will use a mapping derived
+    // from the min/max coordinates computed over all the triangles from all the files.
+    for(arginfo i: *v){
+    
         switch(i.style){
         
             case DrawStyle::DARK:
@@ -170,10 +186,10 @@ int main(int argc, char * argv[]){
                 break;
         }
         
-        c->drawTriangles(tvec);
-        
-        delete(r);
-    }  
+        c->drawTriangles(i.triangles);
+        delete i.triangles; // shallow?
+     }
+    
     
     c->saveToFile("reader.pdf");
     
