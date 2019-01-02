@@ -173,7 +173,7 @@ int main(int argc, char * argv[]){
                 c->enableStroke();
                 c->setStrokeWidth(0.01);
                 c->setFillColor(0.995, 0.995, 0.995);
-                c->setStrokeColor(0.6, 0.6, 0.6);           
+                c->setStrokeColor(0.6, 0.6, 0.6);    // .86 is too light .76 a bit light 
                 break;
 
             case DrawStyle::OUTLINE:
