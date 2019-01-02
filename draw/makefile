@@ -18,7 +18,7 @@ run: dmp nc_inundation_v6c.grd
 	 ./dmp
 	 #open dmpdf.pdf
 
-dmp: dmp.o libcanvas.a adcirc ${READER_DIR}/libreader.a ${TIPP_DIR}/lib/libhpdfs.a
+dmp: ${TIPP_DIR}/lib/libhpdfs.a dmp.o libcanvas.a adcirc ${READER_DIR}/libreader.a 
 	g++ ${CPPFLAGS} dmp.o libcanvas.a ${ADCIRC_DIR}/adcirc.o ${LIBDIRS} ${LIBS} -o dmp 
 
 dmp.o: dmp.cpp Canvas.h PDFCanvas.h ${ADCIRC_DIR}/adcirc.h ${READER_DIR}/point.h ${READER_DIR}/triangle.h
