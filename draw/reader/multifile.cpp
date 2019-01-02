@@ -1,11 +1,13 @@
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
+#include <string.h>
 #include "PDFCanvas.h"
 #include "TIPPList.hpp"
 #include "triangle.h"
 #include "point.h"
 #include "edge.h"
+
 #include "ListReader.h"
 
 using namespace std;
