@@ -30,10 +30,19 @@ void readGridName(std::ifstream &in, std::string &name);
 std::vector<point>  readVertices(std::ifstream &in, int numVertices);
 
 
+
 /** Read the specified number of triangles from the file into a vector. Each triangle is a triplet of
 	vertex indices. Point values will be read from the points vector.
 */
 std::vector<triangle>  readTriangles(std::ifstream &in, int numtriangles, std::vector<point> points);
+
+
+
+
+/** Read the specified number of triangles from the file into a vector. Each triangle is a triplet of
+	vertex indices. points in the vector will have valid Id fields, but invalid x and y coordinates.
+*/
+std::vector<triangle>  readTrianglesAsThreeIds(std::ifstream &in, int numtriangles);
 
 
 #endif

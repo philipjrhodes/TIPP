@@ -147,18 +147,18 @@ void PDFCanvas::drawRect(
 // Uses triangle Ids to index vertices.
 void PDFCanvas::drawTriangles(const std::vector<point> &vertices, const std::vector<triangle> &triangles){
 
-    std::cerr << "drawTriangles()[with vertices]: Not implemented." << std::endl;
-    return;
-//     int numTriangles = triangles.size();
-//     
-//     std::cerr << "drawTriangles(): numTriangles == " << numTriangles << std::endl;
-//     for(int i=0; i< numTriangles; i++){
-//                     
-// 		drawTriangle(	vertices[triangles[i].v0].x, vertices[triangles[i].v0].y, 
-// 						vertices[triangles[i].v1].x, vertices[triangles[i].v1].y,
-// 						vertices[triangles[i].v2].x, vertices[triangles[i].v2].y
-// 					);	
-//     }
+//    std::cerr << "drawTriangles()[vector<point>, vector<triangle>]: Not implemented." << std::endl;
+//    return;
+    int numTriangles = triangles.size();
+    
+    std::cerr << "drawTriangles(): numTriangles == " << numTriangles << std::endl;
+    for(int i=0; i< numTriangles; i++){
+                    
+		drawTriangle(	vertices[triangles[i].p1.Id].x, vertices[triangles[i].p1.Id].y, 
+						vertices[triangles[i].p2.Id].x, vertices[triangles[i].p2.Id].y,
+						vertices[triangles[i].p3.Id].x, vertices[triangles[i].p3.Id].y
+					);	
+    }
 }
 
 // Assumes points within triangle objects are valid.
@@ -176,6 +176,7 @@ void PDFCanvas::drawTriangles(const std::vector<triangle> &triangles){
     }
 }
 
+// Assumes points within triangle objects are valid.
 void PDFCanvas::drawTriangles(const std::vector<triangle> *triangles){
 
     int numTriangles = triangles->size();
