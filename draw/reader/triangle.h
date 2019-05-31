@@ -29,7 +29,7 @@ public:
     double centerY;
     double radius;
 
-    //not delivered yet, will be dilivered for a partition
+    //not delivered yet, will be delivered for a partition
     bool delivered;
 
     triangle(const point &_p1, const point &_p2, const point &_p3);

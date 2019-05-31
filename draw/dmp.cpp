@@ -49,8 +49,9 @@ int main (int argc, char **argv)
 	cout << "numVertices=" << numVertices << "   numTriangles=" << numTriangles << endl;
 
 	std::vector<point> v = readVertices(in, numVertices);
+// 	std::vector<triangle> t = readTrianglesAsThreeIds(in, numTriangles, v);
  	std::vector<triangle> t = readTriangles(in, numTriangles, v);
-
+   
 
 
 
@@ -58,24 +59,25 @@ int main (int argc, char **argv)
  
  	c->setMapping(v);
  	
- 	c->setStrokeColor(1, 0, 0);
- 	c->setFillColor(0.9, 0.9, 1);
- 	c->setStrokeWidth(2.0);
- 	
- 	c->drawRect(200,600, 100,100);
- 	c->drawRect(200,500, 100,100);
- 	c->drawRect(100,500, 100,100);
- 	c->drawRect(100,600, 100,100);
+//  	c->setStrokeColor(1, 0, 0);
+//  	c->setFillColor(0.9, 0.9, 1);
+//  	c->setStrokeWidth(2.0);
+//  	
+//  	c->drawRect(200,600, 100,100);
+//  	c->drawRect(200,500, 100,100);
+//  	c->drawRect(100,500, 100,100);
+//  	c->drawRect(100,600, 100,100);
 
 	c->setStrokeWidth(0.01);
  	
- 	c->enableFill();
- 	c->drawCircle(300,400, 100);
- 	
- 	c->setStrokeColor(0, 0, 0);
- 	c->disableFill();
+//  	c->enableFill();
+//  	c->drawCircle(300,400, 100);
+//  	
+//  	c->setStrokeColor(0, 0, 0);
+//  	c->disableFill();
 
-  	c->drawTriangles(v, t);	
+//  	c->drawTriangles(v, t);	
+    c->drawTriangles(t);
     
 	c->saveToFile("dmpdf.pdf");
 	
