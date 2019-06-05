@@ -1,43 +1,43 @@
 ServerAliveInterval 60 
 
 
-host master, 10.52.0.109
+host master 10.52.0.109
 	Hostname 10.52.0.109 
 	User cc
     IdentityFile ~/.ssh/tipp.pem
 	ForwardAgent yes
 	
-host worker1, 10.52.0.39
+host worker1 10.52.0.39
 	Hostname 10.52.0.39
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker2, 10.52.0.85
+host worker2 10.52.0.85
 	Hostname 10.52.0.85
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker3, 10.52.0.180
+host worker3 10.52.0.180
 	Hostname 10.52.0.180
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker4, 10.52.0.32
+host worker4 10.52.0.32
 	Hostname 10.52.0.32
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker5, 10.52.0.171
+host worker5 10.52.0.171
 	Hostname 10.52.0.171
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker6, 10.52.0.33
+host worker6 10.52.0.33
 	Hostname 10.52.0.33
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
 
-host worker7, 10.52.0.4
+host worker7 10.52.0.4
 	Hostname 10.52.0.4
 	User cc
 	IdentityFile ~/.ssh/tipp.pem
