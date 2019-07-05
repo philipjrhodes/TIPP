@@ -1,0 +1,272 @@
+mpiexec -n 364 -f machinefile -wdir /home/cc/tessinstall/examples/tess ./delaunay 364 -1 512 512 512 2.0 -1.0 -1.0 0 0 del.out
+[0]: Time for round 1 = 42.090078 s
+[0]: Time for round 2 = 51.613706 s
+[0]: Time for round 3 = 53.004001 s
+[0]: Time for round 4 = 52.203970 s
+[0]: Time for round 5 = 50.313963 s
+[0]: Time for round 6 = 51.766083 s
+[0]: Time for round 7 = 53.077204 s
+[0]: Time for round 8 = 50.022731 s
+[0]: Time for round 9 = 51.683737 s
+[0]: Time for round 10 = 49.680155 s
+[0]: Time for round 11 = 49.427605 s
+[0]: Time for round 12 = 53.068544 s
+[0]: Time for round 13 = 48.911018 s
+----------------- global stats ------------------
+particle exchange time        = 0.000 s
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+delaunay computation time     = 656.900 s
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+output time                   = 6.928 s
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+total time                    = 663.937 s
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+All times printed in one row:
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+0.000 656.900 6.928 663.937
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+-------------------------------------------------
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+                     [min, avg, max]:
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+original particles = [378880, 378880, 378880]
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+with ghosts        = [416595, 457464, 477851]
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+tets               = [2805655, 3083676, 3223848]
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+-------------------------------------------------
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+Attempting to use an MPI routine after finalizing MPICH
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   EXIT CODE: 1
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@worker01] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:1@worker01] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:1@worker01] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@worker03] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:3@worker03] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:3@worker03] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@worker06] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:6@worker06] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:6@worker06] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@worker02] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:2@worker02] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:2@worker02] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:4@worker04] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:4@worker04] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:4@worker04] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@worker07] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:7@worker07] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:7@worker07] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@worker05] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:5@worker05] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:5@worker05] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@master] HYDT_bscu_wait_for_completion (./tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@master] HYDT_bsci_wait_for_completion (./tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@master] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:217): launcher returned error waiting for completion
+[mpiexec@master] main (./ui/mpich/mpiexec.c:331): process manager error waiting for completion

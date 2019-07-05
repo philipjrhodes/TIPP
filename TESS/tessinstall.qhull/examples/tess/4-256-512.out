@@ -1,0 +1,79 @@
+mpiexec -n 512 -f machinefile -wdir /home/cc/tessinstall/examples/tess ./delaunay 512 -1 256 256 256 2.0 -1.0 -1.0 0 0 del.out
+[0]: Time for round 1 = 9.744051 s
+[0]: Time for round 2 = 16.579568 s
+[0]: Time for round 3 = 46.557557 s
+[0]: Time for round 4 = 76.494212 s
+[0]: Time for round 5 = 26.396001 s
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x20784a0, flag=0x7fff9c169480, status=0x7fff9c1694e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 257: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x25a1590, flag=0x7fff0b8bcb90, status=0x7fff0b8bcbf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 432: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1eaed80, flag=0x7ffcab5ab1f0, status=0x7ffcab5ab250) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 315: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x145fa20, flag=0x7ffc11ff2f60, status=0x7ffc11ff2fc0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xe06b50, flag=0x7ffc795190b0, status=0x7ffc79519110) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1f43880, flag=0x7fff3ca66de0, status=0x7fff3ca66e40) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 390: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1dfbea0, flag=0x7ffe402f79a0, status=0x7ffe402f7a00) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 1: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1145ad0, flag=0x7fffecd4a4d0, status=0x7fffecd4a530) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 125: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1610df0, flag=0x7ffddf2a4580, status=0x7ffddf2a45e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 193: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xcda740, flag=0x7ffe9da041b0, status=0x7ffe9da04210) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 481: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x26ea180, flag=0x7ffd87d72600, status=0x7ffd87d72660) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 5: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1fa2a20, flag=0x7ffc9cd5c4d0, status=0x7ffc9cd5c530) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 14: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1e01750, flag=0x7ffc708c32b0, status=0x7ffc708c3310) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 166: Connection timed out
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xabd6d0, flag=0x7fff1101ac60, status=0x7fff1101acc0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 78: Connection timed out
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   EXIT CODE: 1
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:0@master] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:0@master] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:0@master] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@worker03] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:3@worker03] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:3@worker03] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@master] HYDT_bscu_wait_for_completion (./tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@master] HYDT_bsci_wait_for_completion (./tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@master] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:217): launcher returned error waiting for completion
+[mpiexec@master] main (./ui/mpich/mpiexec.c:331): process manager error waiting for completion
