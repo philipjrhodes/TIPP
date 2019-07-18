@@ -1,0 +1,16 @@
+largeTestFile.dat
+Writed to largeTestFile.dat successfully with size: 800000000
+Parallel I/O with fileSize: 800000000 (int), processNum: 8, time: 0.335447.2
+Parallel I/O with multi-chunks, chunkSize: 10000000, chunkNum: 10, numProcs: 8, time: 0.022925.2
+largeTestFile.dat
+Writed to largeTestFile.dat successfully with size: 1600000000
+Parallel I/O with fileSize: 1600000000 (int), processNum: 16, time: 0.435045.2
+Parallel I/O with multi-chunks, chunkSize: 10000000, chunkNum: 10, numProcs: 16, time: 0.022247.2
+Parallel I/O with fileSize: 1600000000 (int), processNum: 16, time: 0.419304.2
+Parallel I/O with multi-chunks, chunkSize: 10000000, chunkNum: 10, numProcs: 16, time: 0.026190.2
+largeTestFile.dat
+Writed to largeTestFile.dat successfully with size: -1094967296
+[mpiexec@master] Sending Ctrl-C to processes as requested
+[mpiexec@master] Press Ctrl-C again to force abort
+[mpiexec@master] Sending Ctrl-C to processes as requested
+[mpiexec@master] Press Ctrl-C again to force abort

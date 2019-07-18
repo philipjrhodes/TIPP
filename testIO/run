@@ -1,0 +1,27 @@
+#!/bin/bash
+chunkSize=$1
+fileName=$2
+echo $chunkSize $fileName
+./free.sh
+mpiexec -n 256 -f machinefile ./writeMPI $chunkSize $fileName
+./free.sh
+#mpiexec -n 1 -f machinefile ./readMPIStagedPar $chunkSize 256 $fileName
+./free.sh
+exit
+#mpiexec -n 256 -f machinefile ./readMPI $chunkSize $fileName
+./free.sh
+mpiexec -n 2 -f machinefile ./readMPIStagedPar $chunkSize 128 $fileName
+./free.sh
+mpiexec -n 4 -f machinefile ./readMPIStagedPar $chunkSize 64 $fileName
+./free.sh
+mpiexec -n 8 -f machinefile ./readMPIStagedPar $chunkSize 32 $fileName
+./free.sh
+mpiexec -n 16 -f machinefile ./readMPIStagedPar $chunkSize 16 $filename
+./free.sh
+mpiexec -n 32 -f machinefile ./readMPIStagedPar $chunkSize 8 $fileName
+./free.sh
+mpiexec -n 64 -f machinefile ./readMPIStagedPar $chunkSize 4 $fileName
+./free.sh
+mpiexec -n 128 -f machinefile ./readMPIStagedPar $chunkSize 2 $fileName
+./free.sh
+mpiexec -n 256 -f machinefile ./readMPIStagedPar $chunkSize 1 $fileName

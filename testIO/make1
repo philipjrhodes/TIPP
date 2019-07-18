@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#generate files of bytes containing 0x01. When read as ints, you'll see 16843009  
+
+
+
+dd if=/dev/zero count=1048576 bs=1 | tr "\000" "\001" > 1M 
+
+#dd if=/dev/zero count=1048576 bs=10240 | tr "\000" "\001" > 10G
+
