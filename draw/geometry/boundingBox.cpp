@@ -6,6 +6,12 @@
  boundingBox::boundingBox(point lowPointInput, point highPointInput): lowPoint(lowPointInput), highPoint(highPointInput){}
 
  boundingBox::boundingBox(double lowX, double lowY, double highX, double highY){
+ 
+ 	setBox(lowX,lowY, highX, highY);
+}
+
+void boundingBox::setBox(double lowX, double lowY, double highX, double highY){
+
 	lowPoint.setX(lowX);
 	lowPoint.setY(lowY);
 	highPoint.setX(highX);
@@ -20,11 +26,11 @@
 	highPoint = pointInput;
 }
 
- point boundingBox::getLowPoint(){
+const point boundingBox::getLowPoint() const {
 	return lowPoint;
 }
 
- point boundingBox::getHighPoint(){
+const point boundingBox::getHighPoint()const{
 	return highPoint;
 }
 

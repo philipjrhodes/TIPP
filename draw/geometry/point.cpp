@@ -30,11 +30,11 @@ void point::set(point pInput){
 
 }
 
-double point::getX(){
+double point::getX() const{
 	return x;
 }
 
-double point::getY(){
+double point::getY()const{
 	return y;
 }
 

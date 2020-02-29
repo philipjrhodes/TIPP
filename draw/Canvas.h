@@ -90,7 +90,9 @@ class Canvas {
           virtual void drawTriangles(
             const std::vector<triangle> *triangles)=0;
 
-        
+          virtual void drawQuads(
+            const std::vector<boundingBox> *quads)=0;
+       
        
         virtual double getPageWidth()  = 0;
         virtual double getPageHeight() = 0;

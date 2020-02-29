@@ -134,7 +134,48 @@ void ListReader::readTriangles(){
 }
 
 
+void ListReader::setQuadsFileName(std::string qFileName){
 
+	quadFileName = qFileName;
+}
+
+void ListReader::readQuads(){
+
+	FILE * qFile = fopen(quadFileName.c_str(), "r");
+	
+	if( qFile == NULL){
+	
+		std::cerr << "could not open quadfile: "<< quadFileName << std::endl;
+		exit(1);
+	}
+	
+	double lx,ux, ly, uy;
+	int numQuads =0;
+	
+	quads = new std::vector<boundingBox>();
+	boundingBox box;
+	
+	while ( 4 == fscanf(qFile, "%lf %lf %lf %lf", &lx, &ly, &ux, &uy)){
+	
+	
+		box.setBox(lx, ly, ux, uy);
+		quads->push_back(box);
+
+		printf("Quad %d: %lf %lf %lf %lf\n",numQuads, lx, ly, ux, uy);
+
+		numQuads++;
+		
+	}
+
+	fclose(qFile);
+
+}
+
+
+std::vector<boundingBox> * ListReader::getQuadList(){
+
+	return quads;
+}
 
 
 // Read triangles that were written as triplets of indices, along with a separate vertex file.

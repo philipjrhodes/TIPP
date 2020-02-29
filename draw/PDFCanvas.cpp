@@ -2,6 +2,7 @@
 #include "hpdf.h"
 #include "point.h"
 #include "triangle.h"
+#include "boundingBox.h"
 
 #include <vector>
 #include <string>
@@ -189,6 +190,30 @@ void PDFCanvas::drawTriangles(const std::vector<triangle> *triangles){
                         (*triangles)[i].p3.x, (*triangles)[i].p3.y
                     );  
     }
+}
+
+
+void PDFCanvas::drawQuads(const std::vector<boundingBox> *quads){
+    int numQuads = quads->size();
+    
+    std::cerr << "drawQuads(): numQuads == " << numQuads << std::endl;
+    for(int i=0; i< numQuads; i++){
+         
+         const point lowPoint = (*quads)[i].getLowPoint(); 
+         const point highPoint = (*quads)[i].getHighPoint();      
+         
+         double width = highPoint.x - lowPoint.x;
+         double height= highPoint.y - lowPoint.y;        
+                    
+        printf("Rect: %lf %lf %lf %lf\n", lowPoint.x, lowPoint.y, width, height);         
+         drawRect(	lowPoint.x, lowPoint.y, 
+					width,
+					height
+                 );  
+    }
+
+
+
 }
 
 
