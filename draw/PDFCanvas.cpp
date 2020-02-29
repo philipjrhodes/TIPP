@@ -205,7 +205,7 @@ void PDFCanvas::drawQuads(const std::vector<boundingBox> *quads){
          double width = highPoint.x - lowPoint.x;
          double height= highPoint.y - lowPoint.y;        
                     
-        printf("Rect: %lf %lf %lf %lf\n", lowPoint.x, lowPoint.y, width, height);         
+         printf("Rect: %lf %lf %lf %lf\n", lowPoint.x, lowPoint.y, width, height);         
          drawRect(	lowPoint.x, lowPoint.y, 
 					width,
 					height
