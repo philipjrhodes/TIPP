@@ -200,7 +200,7 @@ bool triangle::intersect(boundingBox bBox){
 }
 
 //check the circumcircle of this triangle stay inside the boundingbox or not
-bool triangle::inside(boundingBox bBox){
+bool triangle::inside(boundingBox bBox) {
 	//boundingbox
 	double farBoundingBoxX = bBox.getHighPoint().getX();
 	double nearBoundingBoxX = bBox.getLowPoint().getX();

@@ -8,6 +8,7 @@
 #include "point.h"
 #include "triangle.h"
 #include "hpdf.h"
+#include "boundingBox.h"
 
 class PDFCanvas: public Canvas {
    public:
@@ -57,6 +58,9 @@ class PDFCanvas: public Canvas {
             
         virtual void drawTriangles(
             const std::vector<triangle> *triangles);
+
+        virtual void drawQuads(
+            const std::vector<boundingBox> *quads);
 
 
         virtual double getPageWidth();

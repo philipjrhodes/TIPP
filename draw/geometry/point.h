@@ -26,8 +26,8 @@ public:
 	void setId(unsigned long long id);
 	unsigned long long getId();
 
-	double getX();
-	double getY();
+	double getX() const;
+	double getY() const;
 	bool operator == (point p);
 };
 

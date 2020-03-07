@@ -19,11 +19,13 @@ public:
 	 boundingBox(point lowPointInput, point highPointInput);
 	 boundingBox(double lowX, double lowY, double highX, double highY);
 	 boundingBox(){};
+	 
+	 void setBox(double lowX, double lowY, double highX, double highY);
 
 	 void setLowPoint(point pointInput);
 	 void setHighPoint(point pointInput);
-	 point getLowPoint();
-	 point getHighPoint();
+	 const point getLowPoint() const;
+	 const point getHighPoint() const;
 };
 
 #endif
