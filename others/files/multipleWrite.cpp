@@ -62,7 +62,7 @@ int main(int argc, char **argv){
 	int intArr[] = {0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0};
 	int intNum = 20;
 	int offset=0;
-	int numInts2write=19;
+	int numInts2write=16;
 	
 	writeInt(intArr, intNum, offset, "test.dat");
     std::cout<<"After first write, file offset is: "<<offset<<"\n";
