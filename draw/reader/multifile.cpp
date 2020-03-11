@@ -168,6 +168,7 @@ int main(int argc, char * argv[]){
         	
         	
         	i.quads=r->getQuadList();
+        	c->updateMapping(i.quads);
         }
           
         delete(r);
@@ -208,7 +209,7 @@ int main(int argc, char * argv[]){
                 break;
         }
         
-        //c->drawTriangles(i.triangles);
+        c->drawTriangles(i.triangles);
  		c->drawQuads(i.quads);
  		
         delete i.triangles; // shallow?

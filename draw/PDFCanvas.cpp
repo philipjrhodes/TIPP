@@ -140,7 +140,13 @@ void PDFCanvas::drawRect(
     double width,
     double height){
 
-        HPDF_Page_Rectangle(this->page, xmin, ymin, width, height);
+        double px, py;
+        double pwidth, pheight;
+        
+        mapToPage(xmin, ymin, px, py);
+        mapDimensionsToPage(width, height, pwidth, pheight);
+
+        HPDF_Page_Rectangle(this->page, px, py, pwidth, pheight);
         
         strokefill();
 }

@@ -40,7 +40,26 @@ class Canvas {
         // max and min values resulting from previous calls to this method. 
         void updateMapping(const std::vector<triangle> &triangles);
         void updateMapping(const std::vector<triangle> *triangles);
-      
+ 
+        // Update the mapping between the window space and page space. Computes
+        // the window bounds by finding min and max vertex x and y coordinates
+        // of the points contained directly in the quads, as well as the
+        // max and min values resulting from previous calls to this method. 
+        void updateMapping(const std::vector<boundingBox> &quads);
+        void updateMapping(const std::vector<boundingBox> *quads);
+
+         // Update the mapping between the window space and page space. Computes
+        // the window bounds by finding min and max vertex x and y coordinates
+        // of the points contained directly in the boundingBox, as well as the
+        // max and min values resulting from previous calls to this method. 
+        void updateMapping(boundingBox box);
+ 
+        // Update the mapping between the window space and page space. Computes
+        // the window bounds by finding min and max vertex x and y coordinates
+        // of the argument points, as well as the
+        // max and min values resulting from previous calls to this method. 
+        void updateMapping(const point min, const point max);
+ 
         
         
         virtual inline void enableFill(){ drawStyle |= FILL;};
@@ -115,6 +134,8 @@ class Canvas {
     	int yAxisFlipped = 0;
 
 		void mapToPage(double x, double y, double &px, double &py);
+		
+		void mapDimensionsToPage(double width, double height, double &pwidth, double &pheight);
 		
 		int hasCorrectExtension(const char * s1, const char * extension);
 		
