@@ -186,6 +186,9 @@ void PDFCanvas::drawTriangles(const std::vector<triangle> &triangles){
 // Assumes points within triangle objects are valid.
 void PDFCanvas::drawTriangles(const std::vector<triangle> *triangles){
 
+    if (NULL == triangles)
+        return;
+
     int numTriangles = triangles->size();
     
     std::cerr << "drawTriangles()[flattened triangles *]: numTriangles == " << numTriangles << std::endl;
@@ -200,6 +203,10 @@ void PDFCanvas::drawTriangles(const std::vector<triangle> *triangles){
 
 
 void PDFCanvas::drawQuads(const std::vector<boundingBox> *quads){
+    
+    if (NULL == quads)
+        return;
+            
     int numQuads = quads->size();
     
     std::cerr << "drawQuads(): numQuads == " << numQuads << std::endl;
