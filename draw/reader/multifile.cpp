@@ -69,12 +69,16 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
         ai.qFileName.assign("");
         ai.style = DrawStyle::INVALID;
         ai.triangles = NULL;
+        ai.quads = NULL;
         
         if(hasExtension(argv[i],"tri")){
             ai.tFileName = argv[i];  //std::cerr << ai.tFileName << std::endl;
             i++;
+        } else if(hasExtension(argv[i],"quad")) {
+            ai.qFileName = argv[i];
+            i++;
         } else {
-            std::cerr << argv[i] << " Expected filename ending in .tri" << std::endl;
+            std::cerr << argv[i] << " Expected filename ending in .tri or .quad" << std::endl;
             exit(1);
         }
 
@@ -84,16 +88,20 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
                 ai.vFileName=argv[i];
                 i++; 
             } else {
-            	// quad file?
-            	if(hasExtension(argv[i],"quad")){
-					ai.qFileName=argv[i];
-                	i++; 
-            	} else {
-            		// something's wrong
-                	std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE}" << std::endl;
-                	exit(1);
-                }
+                std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE}" << std::endl;
+                exit(1);
             }
+ //            else {
+//             	// quad file?
+//             	if(hasExtension(argv[i],"quad")){
+// 					ai.qFileName=argv[i];
+//                 	i++; 
+//             	} else {
+//             		// something's wrong
+//                 	std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE}" << std::endl;
+//                 	exit(1);
+//                 }
+//             }
         }  
         
         if( i >= argc){
@@ -134,48 +142,55 @@ int main(int argc, char * argv[]){
     
         ListReader *r;
         
-        if (i.vFileName.empty()){
+        if (!i.tFileName.empty()) {
         
-            //cerr << "calling ListReader(i.tFileName)" << endl;
-            r = new ListReader(i.tFileName);
-        }  else {
-            //cerr << "calling ListReader(i.tFileName, i.vFileName)" << endl;
-            r = new ListReader(i.tFileName, i.vFileName);
-        }    
-        r->readTriangles();
+            if(i.vFileName.empty()){
+            
+                r = new ListReader(i.tFileName);
+            } else {
         
-        int numElements=0;    
-        triangle * tarr = r->getTriangleArray(numElements);
+                r = new ListReader(i.tFileName, i.vFileName);
+            }
+ 
+            r->readTriangles();
+        
+            int numElements=0;    
+            triangle * tarr = r->getTriangleArray(numElements);
        
-        if(NULL == tarr){
+            if(NULL == tarr){
         
-            cerr << "triangle array is empty." << endl;
-            exit(1);
-        }
+                cerr << "triangle array is empty." << endl;
+                exit(1);
+            }
                 
     
-        //std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
-        i.triangles = new std::vector<triangle>(tarr, tarr + numElements);
-        cout << "triangle vector has length " << i.triangles->size() << endl;
-        cout << "triangle[0] " << (*(i.triangles))[0] << endl;
+            //std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
+            i.triangles = new std::vector<triangle>(tarr, tarr + numElements);
+            cout << "triangle vector has length " << i.triangles->size() << endl;
+            cout << "triangle[0] " << (*(i.triangles))[0] << endl;
       
-        c->updateMapping(i.triangles);
+            c->updateMapping(i.triangles);
+             
+        } else if (!i.qFileName.empty()){
         
-        if (! i.qFileName.empty()){ // we've got quads
-        	std::cerr << "quadfilename: "<< i.qFileName << std::endl;
+            r = new ListReader(i.qFileName);
+            
+            std::cerr << "quadfilename: "<< i.qFileName << std::endl;
         	r->setQuadsFileName(i.qFileName);
         	r->readQuads();
-        	
-        	
+         	
         	i.quads=r->getQuadList();
         	c->updateMapping(i.quads);
+
+        } else {
+            usage();
         }
           
         delete(r);
     }  
     
     
-    // Draw the triangles read in the loop above. The canvas will use a mapping derived
+    // Draw the triangles/quds read in the loop above. The canvas will use a mapping derived
     // from the min/max coordinates computed over all the triangles from all the files.
     for(arginfo i: *v){
     
@@ -212,7 +227,8 @@ int main(int argc, char * argv[]){
         c->drawTriangles(i.triangles);
  		c->drawQuads(i.quads);
  		
-        delete i.triangles; // shallow?
+        if (i.triangles)
+            delete i.triangles; // shallow?
         
         if (i.quads)
         	delete i.quads;

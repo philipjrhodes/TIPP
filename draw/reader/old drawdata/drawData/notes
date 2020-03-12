@@ -1,0 +1,8 @@
+activeCoarsePartition-10   figure 10 c ?
+activeCoarsePartitions      10 b ?
+boundary&InteriorTriangles-of-fourActiveSubPartitions-of-coarsePartition10   10d?
+fourActiveSubPartitions-of-coarsePartition10  10 e?
+initTrianglesDomain 10a
+initTrianglesForAllCoarsePartitions 10b
+interior&BoundaryTriangle-of-coarsePartition10 10f
+

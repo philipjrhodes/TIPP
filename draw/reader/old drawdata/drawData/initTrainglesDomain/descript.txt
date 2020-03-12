@@ -1,0 +1,3 @@
+figure 7a in editing paper
+The content includes all coordinates (double) of many init triangles of the domain: [x1 y1 x2 y2 x3 y3] [x1 y1 x2 y2 x3 y3] ...
+The range of xk, yk is in [0..1]
