@@ -62,13 +62,14 @@ class Canvas {
  
         
         
-        virtual inline void enableFill(){ drawStyle |= FILL;};
+        virtual inline void enableFill(){ drawAction |= FILL;};
         
-        virtual void disableFill(){ drawStyle &= ~FILL;};
+        virtual void disableFill(){ drawAction &= ~FILL;};
         
-        virtual void enableStroke() { drawStyle |= STROKE;};
+        virtual void enableStroke() { drawAction |= STROKE;};
         
-        virtual void disableStroke(){ drawStyle &= ~STROKE;};
+        virtual void disableStroke(){ drawAction &= ~STROKE;};
+        
         
 
 		// Color used for interior of shapes.
@@ -78,7 +79,11 @@ class Canvas {
     	virtual void setStrokeColor(double r, double g, double b)=0;
  
  		//Width of lines
- 		virtual void setStrokeWidth(double w)=0;  		
+ 		virtual void setStrokeWidth(double w)=0;
+ 		
+ 		//dashed stroke
+ 		virtual void setDashed(int dashed)=0;
+ 		  		
     		
 		virtual void drawTriangle(
 			double        x0,
@@ -127,9 +132,9 @@ class Canvas {
     	
     	std::string filename;
 		
-		enum DRAWSTYLE {FILL=1, STROKE=2};
+		enum DRAW_ACTION {FILL=1, STROKE=2};
 
-		int drawStyle=STROKE;
+		int drawAction=STROKE;
     	
     	int yAxisFlipped = 0;
 

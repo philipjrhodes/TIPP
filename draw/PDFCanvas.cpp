@@ -76,7 +76,7 @@ void PDFCanvas::setStrokeColor(double r, double g, double b){
 
 void PDFCanvas::strokefill(){
 
-    switch(drawStyle){
+    switch(drawAction){
         
         case FILL:
             HPDF_Page_Fill(this->page);
@@ -89,9 +89,9 @@ void PDFCanvas::strokefill(){
         case FILL|STROKE:
             HPDF_Page_FillStroke(this->page);
             break;
-            
+                
         default:
-            std::cerr << "invalid drawStyle\n" << std::endl;    
+            std::cerr << "invalid drawAction\n" << std::endl;    
     }       
 }
 
@@ -99,6 +99,21 @@ void PDFCanvas::setStrokeWidth(double w){
 
     HPDF_Page_SetLineWidth (this->page, w);
 }
+
+
+
+void PDFCanvas::setDashed(int dashed){
+
+    HPDF_UINT16 pattern[2]={7,7};
+
+    if (dashed)      
+        HPDF_Page_SetDash(this->page,pattern, 2, 2);
+    else
+        HPDF_Page_SetDash(this->page,NULL, 0, 0);
+}
+
+
+
 
 void PDFCanvas::drawTriangle(
     double        x0,
@@ -128,7 +143,7 @@ void PDFCanvas::drawCircle(
     double cx,
     double cy,
     double r){
-
+        //TODO: needs mapping to page
         HPDF_Page_Circle(this->page, cx, cy, r);
         
         strokefill();

@@ -18,7 +18,7 @@ void usage(){
     exit(1);
 }
 
-enum DrawStyle { DARK, LIGHT, OUTLINE, INVALID};
+enum DrawStyle { DARK, LIGHT, OUTLINE, RED, INVALID};
 
 DrawStyle toStyle(string s){
 
@@ -30,7 +30,10 @@ DrawStyle toStyle(string s){
         
     if(s.compare("OUTLINE") == 0)
         return DrawStyle::OUTLINE;
-    
+ 
+    if(s.compare("RED") == 0)
+        return DrawStyle::RED;
+   
     return DrawStyle::INVALID;
 }
 
@@ -88,31 +91,20 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
                 ai.vFileName=argv[i];
                 i++; 
             } else {
-                std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE}" << std::endl;
+                std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE | RED}" << std::endl;
                 exit(1);
             }
- //            else {
-//             	// quad file?
-//             	if(hasExtension(argv[i],"quad")){
-// 					ai.qFileName=argv[i];
-//                 	i++; 
-//             	} else {
-//             		// something's wrong
-//                 	std::cerr << argv[i] << " Expected filename ending in .ver or .quad or {DARK | LIGHT | OUTLINE}" << std::endl;
-//                 	exit(1);
-//                 }
-//             }
         }  
         
         if( i >= argc){
         
-            std::cerr << "Missing argument: Expected {DARK | LIGHT | OUTLINE}" << std::endl;
+            std::cerr << "Missing argument: Expected {DARK | LIGHT | OUTLINE | RED}" << std::endl;
             exit(1);
         }
 
         style = toStyle(argv[i]);
         if(DrawStyle::INVALID == style){
-            std::cerr << argv[i] << " Expected {DARK | LIGHT | OUTLINE}" << std::endl;
+            std::cerr << argv[i] << " Expected {DARK | LIGHT | OUTLINE | RED}" << std::endl;
             exit(1);
         } else {
             ai.style = style;  
@@ -162,9 +154,7 @@ int main(int argc, char * argv[]){
                 cerr << "triangle array is empty." << endl;
                 exit(1);
             }
-                
-    
-            //std::vector<triangle> tvec (tarr, tarr + numElements); // make a vector from the array.
+
             i.triangles = new std::vector<triangle>(tarr, tarr + numElements);
             cout << "triangle vector has length " << i.triangles->size() << endl;
             cout << "triangle[0] " << (*(i.triangles))[0] << endl;
@@ -190,7 +180,7 @@ int main(int argc, char * argv[]){
     }  
     
     
-    // Draw the triangles/quds read in the loop above. The canvas will use a mapping derived
+    // Draw the triangles/quads read in the loop above. The canvas will use a mapping derived
     // from the min/max coordinates computed over all the triangles from all the files.
     for(arginfo i: *v){
     
@@ -202,6 +192,7 @@ int main(int argc, char * argv[]){
                 c->setStrokeWidth(0.01);
                 c->setStrokeColor(0.0 , 0.0, 0.0);
                 c->setFillColor(0.9, 0.9, 1.0);     
+                c->setDashed(0);
                 break;
             
             case DrawStyle::LIGHT:
@@ -210,6 +201,7 @@ int main(int argc, char * argv[]){
                 c->setStrokeWidth(0.01);
                 c->setFillColor(0.995, 0.995, 0.995);
                 c->setStrokeColor(0.6, 0.6, 0.6);    // .86 is too light .76 a bit light 
+                c->setDashed(0);
                 break;
 
             case DrawStyle::OUTLINE:
@@ -217,8 +209,17 @@ int main(int argc, char * argv[]){
                 c->enableStroke();
                 c->setStrokeWidth(0.01);
                 c->setStrokeColor(0 , 0, 0);
+                c->setDashed(0);
                 break;
-    
+
+            case DrawStyle::RED:
+                c->disableFill();
+                c->enableStroke();
+                c->setStrokeWidth(0.01);
+                c->setStrokeColor(1 , 0, 0);
+                c->setDashed(1);
+                break;
+   
             default:
                 std::cerr << "Found Illegal style." << std::endl;
                 break;

@@ -29,6 +29,9 @@ class PDFCanvas: public Canvas {
         //Width of lines. Initially 0.01
         virtual void setStrokeWidth(double w);          
 
+        //virtual void enableDashedStroke();
+        
+        virtual void setDashed(int dashed);
         
         virtual void drawTriangle(
             double        x0,
