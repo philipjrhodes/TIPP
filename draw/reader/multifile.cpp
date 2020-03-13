@@ -13,6 +13,8 @@
 using namespace std;
 
 
+int drawGrid = 0;
+
 void usage(){
     cout << "Usage: mfd  { file1.tri [file2.ver][file3.quad]  {DARK | LIGHT | OUTLINE} }+" << endl;
     exit(1);
@@ -66,6 +68,18 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
     arginfo ai;
     // triplets  tri [ver] [quad] style 
     int i=1;
+    
+    // check for -grid
+    string gridswitch("-grid");
+    
+    if(gridswitch.compare(argv[1]) == 0){
+        
+        std::cerr << "grid specified" << std::endl;
+        drawGrid=1;
+        i++;
+    }
+    
+    
     while(i<argc){
         ai.tFileName.assign(""); 
         ai.vFileName.assign("");
@@ -126,8 +140,8 @@ int main(int argc, char * argv[]){
     Canvas *c = new PDFCanvas("multiple files", 1); //flipping y axis
     
  
-    // for each set of files, read the triangles into a vector and
-    // update the Canvas mapping, but don't draw the triangles. We
+    // for each set of files, read the shapes into a vector and
+    // update the Canvas mapping, but don't draw the shapes. We
     // want to compute the min/max over all the triangles in all
     // the files before drawing.
     for(arginfo &i: *v){
@@ -227,6 +241,7 @@ int main(int argc, char * argv[]){
         
         c->drawTriangles(i.triangles);
  		c->drawQuads(i.quads);
+ 		
  		
         if (i.triangles)
             delete i.triangles; // shallow?

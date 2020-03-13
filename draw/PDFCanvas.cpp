@@ -104,10 +104,10 @@ void PDFCanvas::setStrokeWidth(double w){
 
 void PDFCanvas::setDashed(int dashed){
 
-    HPDF_UINT16 pattern[2]={7,7};
+    HPDF_UINT16 pattern[]={3};
 
     if (dashed)      
-        HPDF_Page_SetDash(this->page,pattern, 2, 2);
+        HPDF_Page_SetDash(this->page,pattern, 1, 1);
     else
         HPDF_Page_SetDash(this->page,NULL, 0, 0);
 }
@@ -143,8 +143,13 @@ void PDFCanvas::drawCircle(
     double cx,
     double cy,
     double r){
-        //TODO: needs mapping to page
-        HPDF_Page_Circle(this->page, cx, cy, r);
+
+        double px, py, pr;
+        
+        mapToPage(cx, cy, px, py);
+        mapRadiusToPage(r, pr); // FIXME
+        
+        HPDF_Page_Circle(this->page, cx, cy, pr);
         
         strokefill();
 }

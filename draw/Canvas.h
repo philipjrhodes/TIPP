@@ -142,6 +142,8 @@ class Canvas {
 		
 		void mapDimensionsToPage(double width, double height, double &pwidth, double &pheight);
 		
+		void mapRadiusToPage(double dim, double &pdim);
+		
 		int hasCorrectExtension(const char * s1, const char * extension);
 		
 		virtual void copyNameWithExtension(std::string fname, std::string extension);

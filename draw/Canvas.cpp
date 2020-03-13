@@ -191,6 +191,15 @@ void Canvas::mapDimensionsToPage(double width, double height, double &pwidth, do
 }
 
 
+void Canvas::mapRadiusToPage(double dim, double &pdim){
+
+    //FIXME: we assume xratio and yratio are the same.
+	pdim =  dim * xratio;
+}
+
+
+
+
 int Canvas::hasCorrectExtension(const char * s1, const char * extension){
 
     int len = strlen(s1);
