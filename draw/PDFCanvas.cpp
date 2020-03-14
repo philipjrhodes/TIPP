@@ -97,7 +97,7 @@ void PDFCanvas::strokefill(){
 
 void PDFCanvas::setStrokeWidth(double w){
 
-    HPDF_Page_SetLineWidth (this->page, w);
+   HPDF_Page_SetLineWidth (this->page, w);   
 }
 
 
@@ -152,6 +152,34 @@ void PDFCanvas::drawCircle(
         HPDF_Page_Circle(this->page, cx, cy, pr);
         
         strokefill();
+}
+
+void PDFCanvas::drawGrid(){
+
+    double px, py;
+    
+    drawRect(0.004,0.004, 0.992,0.992);
+    
+    for(int i=1; i<4; i++){
+    
+        mapToPage(i * 0.25, 0, px, py);
+        HPDF_Page_MoveTo(this->page, px, py);
+        
+        mapToPage(i * 0.25, 1, px, py);
+        HPDF_Page_LineTo(this->page, px, py);
+        
+        mapToPage(0, i * 0.25, px, py);
+        HPDF_Page_MoveTo(this->page, px, py);
+
+        mapToPage(1, i * 0.25, px, py);
+        HPDF_Page_LineTo(this->page, px, py);
+       
+        
+        
+    }
+    strokefill();
+
+
 }
 
 void PDFCanvas::drawRect(

@@ -64,7 +64,8 @@ class PDFCanvas: public Canvas {
 
         virtual void drawQuads(
             const std::vector<boundingBox> *quads);
-
+        
+        virtual void drawGrid();
 
         virtual double getPageWidth();
         

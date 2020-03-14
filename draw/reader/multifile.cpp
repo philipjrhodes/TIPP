@@ -132,6 +132,54 @@ vector<arginfo> * parseArgs(int argc, char * argv[]){
     return v;
 }
 
+
+void setDrawStyle(Canvas * c,  DrawStyle style){
+
+    switch(style){
+    
+        case DrawStyle::DARK:
+            c->enableFill();
+            c->enableStroke();
+            c->setStrokeWidth(0.01);
+            c->setStrokeColor(0.0 , 0.0, 0.0);
+            c->setFillColor(0.9, 0.9, 1.0);     
+            c->setDashed(0);
+            break;
+        
+        case DrawStyle::LIGHT:
+            c->enableFill();
+            c->enableStroke();
+            c->setStrokeWidth(0.01);
+            c->setFillColor(0.995, 0.995, 0.995);
+            c->setStrokeColor(0.6, 0.6, 0.6);    // .86 is too light .76 a bit light 
+            c->setDashed(0);
+            break;
+
+        case DrawStyle::OUTLINE:
+            c->disableFill();
+            c->enableStroke();
+            c->setStrokeWidth(0.01);
+            c->setStrokeColor(0 , 0, 0);
+            c->setDashed(0);
+            break;
+
+        case DrawStyle::RED:
+            c->disableFill();
+            c->enableStroke();
+            c->setStrokeWidth(2);
+            c->setStrokeColor(1 , 0, 0);
+            c->setDashed(1);
+            break;
+
+        default:
+            std::cerr << "Found Illegal style." << std::endl;
+            break;
+    }
+
+
+}
+
+
 // mfd  foo.tri [bar.ver] DARK  baz.tri  LIGHT 
 int main(int argc, char * argv[]){
     
@@ -195,53 +243,18 @@ int main(int argc, char * argv[]){
     
     
     // Draw the triangles/quads read in the loop above. The canvas will use a mapping derived
-    // from the min/max coordinates computed over all the triangles from all the files.
+    // from the min/max coordinates computed over all the shapes from all the files.
     for(arginfo i: *v){
-    
-        switch(i.style){
-        
-            case DrawStyle::DARK:
-                c->enableFill();
-                c->enableStroke();
-                c->setStrokeWidth(0.01);
-                c->setStrokeColor(0.0 , 0.0, 0.0);
-                c->setFillColor(0.9, 0.9, 1.0);     
-                c->setDashed(0);
-                break;
             
-            case DrawStyle::LIGHT:
-                c->enableFill();
-                c->enableStroke();
-                c->setStrokeWidth(0.01);
-                c->setFillColor(0.995, 0.995, 0.995);
-                c->setStrokeColor(0.6, 0.6, 0.6);    // .86 is too light .76 a bit light 
-                c->setDashed(0);
-                break;
-
-            case DrawStyle::OUTLINE:
-                c->disableFill();
-                c->enableStroke();
-                c->setStrokeWidth(0.01);
-                c->setStrokeColor(0 , 0, 0);
-                c->setDashed(0);
-                break;
-
-            case DrawStyle::RED:
-                c->disableFill();
-                c->enableStroke();
-                c->setStrokeWidth(0.01);
-                c->setStrokeColor(1 , 0, 0);
-                c->setDashed(1);
-                break;
-   
-            default:
-                std::cerr << "Found Illegal style." << std::endl;
-                break;
-        }
+        setDrawStyle(c, i.style);
         
         c->drawTriangles(i.triangles);
  		c->drawQuads(i.quads);
  		
+ 		if (drawGrid){
+ 		    setDrawStyle(c, DrawStyle::RED);
+ 		    c->drawGrid();
+ 		}
  		
         if (i.triangles)
             delete i.triangles; // shallow?
