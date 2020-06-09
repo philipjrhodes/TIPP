@@ -1,0 +1,17 @@
+- Multiple master
+
+- demo for visualization
+
+
+
+
+
+- The init Delaunay Triangle is improved similar to the DT of slave nodes
+- Triangulate on MPI master node run in sequential (serial)
+- Parallel I/O shared file
+
+- Nunmber of tasks depend on number of cores. (send streaming)
+For example: if I have 1000 tasks but 500 cores are available,
+then I have to send 500 tasks first, then send 500 later.
+
+- There is one more parameter in r3.sh

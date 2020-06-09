@@ -1,0 +1,445 @@
+Number of initial points: 1280
+Total number of points in domain: 10060
+Number of grid points (not include 4 corners): 60
+Time for loadInitPoints() is 0.40641
+Time for initTriangulate() is 0.0994351
+Time for triangleTransform() is 0.000448942
+====================================================
+[[[[[[[[list of current coarse active partitions: [ 0  2  8  10 ]
+----------------stage: 1-------------------
+Number of current active partitions: 4
+Number of active partitions leftover: 0
+<<<<<<<list of current fine active partitions of coarse partition 0 is [ 1  7  8  15 ]
+<<<<<<<list of current fine active partitions of coarse partition 10 is [ 0  2  8  10 ]
+Number of active partitions: 4
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 8 is [ 1  3  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 0  2  8  10 ]
+Number of active partitions: 4
+coarsePartId = 0, finePartId = 1, rank = 0, storeTriangleSize: 30, triangleSize: 28, tempTriangleSize: 33, bad triangles:0, from node master
+coarsePartId = 0, finePartId = 8, rank = 2, storeTriangleSize: 43, triangleSize: 29, tempTriangleSize: 42, bad triangles:0, from node slave2
+coarsePartId = 0, finePartId = 7, rank = 1, storeTriangleSize: 38, triangleSize: 16, tempTriangleSize: 35, bad triangles:0, from node slave1coarsePartId = 0, finePartId = 15, rank = 3, storeTriangleSize: 47, triangleSize: 24, tempTriangleSize: 38, bad triangles:0, from node master
+
+coarsePartId = 10, finePartId = 0, rank = 0, storeTriangleSize: 35, triangleSize: 22, tempTriangleSize: 35, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 10, rank = 3, storeTriangleSize: 47, triangleSize: 28, tempTriangleSize: 35, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 2, rank = 1, storeTriangleSize: 43, triangleSize: 23, tempTriangleSize: 36, bad triangles:0, from node slave1
+coarsePartId = 10, finePartId = 8, rank = 2, storeTriangleSize: 45, triangleSize: 26, tempTriangleSize: 40, bad triangles:0, from node slave2
+coarsePartId = 2, finePartId = 0, rank = 0, storeTriangleSize: 47, triangleSize: 23, tempTriangleSize: 40, bad triangles:0, from node slave1
+coarsePartId = 2, finePartId = 8, rank = 2, storeTriangleSize: 57, triangleSize: 18, tempTriangleSize: 40, bad triangles:0, from node master
+coarsePartId = 2, finePartId = 10, rank = 3, storeTriangleSize: 28, triangleSize: 27, tempTriangleSize: 36, bad triangles:0, from node slave1
+coarsePartId = 2, finePartId = 2, rank = 1, storeTriangleSize: 36, triangleSize: 19, tempTriangleSize: 28, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 1, rank = 0, storeTriangleSize: 62, triangleSize: 18, tempTriangleSize: 40, bad triangles:0, from node slave2coarsePartId = 8, finePartId = 3, rank = 1, storeTriangleSize: 49, triangleSize: 20, tempTriangleSize: 46, bad triangles:0, from node master
+coarsePartId = 8, finePartId = 8, rank = 2, storeTriangleSize: 30, triangleSize: 28, tempTriangleSize: 38, bad triangles:0, from node slave1
+
+coarsePartId = 8, finePartId = 10, rank = 3, storeTriangleSize: 30, triangleSize: 28, tempTriangleSize: 30, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 10 is [ 1  3  9  11 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 0 is [ 3  4  10 ]
+Number of active partitions: 3
+coarsePartId = 10, finePartId = 1, rank = 0, storeTriangleSize: 44, triangleSize: 23, tempTriangleSize: 30, bad triangles:0, from node master
+coarsePartId = 0, finePartId = 3, rank = 0, storeTriangleSize: 30, triangleSize: 28, tempTriangleSize: 29, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 11, rank = 3, storeTriangleSize: 34, triangleSize: 16, tempTriangleSize: 40, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 9, rank = 2, storeTriangleSize: 54, triangleSize: 23, tempTriangleSize: 45, bad triangles:0, from node slave2coarsePartId = 0, finePartId = 4, rank = 1, storeTriangleSize: 59, triangleSize: 19, tempTriangleSize: 48, bad triangles:0, from node slave1
+coarsePartId = 10, finePartId = 3, rank = 1, storeTriangleSize: 43, triangleSize: 27, tempTriangleSize: 42, bad triangles:0, from node slave1
+
+coarsePartId = 0, finePartId = 10, rank = 2, storeTriangleSize: 49, triangleSize: 25, tempTriangleSize: 35, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 8 is [ 0  2  9  11 ]
+Number of active partitions: 4
+coarsePartId = 8, finePartId = 9, rank = 2, storeTriangleSize: 32, triangleSize: 26, tempTriangleSize: 40, bad triangles:0, from node slave1
+coarsePartId = 8, finePartId = 0, rank = 0, storeTriangleSize: 59, triangleSize: 29, tempTriangleSize: 32, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 11, rank = 3, storeTriangleSize: 81, triangleSize: 16, tempTriangleSize: 50, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 2, rank = 1, storeTriangleSize: 33, triangleSize: 31, tempTriangleSize: 38, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 1  7  12  14 ]
+Number of active partitions: 4
+coarsePartId = 2, finePartId = 1, rank = 0, storeTriangleSize: 53, triangleSize: 26, tempTriangleSize: 33, bad triangles:0, from node slave1
+coarsePartId = 2, finePartId = 12, rank = 2, storeTriangleSize: 52, triangleSize: 23, tempTriangleSize: 36, bad triangles:0, from node master
+coarsePartId = 2, finePartId = 14, rank = 3, storeTriangleSize: 42, triangleSize: 29, tempTriangleSize: 30, bad triangles:0, from node slave1coarsePartId = 2, finePartId = 7, rank = 1, storeTriangleSize: 40, triangleSize: 23, tempTriangleSize: 41, bad triangles:0, from node slave2
+
+<<<<<<<list of current fine active partitions of coarse partition 10 is [ 4  6  12  14 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 0 is [ 0  6  12  14 ]
+Number of active partitions: 4
+coarsePartId = 10, finePartId = 4, rank = 0, storeTriangleSize: 33, triangleSize: 22, tempTriangleSize: 41, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 14, rank = 3, storeTriangleSize: 40, triangleSize: 33, tempTriangleSize: 39, bad triangles:0, from node master
+coarsePartId = 10, finePartId = 12, rank = 2, storeTriangleSize: 35, triangleSize: 24, tempTriangleSize: 40, bad triangles:0, from node slave2
+coarsePartId = 10, finePartId = 6, rank = 1, storeTriangleSize: 43, triangleSize: 24, tempTriangleSize: 47, bad triangles:0, from node slave1
+coarsePartId = 0, finePartId = 0, rank = 0, storeTriangleSize: 25, triangleSize: 35, tempTriangleSize: 31, bad triangles:0, from node master
+coarsePartId = 0, finePartId = 14, rank = 3, storeTriangleSize: 50, triangleSize: 37, tempTriangleSize: 39, bad triangles:0, from node master
+coarsePartId = 0, finePartId = 6, rank = 1, storeTriangleSize: 55, triangleSize: 29, tempTriangleSize: 45, bad triangles:0, from node slave1
+coarsePartId = 0, finePartId = 12, rank = 2, storeTriangleSize: 36, triangleSize: 22, tempTriangleSize: 40, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 8 is [ 5  7  12  14 ]
+Number of active partitions: 4
+coarsePartId = 8, finePartId = 5, rank = 0, storeTriangleSize: 48, triangleSize: 22, tempTriangleSize: 48, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 14, rank = 3, storeTriangleSize: 48, triangleSize: 28, tempTriangleSize: 29, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 12, rank = 2, storeTriangleSize: 26, triangleSize: 24, tempTriangleSize: 31, bad triangles:0, from node slave1
+coarsePartId = 8, finePartId = 7, rank = 1, storeTriangleSize: 52, triangleSize: 27, tempTriangleSize: 46, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 3  4  11  13 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 0 is [ 5  11  13 ]
+Number of active partitions: 3
+coarsePartId = 0, finePartId = 5, rank = 0, storeTriangleSize: 55, triangleSize: 28, tempTriangleSize: 46, bad triangles:0, from node master
+coarsePartId = 2, finePartId = 3, rank = 0, storeTriangleSize: 26, triangleSize: 25, tempTriangleSize: 31, bad triangles:0, from node slave1
+coarsePartId = 0, finePartId = 13, rank = 2, storeTriangleSize: 41, triangleSize: 31, tempTriangleSize: 28, bad triangles:0, from node slave2
+coarsePartId = 2, finePartId = 13, rank = 3, storeTriangleSize: 56, triangleSize: 23, tempTriangleSize: 43, bad triangles:0, from node slave1
+coarsePartId = 2, finePartId = 11, rank = 2, storeTriangleSize: 66, triangleSize: 17, tempTriangleSize: 57, bad triangles:0, from node master
+coarsePartId = 2, finePartId = 4, rank = 1, storeTriangleSize: 44, triangleSize: 17, tempTriangleSize: 54, bad triangles:0, from node slave2
+coarsePartId = 0, finePartId = 11, rank = 1, storeTriangleSize: 35, triangleSize: 23, tempTriangleSize: 55, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 10 is [ 5  7  13  15 ]
+Number of active partitions: 4
+coarsePartId = 10, finePartId = 5, rank = 0, storeTriangleSize: 52, triangleSize: 24, tempTriangleSize: 43, bad triangles:0, from node mastercoarsePartId = 10, finePartId = 15, rank = 3, storeTriangleSize: 51, triangleSize: 18, tempTriangleSize: 41, bad triangles:0, from node master
+
+coarsePartId = 10, finePartId = 7, rank = 1, storeTriangleSize: 61, triangleSize: 25, tempTriangleSize: 53, bad triangles:0, from node slave1
+coarsePartId = 10, finePartId = 13, rank = 2, storeTriangleSize: 57, triangleSize: 33, tempTriangleSize: 43, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 0 is [ 2  9 ]
+Number of active partitions: 2
+coarsePartId = 0, finePartId = 2, rank = 0, storeTriangleSize: 38, triangleSize: 26, tempTriangleSize: 36, bad triangles:0, from node master<<<<<<<list of current fine active partitions of coarse partition 8 is [ 4  6  13  15 ]
+
+Number of active partitions: 4
+coarsePartId = 0, finePartId = 9, rank = 1, storeTriangleSize: 52, triangleSize: 24, tempTriangleSize: 44, bad triangles:0, from node slave1
+coarsePartId = 8, finePartId = 15, rank = 3, storeTriangleSize: 37, triangleSize: 16, tempTriangleSize: 40, bad triangles:0, from node slave2
+coarsePartId = 8, finePartId = 4, rank = 0, storeTriangleSize: 46, triangleSize: 33, tempTriangleSize: 42, bad triangles:0, from node slave2coarsePartId = 8, finePartId = 6, rank = 1, storeTriangleSize: 52, triangleSize: 27, tempTriangleSize: 55, bad triangles:0, from node master
+
+coarsePartId = 8, finePartId = 13, rank = 2, storeTriangleSize: 32, triangleSize: 23, tempTriangleSize: 36, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 6  15 ]
+Number of active partitions: 2
+coarsePartId = 2, finePartId = 6, rank = 0, storeTriangleSize: 45, triangleSize: 21, tempTriangleSize: 48, bad triangles:0, from node slave1
+coarsePartId = 2, finePartId = 15, rank = 1, storeTriangleSize: 43, triangleSize: 27, tempTriangleSize: 34, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 5 ]
+Number of active partitions: 1
+coarsePartId = 2, finePartId = 5, rank = 0, storeTriangleSize: 35, triangleSize: 30, tempTriangleSize: 40, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 2 is [ 9 ]
+Number of active partitions: 1
+coarsePartId = 2, finePartId = 9, rank = 0, storeTriangleSize: 44, triangleSize: 28, tempTriangleSize: 52, bad triangles:0, from node slave1
+====================================================
+[[[[[[[[list of current coarse active partitions: [ 1  3  9  11 ]
+----------------stage: 2-------------------
+Number of current active partitions: 4
+Number of active partitions leftover: 0
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 1  7  12  14 ]
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 1  7  12  14 ]
+<<<<<<<list of current fine active partitions of coarse partition 11 is [ 0  2  8  10 ]
+Number of active partitions: 4
+Number of active partitions: 4
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 9 is [ 0  2  8  10 ]
+Number of active partitions: 4
+coarsePartId = 11, finePartId = 0, rank = 0, storeTriangleSize: 55, triangleSize: 24, tempTriangleSize: 39, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 8, rank = 2, storeTriangleSize: 36, triangleSize: 35, tempTriangleSize: 48, bad triangles:0, from node slave2
+coarsePartId = 1, finePartId = 1, rank = 0, storeTriangleSize: 56, triangleSize: 23, tempTriangleSize: 32, bad triangles:0, from node mastercoarsePartId = 11, finePartId = 2, rank = 1, storeTriangleSize: 44, triangleSize: 24, tempTriangleSize: 36, bad triangles:0, from node slave1
+
+coarsePartId = 11, finePartId = 10, rank = 3, storeTriangleSize: 37, triangleSize: 23, tempTriangleSize: 37, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 12, rank = 2, storeTriangleSize: 34, triangleSize: 27, tempTriangleSize: 44, bad triangles:0, from node slave2
+coarsePartId = 1, finePartId = 7, rank = 1, storeTriangleSize: 40, triangleSize: 28, tempTriangleSize: 40, bad triangles:0, from node slave1
+coarsePartId = 1, finePartId = 14, rank = 3, storeTriangleSize: 57, triangleSize: 26, tempTriangleSize: 37, bad triangles:0, from node master
+coarsePartId = 9, finePartId = 0, rank = 0, storeTriangleSize: 58, triangleSize: 29, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 10, rank = 3, storeTriangleSize: 41, triangleSize: 26, tempTriangleSize: 35, bad triangles:0, from node slave2
+coarsePartId = 3, finePartId = 1, rank = 0, storeTriangleSize: 53, triangleSize: 30, tempTriangleSize: 34, bad triangles:0, from node slave1
+coarsePartId = 9, finePartId = 8, rank = 2, storeTriangleSize: 32, triangleSize: 23, tempTriangleSize: 36, bad triangles:0, from node slave1
+coarsePartId = 3, finePartId = 12, rank = 2, storeTriangleSize: 44, triangleSize: 22, tempTriangleSize: 48, bad triangles:0, from node master
+coarsePartId = 9, finePartId = 2, rank = 1, storeTriangleSize: 34, triangleSize: 27, tempTriangleSize: 31, bad triangles:0, from node mastercoarsePartId = 3, finePartId = 14, rank = 3, storeTriangleSize: 50, triangleSize: 23, tempTriangleSize: 47, bad triangles:0, from node slave1
+
+coarsePartId = 3, finePartId = 7, rank = 1, storeTriangleSize: 49, triangleSize: 21, tempTriangleSize: 34, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 11 is [ 3  4  12  14 ]
+Number of active partitions: 4
+coarsePartId = 11, finePartId = 3, rank = 0, storeTriangleSize: 25, triangleSize: 25, tempTriangleSize: 31, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 4, rank = 1, storeTriangleSize: 48, triangleSize: 27, tempTriangleSize: 64, bad triangles:0, from node slave1
+coarsePartId = 11, finePartId = 14, rank = 3, storeTriangleSize: 46, triangleSize: 23, tempTriangleSize: 50, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 12, rank = 2, storeTriangleSize: 37, triangleSize: 30, tempTriangleSize: 34, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 3  4  10 ]
+Number of active partitions: 3
+coarsePartId = 1, finePartId = 3, rank = 0, storeTriangleSize: 38, triangleSize: 40, tempTriangleSize: 39, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 10, rank = 2, storeTriangleSize: 37, triangleSize: 20, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 1, finePartId = 4, rank = 1, storeTriangleSize: 31, triangleSize: 26, tempTriangleSize: 37, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 2  4  13  15 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 9 is [ 1  3  9  11 ]
+Number of active partitions: 4
+coarsePartId = 3, finePartId = 2, rank = 0, storeTriangleSize: 36, triangleSize: 27, tempTriangleSize: 33, bad triangles:0, from node slave1
+coarsePartId = 3, finePartId = 15, rank = 3, storeTriangleSize: 58, triangleSize: 20, tempTriangleSize: 48, bad triangles:0, from node slave1
+coarsePartId = 3, finePartId = 13, rank = 2, storeTriangleSize: 49, triangleSize: 32, tempTriangleSize: 34, bad triangles:0, from node master
+coarsePartId = 3, finePartId = 4, rank = 1, storeTriangleSize: 54, triangleSize: 20, tempTriangleSize: 42, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 3, rank = 1, storeTriangleSize: 35, triangleSize: 25, tempTriangleSize: 37, bad triangles:0, from node master
+coarsePartId = 9, finePartId = 1, rank = 0, storeTriangleSize: 54, triangleSize: 29, tempTriangleSize: 38, bad triangles:0, from node slave2coarsePartId = 9, finePartId = 11, rank = 3, storeTriangleSize: 41, triangleSize: 32, tempTriangleSize: 33, bad triangles:0, from node slave2
+
+coarsePartId = 9, finePartId = 9, rank = 2, storeTriangleSize: 37, triangleSize: 29, tempTriangleSize: 45, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 11 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 11, finePartId = 5, rank = 0, storeTriangleSize: 35, triangleSize: 33, tempTriangleSize: 42, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 7, rank = 1, storeTriangleSize: 21, triangleSize: 29, tempTriangleSize: 30, bad triangles:0, from node slave1
+coarsePartId = 11, finePartId = 13, rank = 2, storeTriangleSize: 55, triangleSize: 31, tempTriangleSize: 38, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 2  8  15 ]
+Number of active partitions: 3
+coarsePartId = 1, finePartId = 2, rank = 0, storeTriangleSize: 46, triangleSize: 32, tempTriangleSize: 43, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 15, rank = 2, storeTriangleSize: 47, triangleSize: 21, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 1, finePartId = 8, rank = 1, storeTriangleSize: 57, triangleSize: 20, tempTriangleSize: 48, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 0  3  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 11 is [ 1  9  11 ]
+Number of active partitions: 3
+coarsePartId = 11, finePartId = 1, rank = 0, storeTriangleSize: 45, triangleSize: 27, tempTriangleSize: 45, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 11, rank = 2, storeTriangleSize: 44, triangleSize: 19, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 11, finePartId = 9, rank = 1, storeTriangleSize: 50, triangleSize: 31, tempTriangleSize: 53, bad triangles:0, from node slave1
+coarsePartId = 3, finePartId = 8, rank = 2, storeTriangleSize: 34, triangleSize: 23, tempTriangleSize: 45, bad triangles:0, from node mastercoarsePartId = 3, finePartId = 3, rank = 1, storeTriangleSize: 40, triangleSize: 25, tempTriangleSize: 43, bad triangles:0, from node slave2
+
+coarsePartId = 3, finePartId = 0, rank = 0, storeTriangleSize: 59, triangleSize: 33, tempTriangleSize: 38, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 9 is [ 4  6  12  14 ]
+Number of active partitions: 4
+coarsePartId = 3, finePartId = 10, rank = 3, storeTriangleSize: 40, triangleSize: 24, tempTriangleSize: 34, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 0  6  13 ]
+Number of active partitions: 3
+coarsePartId = 9, finePartId = 4, rank = 0, storeTriangleSize: 33, triangleSize: 29, tempTriangleSize: 50, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 14, rank = 3, storeTriangleSize: 35, triangleSize: 20, tempTriangleSize: 46, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 12, rank = 2, storeTriangleSize: 45, triangleSize: 22, tempTriangleSize: 40, bad triangles:0, from node slave1
+coarsePartId = 9, finePartId = 6, rank = 1, storeTriangleSize: 40, triangleSize: 25, tempTriangleSize: 42, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 0, rank = 0, storeTriangleSize: 31, triangleSize: 28, tempTriangleSize: 32, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 13, rank = 2, storeTriangleSize: 30, triangleSize: 29, tempTriangleSize: 39, bad triangles:0, from node slave2
+coarsePartId = 1, finePartId = 6, rank = 1, storeTriangleSize: 25, triangleSize: 26, tempTriangleSize: 49, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 11 is [ 6  15 ]
+Number of active partitions: 2
+coarsePartId = 11, finePartId = 6, rank = 0, storeTriangleSize: 50, triangleSize: 26, tempTriangleSize: 48, bad triangles:0, from node master
+coarsePartId = 11, finePartId = 15, rank = 1, storeTriangleSize: 39, triangleSize: 19, tempTriangleSize: 43, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 9  11 ]
+Number of active partitions: 2
+coarsePartId = 1, finePartId = 9, rank = 0, storeTriangleSize: 55, triangleSize: 27, tempTriangleSize: 43, bad triangles:0, from node master
+coarsePartId = 1, finePartId = 11, rank = 1, storeTriangleSize: 70, triangleSize: 33, tempTriangleSize: 44, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 9  11 ]
+Number of active partitions: 2
+<<<<<<<list of current fine active partitions of coarse partition 9 is [ 5  7  13  15 ]
+Number of active partitions: 4
+coarsePartId = 3, finePartId = 9, rank = 0, storeTriangleSize: 49, triangleSize: 19, tempTriangleSize: 46, bad triangles:0, from node slave1
+coarsePartId = 3, finePartId = 11, rank = 1, storeTriangleSize: 59, triangleSize: 22, tempTriangleSize: 51, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 7, rank = 1, storeTriangleSize: 58, triangleSize: 27, tempTriangleSize: 50, bad triangles:0, from node master
+coarsePartId = 9, finePartId = 13, rank = 2, storeTriangleSize: 50, triangleSize: 31, tempTriangleSize: 49, bad triangles:0, from node slave1
+coarsePartId = 9, finePartId = 5, rank = 0, storeTriangleSize: 48, triangleSize: 29, tempTriangleSize: 42, bad triangles:0, from node slave2
+coarsePartId = 9, finePartId = 15, rank = 3, storeTriangleSize: 37, triangleSize: 33, tempTriangleSize: 44, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 1 is [ 5 ]
+Number of active partitions: 1
+coarsePartId = 1, finePartId = 5, rank = 0, storeTriangleSize: 43, triangleSize: 27, tempTriangleSize: 46, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 5 ]
+Number of active partitions: 1
+coarsePartId = 3, finePartId = 5, rank = 0, storeTriangleSize: 28, triangleSize: 24, tempTriangleSize: 55, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 3 is [ 6 ]
+Number of active partitions: 1
+coarsePartId = 3, finePartId = 6, rank = 0, storeTriangleSize: 19, triangleSize: 29, tempTriangleSize: 39, bad triangles:0, from node slave1
+====================================================
+[[[[[[[[list of current coarse active partitions: [ 4  6  12  14 ]
+----------------stage: 3-------------------
+Number of current active partitions: 4
+Number of active partitions leftover: 0
+<<<<<<<list of current fine active partitions of coarse partition 4 is [ 1  3  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 6 is [ 0  2  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 12 is [ 0  2  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 14 is [ 0  2  8  10 ]
+Number of active partitions: 4
+coarsePartId = 14, finePartId = 0, rank = 0, storeTriangleSize: 32, triangleSize: 30, tempTriangleSize: 31, bad triangles:0, from node master
+coarsePartId = 6, finePartId = 8, rank = 2, storeTriangleSize: 56, triangleSize: 22, tempTriangleSize: 37, bad triangles:0, from node mastercoarsePartId = 14, finePartId = 10, rank = 3, storeTriangleSize: 31, triangleSize: 23, tempTriangleSize: 34, bad triangles:0, from node master
+coarsePartId = 14, finePartId = 8, rank = 2, storeTriangleSize: 35, triangleSize: 31, tempTriangleSize: 28, bad triangles:0, from node slave2
+coarsePartId = 6, finePartId = 0, rank = 0, storeTriangleSize: 51, triangleSize: 30, tempTriangleSize: 43, bad triangles:0, from node slave1
+
+coarsePartId = 14, finePartId = 2, rank = 1, storeTriangleSize: 39, triangleSize: 26, tempTriangleSize: 45, bad triangles:0, from node slave1
+coarsePartId = 6, finePartId = 10, rank = 3, storeTriangleSize: 38, triangleSize: 24, tempTriangleSize: 34, bad triangles:0, from node slave1
+coarsePartId = 12, finePartId = 2, rank = 1, storeTriangleSize: 42, triangleSize: 21, tempTriangleSize: 41, bad triangles:0, from node master
+coarsePartId = 12, finePartId = 8, rank = 2, storeTriangleSize: 36, triangleSize: 31, tempTriangleSize: 32, bad triangles:0, from node slave1coarsePartId = 12, finePartId = 10, rank = 3, storeTriangleSize: 54, triangleSize: 24, tempTriangleSize: 39, bad triangles:0, from node slave2
+
+coarsePartId = 12, finePartId = 0, rank = 0, storeTriangleSize: 47, triangleSize: 23, tempTriangleSize: 40, bad triangles:0, from node slave2
+coarsePartId = 6, finePartId = 2, rank = 1, storeTriangleSize: 15, triangleSize: 28, tempTriangleSize: 39, bad triangles:0, from node slave2
+coarsePartId = 4, finePartId = 1, rank = 0, storeTriangleSize: 24, triangleSize: 22, tempTriangleSize: 42, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 10, rank = 3, storeTriangleSize: 58, triangleSize: 23, tempTriangleSize: 37, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 3, rank = 1, storeTriangleSize: 29, triangleSize: 27, tempTriangleSize: 41, bad triangles:0, from node slave1
+coarsePartId = 4, finePartId = 8, rank = 2, storeTriangleSize: 40, triangleSize: 25, tempTriangleSize: 31, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 14 is [ 1  3  9  11 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 4 is [ 0  2  9  11 ]
+Number of active partitions: 4
+coarsePartId = 14, finePartId = 1, rank = 0, storeTriangleSize: 54, triangleSize: 26, tempTriangleSize: 51, bad triangles:0, from node master
+coarsePartId = 14, finePartId = 9, rank = 2, storeTriangleSize: 40, triangleSize: 28, tempTriangleSize: 41, bad triangles:0, from node slave2
+coarsePartId = 14, finePartId = 3, rank = 1, storeTriangleSize: 39, triangleSize: 20, tempTriangleSize: 48, bad triangles:0, from node slave1
+coarsePartId = 14, finePartId = 11, rank = 3, storeTriangleSize: 25, triangleSize: 21, tempTriangleSize: 39, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 0, rank = 0, storeTriangleSize: 29, triangleSize: 31, tempTriangleSize: 28, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 11, rank = 3, storeTriangleSize: 35, triangleSize: 17, tempTriangleSize: 41, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 9, rank = 2, storeTriangleSize: 47, triangleSize: 29, tempTriangleSize: 48, bad triangles:0, from node slave2
+coarsePartId = 4, finePartId = 2, rank = 1, storeTriangleSize: 36, triangleSize: 32, tempTriangleSize: 39, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 12 is [ 1  3  9  11 ]
+Number of active partitions: 4
+coarsePartId = 12, finePartId = 3, rank = 1, storeTriangleSize: 47, triangleSize: 16, tempTriangleSize: 47, bad triangles:0, from node master
+coarsePartId = 12, finePartId = 9, rank = 2, storeTriangleSize: 51, triangleSize: 24, tempTriangleSize: 46, bad triangles:0, from node slave1
+coarsePartId = 12, finePartId = 1, rank = 0, storeTriangleSize: 55, triangleSize: 35, tempTriangleSize: 41, bad triangles:0, from node slave2
+coarsePartId = 12, finePartId = 11, rank = 3, storeTriangleSize: 39, triangleSize: 21, tempTriangleSize: 42, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 6 is [ 1  3  9  11 ]
+Number of active partitions: 4
+coarsePartId = 6, finePartId = 9, rank = 2, storeTriangleSize: 54, triangleSize: 25, tempTriangleSize: 46, bad triangles:0, from node mastercoarsePartId = 6, finePartId = 1, rank = 0, storeTriangleSize: 39, triangleSize: 23, tempTriangleSize: 48, bad triangles:0, from node slave1
+
+coarsePartId = 6, finePartId = 3, rank = 1, storeTriangleSize: 26, triangleSize: 19, tempTriangleSize: 41, bad triangles:0, from node slave2
+coarsePartId = 6, finePartId = 11, rank = 3, storeTriangleSize: 36, triangleSize: 22, tempTriangleSize: 41, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 4 is [ 5  7  12  14 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 14 is [ 4  6  12  14 ]
+Number of active partitions: 4
+coarsePartId = 4, finePartId = 5, rank = 0, storeTriangleSize: 54, triangleSize: 18, tempTriangleSize: 52, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 12, rank = 2, storeTriangleSize: 53, triangleSize: 24, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 4, finePartId = 14, rank = 3, storeTriangleSize: 28, triangleSize: 32, tempTriangleSize: 35, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 7, rank = 1, storeTriangleSize: 39, triangleSize: 19, tempTriangleSize: 45, bad triangles:0, from node slave1
+coarsePartId = 14, finePartId = 14, rank = 3, storeTriangleSize: 37, triangleSize: 24, tempTriangleSize: 36, bad triangles:0, from node mastercoarsePartId = 14, finePartId = 4, rank = 0, storeTriangleSize: 41, triangleSize: 32, tempTriangleSize: 40, bad triangles:0, from node master
+
+coarsePartId = 14, finePartId = 6, rank = 1, storeTriangleSize: 33, triangleSize: 26, tempTriangleSize: 48, bad triangles:0, from node slave1
+coarsePartId = 14, finePartId = 12, rank = 2, storeTriangleSize: 56, triangleSize: 25, tempTriangleSize: 38, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 4 is [ 4  6  13  15 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 12 is [ 4  6  12  15 ]
+Number of active partitions: 4
+coarsePartId = 4, finePartId = 4, rank = 0, storeTriangleSize: 34, triangleSize: 23, tempTriangleSize: 47, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 15, rank = 3, storeTriangleSize: 27, triangleSize: 21, tempTriangleSize: 51, bad triangles:0, from node master
+coarsePartId = 4, finePartId = 13, rank = 2, storeTriangleSize: 54, triangleSize: 25, tempTriangleSize: 51, bad triangles:0, from node slave2
+coarsePartId = 4, finePartId = 6, rank = 1, storeTriangleSize: 49, triangleSize: 27, tempTriangleSize: 45, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 14 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 12, finePartId = 6, rank = 1, storeTriangleSize: 57, triangleSize: 22, tempTriangleSize: 51, bad triangles:0, from node master
+coarsePartId = 12, finePartId = 15, rank = 3, storeTriangleSize: 37, triangleSize: 27, tempTriangleSize: 35, bad triangles:0, from node slave2
+coarsePartId = 12, finePartId = 4, rank = 0, storeTriangleSize: 54, triangleSize: 21, tempTriangleSize: 52, bad triangles:0, from node slave2coarsePartId = 12, finePartId = 12, rank = 2, storeTriangleSize: 44, triangleSize: 26, tempTriangleSize: 34, bad triangles:0, from node slave1
+
+coarsePartId = 14, finePartId = 5, rank = 0, storeTriangleSize: 59, triangleSize: 31, tempTriangleSize: 55, bad triangles:0, from node master
+coarsePartId = 14, finePartId = 13, rank = 2, storeTriangleSize: 37, triangleSize: 31, tempTriangleSize: 36, bad triangles:0, from node slave2
+coarsePartId = 14, finePartId = 7, rank = 1, storeTriangleSize: 46, triangleSize: 25, tempTriangleSize: 52, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 6 is [ 4  6  12  14 ]
+Number of active partitions: 4
+coarsePartId = 6, finePartId = 4, rank = 0, storeTriangleSize: 36, triangleSize: 22, tempTriangleSize: 51, bad triangles:0, from node slave1
+coarsePartId = 6, finePartId = 14, rank = 3, storeTriangleSize: 44, triangleSize: 26, tempTriangleSize: 37, bad triangles:0, from node slave1
+coarsePartId = 6, finePartId = 12, rank = 2, storeTriangleSize: 44, triangleSize: 23, tempTriangleSize: 38, bad triangles:0, from node master
+coarsePartId = 6, finePartId = 6, rank = 1, storeTriangleSize: 53, triangleSize: 21, tempTriangleSize: 44, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 14 is [ 15 ]
+Number of active partitions: 1
+coarsePartId = 14, finePartId = 15, rank = 0, storeTriangleSize: 40, triangleSize: 21, tempTriangleSize: 39, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 12 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 12, finePartId = 5, rank = 0, storeTriangleSize: 53, triangleSize: 35, tempTriangleSize: 49, bad triangles:0, from node slave2coarsePartId = 12, finePartId = 13, rank = 2, storeTriangleSize: 50, triangleSize: 38, tempTriangleSize: 37, bad triangles:0, from node slave1
+
+coarsePartId = 12, finePartId = 7, rank = 1, storeTriangleSize: 38, triangleSize: 28, tempTriangleSize: 50, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 6 is [ 5  7  13  15 ]
+Number of active partitions: 4
+coarsePartId = 6, finePartId = 5, rank = 0, storeTriangleSize: 51, triangleSize: 24, tempTriangleSize: 51, bad triangles:0, from node slave1
+coarsePartId = 6, finePartId = 7, rank = 1, storeTriangleSize: 28, triangleSize: 17, tempTriangleSize: 39, bad triangles:0, from node slave2coarsePartId = 6, finePartId = 13, rank = 2, storeTriangleSize: 56, triangleSize: 25, tempTriangleSize: 35, bad triangles:0, from node master
+
+coarsePartId = 6, finePartId = 15, rank = 3, storeTriangleSize: 43, triangleSize: 26, tempTriangleSize: 45, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 12 is [ 14 ]
+Number of active partitions: 1
+coarsePartId = 12, finePartId = 14, rank = 0, storeTriangleSize: 29, triangleSize: 33, tempTriangleSize: 43, bad triangles:0, from node slave2
+====================================================
+[[[[[[[[list of current coarse active partitions: [ 5  7  13  15 ]
+----------------stage: 4-------------------
+Number of current active partitions: 4
+Number of active partitions leftover: 0
+<<<<<<<list of current fine active partitions of coarse partition 5 is [ 0  2  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 0  2  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 7 is [ 0  2  8  10 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 13 is [ 0  2  8  10 ]
+Number of active partitions: 4
+coarsePartId = 5, finePartId = 0, rank = 0, storeTriangleSize: 48, triangleSize: 23, tempTriangleSize: 44, bad triangles:0, from node master
+coarsePartId = 5, finePartId = 10, rank = 3, storeTriangleSize: 30, triangleSize: 27, tempTriangleSize: 38, bad triangles:0, from node master
+coarsePartId = 5, finePartId = 2, rank = 1, storeTriangleSize: 46, triangleSize: 21, tempTriangleSize: 41, bad triangles:0, from node slave1
+coarsePartId = 5, finePartId = 8, rank = 2, storeTriangleSize: 61, triangleSize: 22, tempTriangleSize: 42, bad triangles:0, from node slave2
+coarsePartId = 15, finePartId = 0, rank = 0, storeTriangleSize: 48, triangleSize: 19, tempTriangleSize: 42, bad triangles:0, from node master
+coarsePartId = 15, finePartId = 8, rank = 2, storeTriangleSize: 41, triangleSize: 26, tempTriangleSize: 48, bad triangles:0, from node slave2coarsePartId = 15, finePartId = 2, rank = 1, storeTriangleSize: 45, triangleSize: 24, tempTriangleSize: 44, bad triangles:0, from node slave1
+coarsePartId = 15, finePartId = 10, rank = 3, storeTriangleSize: 53, triangleSize: 26, tempTriangleSize: 36, bad triangles:0, from node master
+
+coarsePartId = 7, finePartId = 8, rank = 2, storeTriangleSize: 52, triangleSize: 26, tempTriangleSize: 40, bad triangles:0, from node master
+coarsePartId = 7, finePartId = 0, rank = 0, storeTriangleSize: 13, triangleSize: 31, tempTriangleSize: 35, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 10, rank = 3, storeTriangleSize: 40, triangleSize: 29, tempTriangleSize: 44, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 2, rank = 1, storeTriangleSize: 49, triangleSize: 26, tempTriangleSize: 41, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 0, rank = 0, storeTriangleSize: 44, triangleSize: 18, tempTriangleSize: 45, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 10, rank = 3, storeTriangleSize: 40, triangleSize: 24, tempTriangleSize: 33, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 8, rank = 2, storeTriangleSize: 52, triangleSize: 22, tempTriangleSize: 39, bad triangles:0, from node slave1
+coarsePartId = 13, finePartId = 2, rank = 1, storeTriangleSize: 32, triangleSize: 21, tempTriangleSize: 41, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 5 is [ 1  3  9  11 ]
+Number of active partitions: 4
+coarsePartId = 5, finePartId = 1, rank = 0, storeTriangleSize: 38, triangleSize: 35, tempTriangleSize: 55, bad triangles:0, from node mastercoarsePartId = 5, finePartId = 11, rank = 3, storeTriangleSize: 52, triangleSize: 25, tempTriangleSize: 45, bad triangles:0, from node master
+
+coarsePartId = 5, finePartId = 3, rank = 1, storeTriangleSize: 36, triangleSize: 35, tempTriangleSize: 38, bad triangles:0, from node slave1
+coarsePartId = 5, finePartId = 9, rank = 2, storeTriangleSize: 37, triangleSize: 27, tempTriangleSize: 40, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 1  3  9  15 ]
+Number of active partitions: 4
+coarsePartId = 15, finePartId = 1, rank = 0, storeTriangleSize: 36, triangleSize: 27, tempTriangleSize: 47, bad triangles:0, from node master
+coarsePartId = 15, finePartId = 3, rank = 1, storeTriangleSize: 38, triangleSize: 27, tempTriangleSize: 36, bad triangles:0, from node slave1
+coarsePartId = 15, finePartId = 15, rank = 3, storeTriangleSize: 55, triangleSize: 24, tempTriangleSize: 32, bad triangles:0, from node master
+coarsePartId = 15, finePartId = 9, rank = 2, storeTriangleSize: 58, triangleSize: 30, tempTriangleSize: 48, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 13 is [ 1  3  9  11 ]
+Number of active partitions: 4
+<<<<<<<list of current fine active partitions of coarse partition 7 is [ 3  4  12  14 ]
+Number of active partitions: 4
+coarsePartId = 13, finePartId = 3, rank = 1, storeTriangleSize: 40, triangleSize: 23, tempTriangleSize: 50, bad triangles:0, from node master
+coarsePartId = 13, finePartId = 11, rank = 3, storeTriangleSize: 41, triangleSize: 24, tempTriangleSize: 33, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 1, rank = 0, storeTriangleSize: 55, triangleSize: 26, tempTriangleSize: 43, bad triangles:0, from node slave2coarsePartId = 13, finePartId = 9, rank = 2, storeTriangleSize: 20, triangleSize: 31, tempTriangleSize: 39, bad triangles:0, from node slave1
+
+<<<<<<<list of current fine active partitions of coarse partition 5 is [ 4  6  12  14 ]
+Number of active partitions: 4
+coarsePartId = 7, finePartId = 12, rank = 2, storeTriangleSize: 60, triangleSize: 21, tempTriangleSize: 51, bad triangles:0, from node master
+coarsePartId = 7, finePartId = 3, rank = 0, storeTriangleSize: 25, triangleSize: 20, tempTriangleSize: 45, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 4, rank = 1, storeTriangleSize: 41, triangleSize: 19, tempTriangleSize: 47, bad triangles:0, from node slave2
+coarsePartId = 7, finePartId = 14, rank = 3, storeTriangleSize: 40, triangleSize: 24, tempTriangleSize: 53, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 4  6  12 ]
+coarsePartId = 5, finePartId = 14, rank = 3, storeTriangleSize: 44, triangleSize: 32, tempTriangleSize: 38, bad triangles:0, from node mastercoarsePartId = 5, finePartId = 4, rank = 0, storeTriangleSize: 69, triangleSize: 22, tempTriangleSize: 58, bad triangles:0, from node master
+Number of active partitions: 3
+
+coarsePartId = 5, finePartId = 6, rank = 1, storeTriangleSize: 40, triangleSize: 26, tempTriangleSize: 53, bad triangles:0, from node slave1
+coarsePartId = 5, finePartId = 12, rank = 2, storeTriangleSize: 28, triangleSize: 27, tempTriangleSize: 53, bad triangles:0, from node slave2
+coarsePartId = 15, finePartId = 4, rank = 0, storeTriangleSize: 35, triangleSize: 25, tempTriangleSize: 45, bad triangles:0, from node master
+coarsePartId = 15, finePartId = 12, rank = 2, storeTriangleSize: 48, triangleSize: 26, tempTriangleSize: 37, bad triangles:0, from node slave2
+coarsePartId = 15, finePartId = 6, rank = 1, storeTriangleSize: 32, triangleSize: 25, tempTriangleSize: 48, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 5 is [ 5  7  13  15 ]
+Number of active partitions: 4
+coarsePartId = 5, finePartId = 5, rank = 0, storeTriangleSize: 43, triangleSize: 35, tempTriangleSize: 54, bad triangles:0, from node master
+coarsePartId = 5, finePartId = 15, rank = 3, storeTriangleSize: 33, triangleSize: 27, tempTriangleSize: 48, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 5, finePartId = 7, rank = 1, storeTriangleSize: 44, triangleSize: 32, tempTriangleSize: 47, bad triangles:0, from node slave1
+coarsePartId = 5, finePartId = 13, rank = 2, storeTriangleSize: 39, triangleSize: 21, tempTriangleSize: 51, bad triangles:0, from node slave2
+coarsePartId = 15, finePartId = 5, rank = 0, storeTriangleSize: 30, triangleSize: 34, tempTriangleSize: 42, bad triangles:0, from node mastercoarsePartId = 15, finePartId = 13, rank = 2, storeTriangleSize: 45, triangleSize: 31, tempTriangleSize: 38, bad triangles:0, from node slave2
+coarsePartId = 15, finePartId = 7, rank = 1, storeTriangleSize: 40, triangleSize: 14, tempTriangleSize: 49, bad triangles:0, from node slave1
+
+<<<<<<<list of current fine active partitions of coarse partition 13 is [ 4  6  12  15 ]
+Number of active partitions: 4
+coarsePartId = 13, finePartId = 6, rank = 1, storeTriangleSize: 43, triangleSize: 21, tempTriangleSize: 44, bad triangles:0, from node master
+coarsePartId = 13, finePartId = 4, rank = 0, storeTriangleSize: 40, triangleSize: 32, tempTriangleSize: 48, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 15, rank = 3, storeTriangleSize: 42, triangleSize: 33, tempTriangleSize: 33, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 7 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 13, finePartId = 12, rank = 2, storeTriangleSize: 41, triangleSize: 25, tempTriangleSize: 46, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 5, rank = 0, storeTriangleSize: 41, triangleSize: 23, tempTriangleSize: 44, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 13, rank = 2, storeTriangleSize: 43, triangleSize: 37, tempTriangleSize: 43, bad triangles:0, from node master
+coarsePartId = 7, finePartId = 7, rank = 1, storeTriangleSize: 42, triangleSize: 19, tempTriangleSize: 52, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 11 ]
+Number of active partitions: 1
+coarsePartId = 15, finePartId = 11, rank = 0, storeTriangleSize: 19, triangleSize: 27, tempTriangleSize: 40, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 13 is [ 5  7  13 ]
+Number of active partitions: 3
+coarsePartId = 13, finePartId = 7, rank = 1, storeTriangleSize: 36, triangleSize: 32, tempTriangleSize: 44, bad triangles:0, from node master
+coarsePartId = 13, finePartId = 5, rank = 0, storeTriangleSize: 30, triangleSize: 28, tempTriangleSize: 34, bad triangles:0, from node slave2
+coarsePartId = 13, finePartId = 13, rank = 2, storeTriangleSize: 57, triangleSize: 26, tempTriangleSize: 40, bad triangles:0, from node slave1
+<<<<<<<list of current fine active partitions of coarse partition 15 is [ 14 ]
+Number of active partitions: 1
+coarsePartId = 15, finePartId = 14, rank = 0, storeTriangleSize: 57, triangleSize: 39, tempTriangleSize: 41, bad triangles:0, from node master
+<<<<<<<list of current fine active partitions of coarse partition 7 is [ 1  9  11 ]
+Number of active partitions: 3
+coarsePartId = 7, finePartId = 1, rank = 0, storeTriangleSize: 62, triangleSize: 29, tempTriangleSize: 62, bad triangles:0, from node slave1coarsePartId = 7, finePartId = 11, rank = 2, storeTriangleSize: 34, triangleSize: 21, tempTriangleSize: 47, bad triangles:0, from node master
+
+coarsePartId = 7, finePartId = 9, rank = 1, storeTriangleSize: 28, triangleSize: 23, tempTriangleSize: 46, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 13 is [ 14 ]
+Number of active partitions: 1
+coarsePartId = 13, finePartId = 14, rank = 0, storeTriangleSize: 45, triangleSize: 42, tempTriangleSize: 34, bad triangles:0, from node slave2
+<<<<<<<list of current fine active partitions of coarse partition 7 is [ 6  15 ]
+Number of active partitions: 2
+coarsePartId = 7, finePartId = 6, rank = 0, storeTriangleSize: 52, triangleSize: 33, tempTriangleSize: 40, bad triangles:0, from node slave1
+coarsePartId = 7, finePartId = 15, rank = 1, storeTriangleSize: 49, triangleSize: 23, tempTriangleSize: 53, bad triangles:0, from node slave2
+number of undelivered triangles left: 1106
+done!!!
+datasources: ../dataSources/10Kvertices/
+Delaunay triangulation: 4 x 4 = 16 coarse partitions
+Master time: 0.973004
+MPI time: 38.6387
+Total time: 39.6117

@@ -1,0 +1,935 @@
+mpiexec -n 1024 -f machinefile ./delaunay 1024 -1 512 512 512 2.0 -1.0 -1.0 0 0 del.out
+[0]: Time for round 1 = 10.928297 s
+[0]: Time for round 2 = 14.764305 s
+[0]: Time for round 3 = 19.547857 s
+[0]: Time for round 4 = 25.523814 s
+[0]: Time for round 5 = 19.576910 s
+[0]: Time for round 6 = 25.649306 s
+Fatal error in PMPI_Test: Other MPI error, error stack:
+PMPI_Test(166)...............: MPI_Test(request=0xa426b0, flag=0x7ffe73145ee0, status=0x7ffe73145f40) failed
+MPIDI_CH3I_Progress(367).....: 
+MPID_nem_mpich_test_recv(754): 
+MPID_nem_tcp_connpoll(1838)..: 
+state_listening_handler(1906): accept of socket fd failed - Too many open files
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1b1a320, flag=0x7ffda7ac33a0, status=0x7ffda7ac3400) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xc465a0, flag=0x7ffce1236450, status=0x7ffce12364b0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x14cc840, flag=0x7ffe4b3d1210, status=0x7ffe4b3d1270) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x273e630, flag=0x7ffd99f792e0, status=0x7ffd99f79340) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xf13cc0, flag=0x7ffe4858ec30, status=0x7ffe4858ec90) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2546eb0, flag=0x7ffd2e635b50, status=0x7ffd2e635bb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2003ab0, flag=0x7ffe8ac3a100, status=0x7ffe8ac3a160) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1822660, flag=0x7ffcdc67a1e0, status=0x7ffcdc67a240) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x296ecc0, flag=0x7ffcc8a22230, status=0x7ffcc8a22290) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1d43e40, flag=0x7ffc91621a90, status=0x7ffc91621af0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xa36930, flag=0x7ffcfbeaf520, status=0x7ffcfbeaf580) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x20f6c90, flag=0x7ffc00886f60, status=0x7ffc00886fc0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x21c17c0, flag=0x7ffd1df8b6d0, status=0x7ffd1df8b730) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x18eda00, flag=0x7ffd2ba48220, status=0x7ffd2ba48280) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x15e8800, flag=0x7fffff986ff0, status=0x7fffff987050) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xb9f0c0, flag=0x7ffedc7b97b0, status=0x7ffedc7b9810) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1349970, flag=0x7ffcb7dbddd0, status=0x7ffcb7dbde30) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1545260, flag=0x7ffcdc3eedc0, status=0x7ffcdc3eee20) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2661790, flag=0x7fff077aac50, status=0x7fff077aacb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xbd5910, flag=0x7ffff539f200, status=0x7ffff539f260) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x11e1070, flag=0x7ffc5121e390, status=0x7ffc5121e3f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x16df8b0, flag=0x7ffd0d306e00, status=0x7ffd0d306e60) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1631ab0, flag=0x7ffc1278cac0, status=0x7ffc1278cb20) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x13300f0, flag=0x7ffd085a73c0, status=0x7ffd085a7420) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1f39f50, flag=0x7ffc17b8c440, status=0x7ffc17b8c4a0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1fd2aa0, flag=0x7fff61c3a700, status=0x7fff61c3a760) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x13ae210, flag=0x7ffd3afd0ed0, status=0x7ffd3afd0f30) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x10c6800, flag=0x7ffe56daeb90, status=0x7ffe56daebf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1b01e00, flag=0x7ffd6286bd90, status=0x7ffd6286bdf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x20be7c0, flag=0x7ffc59270a20, status=0x7ffc59270a80) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xf62380, flag=0x7ffe1bbe2470, status=0x7ffe1bbe24d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ae3d30, flag=0x7ffff37b3b50, status=0x7ffff37b3bb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1162b90, flag=0x7ffcd9adffe0, status=0x7ffcd9ae0040) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x91aed0, flag=0x7ffe4d24b560, status=0x7ffe4d24b5c0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1d41cf0, flag=0x7ffdd3fabb90, status=0x7ffdd3fabbf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1729690, flag=0x7ffcf4226770, status=0x7ffcf42267d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x16ffa50, flag=0x7fff1bc6a2a0, status=0x7fff1bc6a300) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x22ecf00, flag=0x7ffc4c727c50, status=0x7ffc4c727cb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1378e00, flag=0x7ffe76cd9970, status=0x7ffe76cd99d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x25ed7e0, flag=0x7ffeb54ea6e0, status=0x7ffeb54ea740) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xb32590, flag=0x7ffe27c9bf50, status=0x7ffe27c9bfb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2437820, flag=0x7ffebc13ea40, status=0x7ffebc13eaa0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x134b060, flag=0x7ffd2ad83400, status=0x7ffd2ad83460) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x192bbc0, flag=0x7ffd8cecacc0, status=0x7ffd8cecad20) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x246c2c0, flag=0x7fffc824b480, status=0x7fffc824b4e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x174baf0, flag=0x7fff7fa88be0, status=0x7fff7fa88c40) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x26aadc0, flag=0x7ffc5ed53730, status=0x7ffc5ed53790) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ebf3f0, flag=0x7fff1d36acf0, status=0x7fff1d36ad50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xfb8f80, flag=0x7ffd5f7121e0, status=0x7ffd5f712240) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x141ed40, flag=0x7fff7ea42020, status=0x7fff7ea42080) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x8c9010, flag=0x7fff83307e00, status=0x7fff83307e60) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1e7a790, flag=0x7ffd1460c5e0, status=0x7ffd1460c640) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x27e63b0, flag=0x7fff3e5c4f40, status=0x7fff3e5c4fa0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xcb7400, flag=0x7ffcd6727cb0, status=0x7ffcd6727d10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xaa8020, flag=0x7fff18eb9060, status=0x7fff18eb90c0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2724590, flag=0x7ffc21762680, status=0x7ffc217626e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x253d800, flag=0x7ffe16aa5a10, status=0x7ffe16aa5a70) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2a8e4c0, flag=0x7ffd81cf5960, status=0x7ffd81cf59c0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x24d39e0, flag=0x7fff4ef7b770, status=0x7fff4ef7b7d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x7e9bc0, flag=0x7fffd87005b0, status=0x7fffd8700610) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x240d2e0, flag=0x7ffecda51d20, status=0x7ffecda51d80) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1547500, flag=0x7ffc8c5eed40, status=0x7ffc8c5eeda0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x18fa2c0, flag=0x7ffd3633fc00, status=0x7ffd3633fc60) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x21bc850, flag=0x7fffb45fd0b0, status=0x7fffb45fd110) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x10546e0, flag=0x7fffa55f2ce0, status=0x7fffa55f2d40) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1155ae0, flag=0x7ffeba338950, status=0x7ffeba3389b0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2c9bbf0, flag=0x7ffe3d118970, status=0x7ffe3d1189d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2161bb0, flag=0x7ffea6a24810, status=0x7ffea6a24870) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xbd3920, flag=0x7ffdba8b8690, status=0x7ffdba8b86f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x19130c0, flag=0x7ffce5c24890, status=0x7ffce5c248f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1257e40, flag=0x7ffde63647a0, status=0x7ffde6364800) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x24eb080, flag=0x7ffde77e6770, status=0x7ffde77e67d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x103c1a0, flag=0x7ffca05edec0, status=0x7ffca05edf20) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x10e5a30, flag=0x7ffc230c5e60, status=0x7ffc230c5ec0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x29af280, flag=0x7ffceb1c5d70, status=0x7ffceb1c5dd0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x25e8b60, flag=0x7fff0664ed50, status=0x7fff0664edb0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1cc7c40, flag=0x7fff9cdcb1e0, status=0x7fff9cdcb240) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x156ef80, flag=0x7fff2982a500, status=0x7fff2982a560) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x199f7a0, flag=0x7ffd6c8f24d0, status=0x7ffd6c8f2530) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x132b390, flag=0x7fffaa996af0, status=0x7fffaa996b50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1abb9c0, flag=0x7ffc497e2a10, status=0x7ffc497e2a70) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x21b6550, flag=0x7fff01d6be20, status=0x7fff01d6be80) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xcae6c0, flag=0x7ffc97b6a400, status=0x7ffc97b6a460) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xb74280, flag=0x7fffad4f4060, status=0x7fffad4f40c0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2257130, flag=0x7ffd60351790, status=0x7ffd603517f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ab9a10, flag=0x7ffd7429dec0, status=0x7ffd7429df20) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x22f6fe0, flag=0x7ffd34827880, status=0x7ffd348278e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ef0b90, flag=0x7fff65ae8a70, status=0x7fff65ae8ad0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x207a040, flag=0x7ffc79738f70, status=0x7ffc79738fd0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ee2690, flag=0x7ffd21204670, status=0x7ffd212046d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x19a30b0, flag=0x7ffd2a8ed4e0, status=0x7ffd2a8ed540) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ac38d0, flag=0x7ffcdfce8cd0, status=0x7ffcdfce8d30) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x20a9020, flag=0x7fff6bad3140, status=0x7fff6bad31a0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x196b2f0, flag=0x7ffe8f0f4120, status=0x7ffe8f0f4180) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xbbb9c0, flag=0x7fff33546bd0, status=0x7fff33546c30) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1e91300, flag=0x7ffd82d02860, status=0x7ffd82d028c0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1d8fc30, flag=0x7fffa8f8c790, status=0x7fffa8f8c7f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x170cf00, flag=0x7ffc7075e070, status=0x7ffc7075e0d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x26c8d60, flag=0x7ffd205a6410, status=0x7ffd205a6470) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xa06ef0, flag=0x7ffd90d461b0, status=0x7ffd90d46210) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x142b290, flag=0x7ffe5d969a50, status=0x7ffe5d969ab0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1275980, flag=0x7fff8530ec60, status=0x7fff8530ecc0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1777cb0, flag=0x7fff97415d50, status=0x7fff97415db0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1cf7c50, flag=0x7ffdfb8d5fc0, status=0x7ffdfb8d6020) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x21c31c0, flag=0x7fff4e5eabb0, status=0x7fff4e5eac10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x15fd110, flag=0x7fffec05ff90, status=0x7fffec05fff0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1444cb0, flag=0x7fffa5ce5050, status=0x7fffa5ce50b0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2697210, flag=0x7ffccd5cefc0, status=0x7ffccd5cf020) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2170930, flag=0x7ffc8faef330, status=0x7ffc8faef390) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x18136a0, flag=0x7ffe5b9d0780, status=0x7ffe5b9d07e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1dfc5c0, flag=0x7ffc88d4aaa0, status=0x7ffc88d4ab00) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1e37db0, flag=0x7ffc5f509f80, status=0x7ffc5f509fe0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2a89730, flag=0x7ffdd7ff3080, status=0x7ffdd7ff30e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2261f10, flag=0x7ffdf43071e0, status=0x7ffdf4307240) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1f1a740, flag=0x7fff5d146db0, status=0x7fff5d146e10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x29f68e0, flag=0x7ffebec14b00, status=0x7ffebec14b60) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2559890, flag=0x7ffc7fa4ee80, status=0x7ffc7fa4eee0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xd27970, flag=0x7fff8bdf49a0, status=0x7fff8bdf4a00) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x23c3bc0, flag=0x7ffda0458d30, status=0x7ffda0458d90) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 455: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2d58b50, flag=0x7ffc95f74720, status=0x7ffc95f74780) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 16: UNKNOWN
+Fatal error in PMPI_Test: Other MPI error, error stack:
+PMPI_Test(166)...............: MPI_Test(request=0x2c506c0, flag=0x7ffd6934b300, status=0x7ffd6934b360) failed
+MPIDI_CH3I_Progress(367).....: 
+MPID_nem_mpich_test_recv(754): 
+MPID_nem_tcp_connpoll(1838)..: 
+state_listening_handler(1906): accept of socket fd failed - Too many open files
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xea43b0, flag=0x7fff675d4ea0, status=0x7fff675d4f00) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 0: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x168df40, flag=0x7ffc0c0db880, status=0x7ffc0c0db8e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 128: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1111c00, flag=0x7ffc5f33bc90, status=0x7ffc5f33bcf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 0: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xc05150, flag=0x7ffd881b07b0, status=0x7ffd881b0810) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 240: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x27a0fd0, flag=0x7fff8fd897d0, status=0x7fff8fd89830) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 128: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x24f7e90, flag=0x7fff4ab14420, status=0x7fff4ab14480) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x21e7e50, flag=0x7ffcc7dd2bf0, status=0x7ffcc7dd2c50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xb8d110, flag=0x7ffdbe792b90, status=0x7ffdbe792bf0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x23122e0, flag=0x7ffde5843fa0, status=0x7ffde5844000) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xa10ac0, flag=0x7ffe6bebede0, status=0x7ffe6bebee40) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x179b310, flag=0x7ffc9cbe8d80, status=0x7ffc9cbe8de0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x15159a0, flag=0x7fffbfc081b0, status=0x7fffbfc08210) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1533230, flag=0x7ffe8782cd20, status=0x7ffe8782cd80) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ab3e50, flag=0x7ffe8208ecf0, status=0x7ffe8208ed50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1da6280, flag=0x7ffea1480000, status=0x7ffea1480060) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2406460, flag=0x7ffc822113e0, status=0x7ffc82211440) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x257d360, flag=0x7ffc576e8800, status=0x7ffc576e8860) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1c3f260, flag=0x7ffc0003b730, status=0x7ffc0003b790) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x11d3bd0, flag=0x7ffd9051c720, status=0x7ffd9051c780) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2c70930, flag=0x7ffd1dce62f0, status=0x7ffd1dce6350) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1570470, flag=0x7ffef92473f0, status=0x7ffef9247450) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x20e3da0, flag=0x7ffec281a330, status=0x7ffec281a390) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1edd4d0, flag=0x7ffc94ca6450, status=0x7ffc94ca64b0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1168d70, flag=0x7fffad0a64f0, status=0x7fffad0a6550) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ff77f0, flag=0x7ffdab01feb0, status=0x7ffdab01ff10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x236e9a0, flag=0x7ffd1318c530, status=0x7ffd1318c590) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x15c9c20, flag=0x7ffd080e8290, status=0x7ffd080e82f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x25c45e0, flag=0x7ffd2bb777b0, status=0x7ffd2bb77810) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2c47c30, flag=0x7ffc8933b7d0, status=0x7ffc8933b830) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x222e300, flag=0x7ffc5db6a740, status=0x7ffc5db6a7a0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1ecbd70, flag=0x7ffc2cd20d70, status=0x7ffc2cd20dd0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x260af00, flag=0x7ffee58934a0, status=0x7ffee5893500) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xbe7530, flag=0x7ffd3e94f6e0, status=0x7ffd3e94f740) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x16b2220, flag=0x7fffad799780, status=0x7fffad7997e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xf0c780, flag=0x7fff14856100, status=0x7fff14856160) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x19e33f0, flag=0x7fff96088770, status=0x7fff960887d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1793e60, flag=0x7ffe26a36400, status=0x7ffe26a36460) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1e106c0, flag=0x7ffefbd27430, status=0x7ffefbd27490) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x72baf0, flag=0x7ffdb83763e0, status=0x7ffdb8376440) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2659b50, flag=0x7ffc47787eb0, status=0x7ffc47787f10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1fbd020, flag=0x7ffd285b0600, status=0x7ffd285b0660) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x19a96c0, flag=0x7ffc35a83cf0, status=0x7ffc35a83d50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x17ecc10, flag=0x7fffeec010e0, status=0x7fffeec01140) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2436a80, flag=0x7fff0208baf0, status=0x7fff0208bb50) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1fce1e0, flag=0x7ffee478b590, status=0x7ffee478b5f0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x148a3c0, flag=0x7ffd1802f080, status=0x7ffd1802f0e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x15f46d0, flag=0x7ffd38f153a0, status=0x7ffd38f15400) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x145ef20, flag=0x7ffc54f962f0, status=0x7ffc54f96350) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2b46b00, flag=0x7ffd4e4fdd10, status=0x7ffd4e4fdd70) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x11989f0, flag=0x7ffe31209070, status=0x7ffe312090d0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 976: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0xb755b0, flag=0x7ffd5c9152f0, status=0x7ffd5c915350) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x14172a0, flag=0x7ffe08696db0, status=0x7ffe08696e10) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 391: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2676440, flag=0x7ffd0179ee60, status=0x7ffd0179eec0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x24d5e00, flag=0x7ffd3a0bf440, status=0x7ffd3a0bf4a0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1f4b7c0, flag=0x7ffcaf86f480, status=0x7ffcaf86f4e0) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2559e00, flag=0x7ffd5d7504d0, status=0x7ffd5d750530) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2107200, flag=0x7ffd9f904100, status=0x7ffd9f904160) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 7: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x2d60380, flag=0x7ffe99bb4120, status=0x7ffe99bb4180) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+Fatal error in PMPI_Test: A process has failed, error stack:
+PMPI_Test(166).............: MPI_Test(request=0x1d5be50, flag=0x7ffff5cf7110, status=0x7ffff5cf7170) failed
+MPIR_Test_impl(65).........: 
+MPID_nem_tcp_connpoll(1826): Communication error with rank 903: Connection reset by peer
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   EXIT CODE: 1
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:0@master] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:0@master] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:0@master] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:1@worker01] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:1@worker01] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:1@worker01] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@worker02] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:2@worker02] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:2@worker02] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@worker03] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:3@worker03] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:3@worker03] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:4@worker04] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:4@worker04] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:4@worker04] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@worker05] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:5@worker05] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:5@worker05] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@worker06] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:6@worker06] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:6@worker06] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@worker07] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:7@worker07] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:7@worker07] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:8@worker08] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:8@worker08] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:8@worker08] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:9@worker09] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:9@worker09] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:9@worker09] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:10@worker10] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:10@worker10] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:10@worker10] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:11@worker11] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:11@worker11] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:11@worker11] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:12@worker12] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:12@worker12] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:12@worker12] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:13@worker13] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:13@worker13] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:13@worker13] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:14@worker14] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:14@worker14] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:14@worker14] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:15@worker15] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:15@worker15] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:15@worker15] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:16@worker16] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:16@worker16] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:16@worker16] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:17@worker17] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:17@worker17] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:17@worker17] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:18@worker18] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:18@worker18] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:18@worker18] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:19@worker19] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:19@worker19] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:19@worker19] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:20@worker20] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:20@worker20] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:20@worker20] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:21@worker21] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:21@worker21] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:21@worker21] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:22@worker22] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:22@worker22] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:22@worker22] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:23@worker23] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:23@worker23] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:23@worker23] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:24@worker24] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:24@worker24] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:24@worker24] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:25@worker25] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:25@worker25] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:25@worker25] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:26@worker26] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:26@worker26] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:26@worker26] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:27@worker27] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:27@worker27] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:27@worker27] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:28@worker28] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:28@worker28] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:28@worker28] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:29@worker29] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:29@worker29] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:29@worker29] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:30@worker30] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:30@worker30] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:30@worker30] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:31@worker31] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:31@worker31] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:31@worker31] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:32@worker32] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:32@worker32] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:32@worker32] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:33@worker33] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:33@worker33] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:33@worker33] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:34@worker34] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:34@worker34] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:34@worker34] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:35@worker35] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:35@worker35] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:35@worker35] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:36@worker36] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:36@worker36] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:36@worker36] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:37@worker37] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:37@worker37] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:37@worker37] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:38@worker38] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:38@worker38] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:38@worker38] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:39@worker39] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:39@worker39] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:39@worker39] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:40@worker40] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:40@worker40] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:40@worker40] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:41@worker41] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:41@worker41] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:41@worker41] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:42@worker42] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:42@worker42] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:42@worker42] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:43@worker43] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:43@worker43] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:43@worker43] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:44@worker44] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:44@worker44] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:44@worker44] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:45@worker45] stdoe_cb (./pm/pmiserv/pmip_cb.c:64): assert (!upstream_sock_closed) failed
+[proxy:0:45@worker45] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:45@worker45] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:46@worker46] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:46@worker46] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:46@worker46] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:47@worker47] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:47@worker47] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:47@worker47] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:49@worker49] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:49@worker49] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:49@worker49] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:50@worker50] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:50@worker50] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:50@worker50] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:51@worker51] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:51@worker51] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:51@worker51] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:52@worker52] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:52@worker52] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:52@worker52] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:53@worker53] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:53@worker53] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:53@worker53] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:54@worker54] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:54@worker54] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:54@worker54] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:55@worker55] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:55@worker55] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:55@worker55] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:56@worker56] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:56@worker56] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:56@worker56] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:57@worker57] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:57@worker57] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:57@worker57] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:58@worker58] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:58@worker58] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:58@worker58] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:59@worker59] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:59@worker59] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:59@worker59] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:60@worker60] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:60@worker60] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:60@worker60] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:61@worker61] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:61@worker61] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:61@worker61] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:62@worker62] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:62@worker62] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:62@worker62] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:63@worker63] HYD_pmcd_pmip_control_cmd_cb (./pm/pmiserv/pmip_cb.c:886): assert (!closed) failed
+[proxy:0:63@worker63] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[proxy:0:63@worker63] main (./pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@master] HYDT_bscu_wait_for_completion (./tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@master] HYDT_bsci_wait_for_completion (./tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@master] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:217): launcher returned error waiting for completion
+[mpiexec@master] main (./ui/mpich/mpiexec.c:331): process manager error waiting for completion

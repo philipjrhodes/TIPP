@@ -1,0 +1,730 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 15.83      1.19     1.19                             domain::updateTriangleArr()
+ 13.97      2.24     1.05 961714975     0.00     0.00  point::point(point const&)
+  5.99      2.69     0.45                             domain::deliverTriangles()
+  5.19      3.08     0.39                             domain::generateIntersection()
+  4.92      3.45     0.37 473898715     0.00     0.00  point::getX()
+  4.85      3.82     0.37 217227712     0.00     0.00  boundingBox::getHighPoint()
+  4.46      4.15     0.34 469127933     0.00     0.00  point::getY()
+  4.06      4.46     0.31 20637853     0.00     0.00  triangle::triangle(triangle const&)
+  3.72      4.74     0.28                             domain::generateConflictPartitions()
+  3.46      5.00     0.26       10    26.00    29.19  domain::storeActiveParitions(int*, int, unsigned int)
+  2.93      5.22     0.22 258230094     0.00     0.00  boundingBox::getLowPoint()
+  2.86      5.43     0.22 39153760     0.00     0.00  triangle::computeCenterRadius()
+  2.86      5.65     0.22 61127212     0.00     0.00  edge::operator==(edge const&)
+  2.26      5.82     0.17   106492     0.00     0.01  domain::basicTriangulate(point)
+  2.19      5.98     0.17 20637853     0.00     0.00  domain::mapLow(boundingBox, double, double)
+  1.86      6.12     0.14     4096     0.03     0.03  std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&)
+  1.73      6.25     0.13 165102824     0.00     0.00  gridElement::gridElement(gridElement const&)
+  1.66      6.38     0.13 20637853     0.00     0.00  domain::boundingGrid(boundingBox)
+  1.46      6.49     0.11 20637853     0.00     0.00  domain::mapHigh(boundingBox, double, double)
+  1.33      6.59     0.10 155235065     0.00     0.00  point::point()
+  1.33      6.69     0.10 51182334     0.00     0.00  triangle::circumCircleContains(point)
+  1.26      6.78     0.10 50120529     0.00     0.00  point::set(point)
+  1.06      6.86     0.08 10996915     0.00     0.00  triangle::intersect(boundingBox)
+  0.60      6.91     0.05 57546376     0.00     0.00  point::point(double, double)
+  0.53      6.95     0.04 41275706     0.00     0.00  gridElement::gridElement(int, int)
+  0.53      6.99     0.04 41275706     0.00     0.00  gridBound::getLowGridElement()
+  0.53      7.03     0.04                             domain::updateConflictPartitions()
+  0.47      7.06     0.04 50120535     0.00     0.00  point::point(double, double, unsigned long long)
+  0.47      7.10     0.04        1    35.01    35.01  boundingBox::setHighPoint(point)
+  0.40      7.13     0.03 137390432     0.00     0.00  point::operator==(point)
+  0.40      7.16     0.03 50735691     0.00     0.00  point::getId()
+  0.40      7.19     0.03    24576     0.00     0.00  std::list<unsigned int, std::allocator<unsigned int> >::sort()
+  0.40      7.22     0.03 41275706     0.00     0.00  gridElement::getX()
+  0.40      7.25     0.03                             domain::processDelaunayMPI(int)
+  0.33      7.27     0.03 51386829     0.00     0.00  triangle::getFarestCoorX()
+  0.27      7.29     0.02 41275706     0.00     0.00  gridBound::getHighGridElement()
+  0.27      7.31     0.02 20637853     0.00     0.00  boundingBox::boundingBox(point, point)
+  0.27      7.33     0.02 20637853     0.00     0.00  gridBound::gridBound(gridElement, gridElement)
+  0.27      7.35     0.02 10996915     0.00     0.00  boundingBox::boundingBox(double, double, double, double)
+  0.27      7.37     0.02                             domain::triangleTransform()
+  0.27      7.39     0.02                             triangle::inside(boundingBox)
+  0.20      7.41     0.02 41275706     0.00     0.00  gridElement::getY()
+  0.20      7.42     0.02                             gridElement::setY(int)
+  0.13      7.43     0.01 22100324     0.00     0.00  point::setY(double)
+  0.13      7.44     0.01  2097681     0.00     0.00  edge::edge(point const&, point const&)
+  0.13      7.45     0.01  1193150     0.00     0.00  removeNode(edgeNode*&, edgeNode*&, edgeNode*&)
+  0.13      7.46     0.01   212984     0.00     0.00  removeLinkList(edgeNode*&)
+  0.13      7.47     0.01   106492     0.00     0.00  point::setId(unsigned long long)
+  0.13      7.48     0.01        1    10.00    10.00  size(triangleNode*)
+  0.13      7.49     0.01                             domain::initTriangulateAdvance()
+  0.13      7.50     0.01                             domain::generateActivePartitions()
+  0.13      7.51     0.01                             gridBound::elementCount()
+  0.07      7.52     0.01  1193150     0.00     0.00  edge::edge(edge const&)
+  0.07      7.52     0.01                             triangle::area()
+  0.00      7.52     0.00 22100324     0.00     0.00  point::setX(double)
+  0.00      7.52     0.00  3290831     0.00     0.00  insertFront(edgeNode*&, edgeNode*)
+  0.00      7.52     0.00  3290831     0.00     0.00  createNewNode(edge*)
+  0.00      7.52     0.00  1108776     0.00     0.00  insertFront(triangleNode*&, triangleNode*)
+  0.00      7.52     0.00   904533     0.00     0.00  triangle::triangle(point const&, point const&, point const&)
+  0.00      7.52     0.00   904531     0.00     0.00  triangle::colinear()
+  0.00      7.52     0.00   904279     0.00     0.00  createNewNode(triangle*)
+  0.00      7.52     0.00   904279     0.00     0.00  triangle::isBad()
+  0.00      7.52     0.00   699227     0.00     0.00  removeNode(triangleNode*&, triangleNode*&, triangleNode*&)
+  0.00      7.52     0.00   699227     0.00     0.00  triangle::getEdge1()
+  0.00      7.52     0.00   699227     0.00     0.00  triangle::getEdge2()
+  0.00      7.52     0.00   699227     0.00     0.00  triangle::getEdge3()
+  0.00      7.52     0.00   204495     0.00     0.00  extractNode(triangleNode*&, triangleNode*, triangleNode*&)
+  0.00      7.52     0.00     4096     0.00     0.00  partition::partition()
+  0.00      7.52     0.00     4096     0.00     0.00  partition::~partition()
+  0.00      7.52     0.00     4096     0.00     0.00  std::pair<std::_Rb_tree_iterator<int>, bool> std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert_unique<int const&>(int const&)
+  0.00      7.52     0.00       20     0.00     0.00  GetWallClockTime()
+  0.00      7.52     0.00       20     0.00     0.00  domain::addFile(std::string, std::string, std::string)
+  0.00      7.52     0.00       10     0.00     0.00  domain::runDelaunayMPI(int)
+  0.00      7.52     0.00       10     0.00     0.00  domain::collectStoreTriangleIds()
+  0.00      7.52     0.00       10     0.00     0.00  domain::storeActiveParitionInfo(int, int*, int*, int*)
+  0.00      7.52     0.00       10     0.00     0.00  std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  0.00      7.52     0.00        7     0.00     0.00  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*)
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z13createNewNodeP4edge
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN11boundingBoxC2E5pointS0_
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN4edgeC2ERK5pointS2_
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN5pointC2Eddy
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6domainC2EddddSs
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN9gridBoundC2E11gridElementS0_
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN9partitionC2Ev
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00      7.52     0.00        1     0.00     0.00  _GLOBAL__sub_I_max
+  0.00      7.52     0.00        1     0.00     0.00  addLinkList(triangleNode*&, triangleNode*&)
+  0.00      7.52     0.00        1     0.00     0.00  boundingBox::setLowPoint(point)
+  0.00      7.52     0.00        1     0.00     0.00  domain::readPointPartFileInfo()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.13% of 7.52 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     48.2    0.39    3.23                 domain::generateIntersection() [1]
+                0.13    1.88 20637853/20637853     domain::boundingGrid(boundingBox) [2]
+                0.31    0.04 20637853/20637853     triangle::triangle(triangle const&) [16]
+                0.08    0.22 10996915/10996915     triangle::intersect(boundingBox) [19]
+                0.11    0.09 20637853/39153760     triangle::computeCenterRadius() [14]
+                0.09    0.00 83907389/961714975     point::point(point const&) [4]
+                0.04    0.03 41275706/41275706     gridBound::getLowGridElement() [26]
+                0.02    0.03 41275706/41275706     gridBound::getHighGridElement() [27]
+                0.02    0.02 20637853/20637853     boundingBox::boundingBox(point, point) [29]
+                0.02    0.02 10996915/10996915     boundingBox::boundingBox(double, double, double, double) [32]
+                0.03    0.00 41275706/57546376     point::point(double, double) [28]
+                0.03    0.00 41275706/41275706     gridElement::getX() [41]
+                0.02    0.00 41275706/41275706     gridElement::getY() [44]
+                0.00    0.00 10996915/22100324     point::setY(double) [47]
+                0.00    0.00      24/258230094     boundingBox::getLowPoint() [9]
+                0.00    0.00      12/217227712     boundingBox::getHighPoint() [8]
+                0.00    0.00      18/473898715     point::getX() [15]
+                0.00    0.00      18/469127933     point::getY() [17]
+-----------------------------------------------
+                0.13    1.88 20637853/20637853     domain::generateIntersection() [1]
+[2]     26.7    0.13    1.88 20637853         domain::boundingGrid(boundingBox) [2]
+                0.17    0.82 20637853/20637853     domain::mapLow(boundingBox, double, double) [5]
+                0.11    0.35 20637853/20637853     domain::mapHigh(boundingBox, double, double) [11]
+                0.07    0.05 41275706/217227712     boundingBox::getHighPoint() [8]
+                0.09    0.00 82551412/961714975     point::point(point const&) [4]
+                0.04    0.05 41275706/258230094     boundingBox::getLowPoint() [9]
+                0.05    0.00 61913559/165102824     gridElement::gridElement(gridElement const&) [23]
+                0.02    0.02 20637853/20637853     gridBound::gridBound(gridElement, gridElement) [33]
+                0.03    0.00 41275706/473898715     point::getX() [15]
+                0.03    0.00 41275706/469127933     point::getY() [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     21.0    1.19    0.39                 domain::updateTriangleArr() [3]
+                0.09    0.07 16706843/39153760     triangle::computeCenterRadius() [14]
+                0.10    0.00 50120529/50120529     point::set(point) [25]
+                0.05    0.00 50120529/961714975     point::point(point const&) [4]
+                0.04    0.00 61310757/155235065     point::point() [24]
+                0.04    0.00 50120529/50120535     point::point(double, double, unsigned long long) [35]
+                0.00    0.00       6/7           std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [87]
+-----------------------------------------------
+                0.00    0.00  208892/961714975     domain::initTriangulateAdvance() [6]
+                0.02    0.00 20637853/961714975     boundingBox::boundingBox(point, point) [29]
+                0.05    0.00 50120529/961714975     domain::updateTriangleArr() [3]
+                0.06    0.00 51182334/961714975     domain::basicTriangulate(point) [7]
+                0.07    0.00 60258328/961714975     triangle::intersect(boundingBox) [19]
+                0.09    0.00 82551412/961714975     domain::boundingGrid(boundingBox) [2]
+                0.09    0.00 83907389/961714975     domain::generateIntersection() [1]
+                0.15    0.00 137390432/961714975     edge::operator==(edge const&) [13]
+                0.24    0.00 217227712/961714975     boundingBox::getHighPoint() [8]
+                0.28    0.00 258230094/961714975     boundingBox::getLowPoint() [9]
+[4]     14.0    1.05    0.00 961714975         point::point(point const&) [4]
+-----------------------------------------------
+                0.17    0.82 20637853/20637853     domain::boundingGrid(boundingBox) [2]
+[5]     13.1    0.17    0.82 20637853         domain::mapLow(boundingBox, double, double) [5]
+                0.28    0.18 164955079/217227712     boundingBox::getHighPoint() [8]
+                0.07    0.09 82403667/258230094     boundingBox::getLowPoint() [9]
+                0.10    0.00 123698942/473898715     point::getX() [15]
+                0.09    0.00 123659804/469127933     point::getY() [17]
+                0.02    0.00 20637853/41275706     gridElement::gridElement(int, int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]     12.0    0.01    0.90                 domain::initTriangulateAdvance() [6]
+                0.17    0.72  106492/106492      domain::basicTriangulate(point) [7]
+                0.01    0.00  106492/106492      point::setId(unsigned long long) [50]
+                0.00    0.00  208892/961714975     point::point(point const&) [4]
+                0.00    0.00  102400/473898715     point::getX() [15]
+                0.00    0.00  102400/469127933     point::getY() [17]
+                0.00    0.00  106492/155235065     point::point() [24]
+                0.00    0.00  106492/22100324     point::setY(double) [47]
+                0.00    0.00  106492/22100324     point::setX(double) [70]
+-----------------------------------------------
+                0.17    0.72  106492/106492      domain::initTriangulateAdvance() [6]
+[7]     11.8    0.17    0.72  106492         domain::basicTriangulate(point) [7]
+                0.22    0.18 61127212/61127212     edge::operator==(edge const&) [13]
+                0.10    0.08 51182334/51182334     triangle::circumCircleContains(point) [21]
+                0.06    0.00 51182334/961714975     point::point(point const&) [4]
+                0.03    0.00 51386829/51386829     triangle::getFarestCoorX() [42]
+                0.01    0.01 1809062/39153760     triangle::computeCenterRadius() [14]
+                0.01    0.00 1193150/1193150     removeNode(edgeNode*&, edgeNode*&, edgeNode*&) [48]
+                0.01    0.00  212984/212984      removeLinkList(edgeNode*&) [49]
+                0.01    0.00 1193150/1193150     edge::edge(edge const&) [54]
+                0.00    0.00  699227/699227      triangle::getEdge1() [56]
+                0.00    0.00  699227/699227      triangle::getEdge2() [57]
+                0.00    0.00  699227/699227      triangle::getEdge3() [58]
+                0.00    0.00  904531/904531      triangle::colinear() [59]
+                0.00    0.00  904531/904533      triangle::triangle(point const&, point const&, point const&) [61]
+                0.00    0.00  106492/473898715     point::getX() [15]
+                0.00    0.00 3290831/3290831     createNewNode(edge*) [72]
+                0.00    0.00 3290831/3290831     insertFront(edgeNode*&, edgeNode*) [71]
+                0.00    0.00 1108774/1108776     insertFront(triangleNode*&, triangleNode*) [73]
+                0.00    0.00  904279/904279      triangle::isBad() [75]
+                0.00    0.00  904279/904279      createNewNode(triangle*) [74]
+                0.00    0.00  699227/699227      removeNode(triangleNode*&, triangleNode*&, triangleNode*&) [76]
+                0.00    0.00  204495/204495      extractNode(triangleNode*&, triangleNode*, triangleNode*&) [77]
+-----------------------------------------------
+                0.00    0.00      12/217227712     domain::generateIntersection() [1]
+                0.02    0.01 10996915/217227712     triangle::intersect(boundingBox) [19]
+                0.07    0.05 41275706/217227712     domain::boundingGrid(boundingBox) [2]
+                0.28    0.18 164955079/217227712     domain::mapLow(boundingBox, double, double) [5]
+[8]      8.0    0.37    0.24 217227712         boundingBox::getHighPoint() [8]
+                0.24    0.00 217227712/961714975     point::point(point const&) [4]
+-----------------------------------------------
+                0.00    0.00      24/258230094     domain::generateIntersection() [1]
+                0.01    0.01 10996915/258230094     triangle::intersect(boundingBox) [19]
+                0.04    0.05 41275706/258230094     domain::boundingGrid(boundingBox) [2]
+                0.07    0.09 82403667/258230094     domain::mapLow(boundingBox, double, double) [5]
+                0.11    0.13 123553782/258230094     domain::mapHigh(boundingBox, double, double) [11]
+[9]      6.7    0.22    0.28 258230094         boundingBox::getLowPoint() [9]
+                0.28    0.00 258230094/961714975     point::point(point const&) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     6.3    0.45    0.02                 domain::deliverTriangles() [10]
+                0.02    0.00 35453703/50735691     point::getId() [39]
+-----------------------------------------------
+                0.11    0.35 20637853/20637853     domain::boundingGrid(boundingBox) [2]
+[11]     6.2    0.11    0.35 20637853         domain::mapHigh(boundingBox, double, double) [11]
+                0.11    0.13 123553782/258230094     boundingBox::getLowPoint() [9]
+                0.05    0.00 61804483/473898715     point::getX() [15]
+                0.04    0.00 61749299/469127933     point::getY() [17]
+                0.02    0.00 20637853/41275706     gridElement::gridElement(int, int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     6.1    0.03    0.43                 domain::processDelaunayMPI(int) [12]
+                0.26    0.03      10/10          domain::storeActiveParitions(int*, int, unsigned int) [20]
+                0.14    0.00    4096/4096        std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [22]
+                0.00    0.00      20/20          GetWallClockTime() [81]
+                0.00    0.00      20/20          domain::addFile(std::string, std::string, std::string) [82]
+                0.00    0.00      10/10          domain::storeActiveParitionInfo(int, int*, int*, int*) [85]
+                0.00    0.00      10/10          domain::runDelaunayMPI(int) [83]
+                0.00    0.00      10/10          domain::collectStoreTriangleIds() [84]
+-----------------------------------------------
+                0.22    0.18 61127212/61127212     domain::basicTriangulate(point) [7]
+[13]     5.3    0.22    0.18 61127212         edge::operator==(edge const&) [13]
+                0.15    0.00 137390432/961714975     point::point(point const&) [4]
+                0.03    0.00 137390432/137390432     point::operator==(point) [38]
+-----------------------------------------------
+                0.00    0.00       2/39153760     domain::domain(double, double, double, double, std::string) [34]
+                0.01    0.01 1809062/39153760     domain::basicTriangulate(point) [7]
+                0.09    0.07 16706843/39153760     domain::updateTriangleArr() [3]
+                0.11    0.09 20637853/39153760     domain::generateIntersection() [1]
+[14]     5.2    0.22    0.18 39153760         triangle::computeCenterRadius() [14]
+                0.09    0.00 117461280/473898715     point::getX() [15]
+                0.08    0.00 117461280/469127933     point::getY() [17]
+-----------------------------------------------
+                0.00    0.00      18/473898715     domain::generateIntersection() [1]
+                0.00    0.00  102400/473898715     domain::initTriangulateAdvance() [6]
+                0.00    0.00  106492/473898715     domain::basicTriangulate(point) [7]
+                0.00    0.00 2713593/473898715     triangle::colinear() [59]
+                0.00    0.00 2787892/473898715     coorX_comparison(void const*, void const*) [60]
+                0.01    0.00 15269628/473898715     domain::storeActiveParitions(int*, int, unsigned int) [20]
+                0.03    0.00 41275706/473898715     domain::boundingGrid(boundingBox) [2]
+                0.04    0.00 51182334/473898715     triangle::circumCircleContains(point) [21]
+                0.04    0.00 57495947/473898715     triangle::intersect(boundingBox) [19]
+                0.05    0.00 61804483/473898715     domain::mapHigh(boundingBox, double, double) [11]
+                0.09    0.00 117461280/473898715     triangle::computeCenterRadius() [14]
+                0.10    0.00 123698942/473898715     domain::mapLow(boundingBox, double, double) [5]
+[15]     4.9    0.37    0.00 473898715         point::getX() [15]
+-----------------------------------------------
+                0.31    0.04 20637853/20637853     domain::generateIntersection() [1]
+[16]     4.6    0.31    0.04 20637853         triangle::triangle(triangle const&) [16]
+                0.04    0.00 61913559/155235065     point::point() [24]
+-----------------------------------------------
+                0.00    0.00      18/469127933     domain::generateIntersection() [1]
+                0.00    0.00  102400/469127933     domain::initTriangulateAdvance() [6]
+                0.00    0.00 2713593/469127933     triangle::colinear() [59]
+                0.01    0.00 15269628/469127933     domain::storeActiveParitions(int*, int, unsigned int) [20]
+                0.03    0.00 41275706/469127933     domain::boundingGrid(boundingBox) [2]
+                0.04    0.00 51182334/469127933     triangle::circumCircleContains(point) [21]
+                0.04    0.00 55713871/469127933     triangle::intersect(boundingBox) [19]
+                0.04    0.00 61749299/469127933     domain::mapHigh(boundingBox, double, double) [11]
+                0.08    0.00 117461280/469127933     triangle::computeCenterRadius() [14]
+                0.09    0.00 123659804/469127933     domain::mapLow(boundingBox, double, double) [5]
+[17]     4.5    0.34    0.00 469127933         point::getY() [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     4.1    0.28    0.03                 domain::generateConflictPartitions() [18]
+                0.03    0.00   24576/24576       std::list<unsigned int, std::allocator<unsigned int> >::sort() [40]
+-----------------------------------------------
+                0.08    0.22 10996915/10996915     domain::generateIntersection() [1]
+[19]     3.9    0.08    0.22 10996915         triangle::intersect(boundingBox) [19]
+                0.07    0.00 60258328/961714975     point::point(point const&) [4]
+                0.04    0.00 57495947/473898715     point::getX() [15]
+                0.04    0.00 55713871/469127933     point::getY() [17]
+                0.02    0.01 10996915/217227712     boundingBox::getHighPoint() [8]
+                0.01    0.01 10996915/258230094     boundingBox::getLowPoint() [9]
+                0.01    0.00 16270668/57546376     point::point(double, double) [28]
+-----------------------------------------------
+                0.26    0.03      10/10          domain::processDelaunayMPI(int) [12]
+[20]     3.9    0.26    0.03      10         domain::storeActiveParitions(int*, int, unsigned int) [20]
+                0.01    0.00 15269628/473898715     point::getX() [15]
+                0.01    0.00 15269628/469127933     point::getY() [17]
+                0.01    0.00 15269628/50735691     point::getId() [39]
+-----------------------------------------------
+                0.10    0.08 51182334/51182334     domain::basicTriangulate(point) [7]
+[21]     2.3    0.10    0.08 51182334         triangle::circumCircleContains(point) [21]
+                0.04    0.00 51182334/473898715     point::getX() [15]
+                0.04    0.00 51182334/469127933     point::getY() [17]
+-----------------------------------------------
+                0.14    0.00    4096/4096        domain::processDelaunayMPI(int) [12]
+[22]     1.9    0.14    0.00    4096         std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&) [22]
+-----------------------------------------------
+                0.02    0.00 20637853/165102824     gridBound::gridBound(gridElement, gridElement) [33]
+                0.03    0.00 41275706/165102824     gridBound::getLowGridElement() [26]
+                0.03    0.00 41275706/165102824     gridBound::getHighGridElement() [27]
+                0.05    0.00 61913559/165102824     domain::boundingGrid(boundingBox) [2]
+[23]     1.7    0.13    0.00 165102824         gridElement::gridElement(gridElement const&) [23]
+-----------------------------------------------
+                0.00    0.00       4/155235065     domain::domain(double, double, double, double, std::string) [34]
+                0.00    0.00  106492/155235065     domain::initTriangulateAdvance() [6]
+                0.00    0.00  615162/155235065     domain::triangleTransform() [37]
+                0.00    0.00 2386300/155235065     edge::edge(edge const&) [54]
+                0.00    0.00 2713599/155235065     triangle::triangle(point const&, point const&, point const&) [61]
+                0.00    0.00 4195362/155235065     edge::edge(point const&, point const&) [46]
+                0.01    0.00 21993830/155235065     boundingBox::boundingBox(double, double, double, double) [32]
+                0.04    0.00 61310757/155235065     domain::updateTriangleArr() [3]
+                0.04    0.00 61913559/155235065     triangle::triangle(triangle const&) [16]
+[24]     1.3    0.10    0.00 155235065         point::point() [24]
+-----------------------------------------------
+                0.10    0.00 50120529/50120529     domain::updateTriangleArr() [3]
+[25]     1.3    0.10    0.00 50120529         point::set(point) [25]
+-----------------------------------------------
+                0.04    0.03 41275706/41275706     domain::generateIntersection() [1]
+[26]     1.0    0.04    0.03 41275706         gridBound::getLowGridElement() [26]
+                0.03    0.00 41275706/165102824     gridElement::gridElement(gridElement const&) [23]
+-----------------------------------------------
+                0.02    0.03 41275706/41275706     domain::generateIntersection() [1]
+[27]     0.7    0.02    0.03 41275706         gridBound::getHighGridElement() [27]
+                0.03    0.00 41275706/165102824     gridElement::gridElement(gridElement const&) [23]
+-----------------------------------------------
+                0.00    0.00       2/57546376     domain::domain(double, double, double, double, std::string) [34]
+                0.01    0.00 16270668/57546376     triangle::intersect(boundingBox) [19]
+                0.03    0.00 41275706/57546376     domain::generateIntersection() [1]
+[28]     0.6    0.05    0.00 57546376         point::point(double, double) [28]
+-----------------------------------------------
+                0.02    0.02 20637853/20637853     domain::generateIntersection() [1]
+[29]     0.6    0.02    0.02 20637853         boundingBox::boundingBox(point, point) [29]
+                0.02    0.00 20637853/961714975     point::point(point const&) [4]
+-----------------------------------------------
+                0.02    0.00 20637853/41275706     domain::mapHigh(boundingBox, double, double) [11]
+                0.02    0.00 20637853/41275706     domain::mapLow(boundingBox, double, double) [5]
+[30]     0.5    0.04    0.00 41275706         gridElement::gridElement(int, int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.5    0.04    0.00                 domain::updateConflictPartitions() [31]
+-----------------------------------------------
+                0.02    0.02 10996915/10996915     domain::generateIntersection() [1]
+[32]     0.5    0.02    0.02 10996915         boundingBox::boundingBox(double, double, double, double) [32]
+                0.01    0.00 21993830/155235065     point::point() [24]
+                0.00    0.00 10996915/22100324     point::setY(double) [47]
+                0.00    0.00 21993830/22100324     point::setX(double) [70]
+-----------------------------------------------
+                0.02    0.02 20637853/20637853     domain::boundingGrid(boundingBox) [2]
+[33]     0.5    0.02    0.02 20637853         gridBound::gridBound(gridElement, gridElement) [33]
+                0.02    0.00 20637853/165102824     gridElement::gridElement(gridElement const&) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.5    0.00    0.04                 domain::domain(double, double, double, double, std::string) [34]
+                0.04    0.00       1/1           boundingBox::setHighPoint(point) [36]
+                0.00    0.00       2/39153760     triangle::computeCenterRadius() [14]
+                0.00    0.00       6/50120535     point::point(double, double, unsigned long long) [35]
+                0.00    0.00       2/904533      triangle::triangle(point const&, point const&, point const&) [61]
+                0.00    0.00       4/155235065     point::point() [24]
+                0.00    0.00       2/57546376     point::point(double, double) [28]
+                0.00    0.00       2/22100324     point::setY(double) [47]
+                0.00    0.00    4096/4096        partition::partition() [78]
+                0.00    0.00       2/22100324     point::setX(double) [70]
+                0.00    0.00       2/1108776     insertFront(triangleNode*&, triangleNode*) [73]
+                0.00    0.00       1/1           boundingBox::setLowPoint(point) [98]
+                0.00    0.00       1/1           domain::readPointPartFileInfo() [99]
+-----------------------------------------------
+                0.00    0.00       6/50120535     domain::domain(double, double, double, double, std::string) [34]
+                0.04    0.00 50120529/50120535     domain::updateTriangleArr() [3]
+[35]     0.5    0.04    0.00 50120535         point::point(double, double, unsigned long long) [35]
+-----------------------------------------------
+                0.04    0.00       1/1           domain::domain(double, double, double, double, std::string) [34]
+[36]     0.5    0.04    0.00       1         boundingBox::setHighPoint(point) [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.4    0.02    0.01                 domain::triangleTransform() [37]
+                0.01    0.00       1/1           size(triangleNode*) [51]
+                0.00    0.00  615162/155235065     point::point() [24]
+                0.00    0.00       1/1           addLinkList(triangleNode*&, triangleNode*&) [97]
+-----------------------------------------------
+                0.03    0.00 137390432/137390432     edge::operator==(edge const&) [13]
+[38]     0.4    0.03    0.00 137390432         point::operator==(point) [38]
+-----------------------------------------------
+                0.00    0.00   12360/50735691     domain::storeAllTriangles() [62]
+                0.01    0.00 15269628/50735691     domain::storeActiveParitions(int*, int, unsigned int) [20]
+                0.02    0.00 35453703/50735691     domain::deliverTriangles() [10]
+[39]     0.4    0.03    0.00 50735691         point::getId() [39]
+-----------------------------------------------
+                0.03    0.00   24576/24576       domain::generateConflictPartitions() [18]
+[40]     0.4    0.03    0.00   24576         std::list<unsigned int, std::allocator<unsigned int> >::sort() [40]
+-----------------------------------------------
+                0.03    0.00 41275706/41275706     domain::generateIntersection() [1]
+[41]     0.4    0.03    0.00 41275706         gridElement::getX() [41]
+-----------------------------------------------
+                0.03    0.00 51386829/51386829     domain::basicTriangulate(point) [7]
+[42]     0.3    0.03    0.00 51386829         triangle::getFarestCoorX() [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.3    0.02    0.00                 triangle::inside(boundingBox) [43]
+-----------------------------------------------
+                0.02    0.00 41275706/41275706     domain::generateIntersection() [1]
+[44]     0.2    0.02    0.00 41275706         gridElement::getY() [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.2    0.02    0.00                 gridElement::setY(int) [45]
+-----------------------------------------------
+                0.00    0.00  699227/2097681     triangle::getEdge1() [56]
+                0.00    0.00  699227/2097681     triangle::getEdge2() [57]
+                0.00    0.00  699227/2097681     triangle::getEdge3() [58]
+[46]     0.2    0.01    0.00 2097681         edge::edge(point const&, point const&) [46]
+                0.00    0.00 4195362/155235065     point::point() [24]
+-----------------------------------------------
+                0.00    0.00       2/22100324     domain::domain(double, double, double, double, std::string) [34]
+                0.00    0.00  106492/22100324     domain::initTriangulateAdvance() [6]
+                0.00    0.00 10996915/22100324     boundingBox::boundingBox(double, double, double, double) [32]
+                0.00    0.00 10996915/22100324     domain::generateIntersection() [1]
+[47]     0.1    0.01    0.00 22100324         point::setY(double) [47]
+-----------------------------------------------
+                0.01    0.00 1193150/1193150     domain::basicTriangulate(point) [7]
+[48]     0.1    0.01    0.00 1193150         removeNode(edgeNode*&, edgeNode*&, edgeNode*&) [48]
+-----------------------------------------------
+                0.01    0.00  212984/212984      domain::basicTriangulate(point) [7]
+[49]     0.1    0.01    0.00  212984         removeLinkList(edgeNode*&) [49]
+-----------------------------------------------
+                0.01    0.00  106492/106492      domain::initTriangulateAdvance() [6]
+[50]     0.1    0.01    0.00  106492         point::setId(unsigned long long) [50]
+-----------------------------------------------
+                0.01    0.00       1/1           domain::triangleTransform() [37]
+[51]     0.1    0.01    0.00       1         size(triangleNode*) [51]
+-----------------------------------------------
+                                                 <spontaneous>
+[52]     0.1    0.01    0.00                 domain::generateActivePartitions() [52]
+                0.00    0.00    4096/4096        std::pair<std::_Rb_tree_iterator<int>, bool> std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert_unique<int const&>(int const&) [80]
+-----------------------------------------------
+                                                 <spontaneous>
+[53]     0.1    0.01    0.00                 gridBound::elementCount() [53]
+-----------------------------------------------
+                0.01    0.00 1193150/1193150     domain::basicTriangulate(point) [7]
+[54]     0.1    0.01    0.00 1193150         edge::edge(edge const&) [54]
+                0.00    0.00 2386300/155235065     point::point() [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.1    0.01    0.00                 triangle::area() [55]
+-----------------------------------------------
+                0.00    0.00  699227/699227      domain::basicTriangulate(point) [7]
+[56]     0.1    0.00    0.00  699227         triangle::getEdge1() [56]
+                0.00    0.00  699227/2097681     edge::edge(point const&, point const&) [46]
+-----------------------------------------------
+                0.00    0.00  699227/699227      domain::basicTriangulate(point) [7]
+[57]     0.1    0.00    0.00  699227         triangle::getEdge2() [57]
+                0.00    0.00  699227/2097681     edge::edge(point const&, point const&) [46]
+-----------------------------------------------
+                0.00    0.00  699227/699227      domain::basicTriangulate(point) [7]
+[58]     0.1    0.00    0.00  699227         triangle::getEdge3() [58]
+                0.00    0.00  699227/2097681     edge::edge(point const&, point const&) [46]
+-----------------------------------------------
+                0.00    0.00  904531/904531      domain::basicTriangulate(point) [7]
+[59]     0.1    0.00    0.00  904531         triangle::colinear() [59]
+                0.00    0.00 2713593/473898715     point::getX() [15]
+                0.00    0.00 2713593/469127933     point::getY() [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[60]     0.0    0.00    0.00                 coorX_comparison(void const*, void const*) [60]
+                0.00    0.00 2787892/473898715     point::getX() [15]
+-----------------------------------------------
+                0.00    0.00       2/904533      domain::domain(double, double, double, double, std::string) [34]
+                0.00    0.00  904531/904533      domain::basicTriangulate(point) [7]
+[61]     0.0    0.00    0.00  904533         triangle::triangle(point const&, point const&, point const&) [61]
+                0.00    0.00 2713599/155235065     point::point() [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[62]     0.0    0.00    0.00                 domain::storeAllTriangles() [62]
+                0.00    0.00   12360/50735691     point::getId() [39]
+-----------------------------------------------
+                0.00    0.00       2/22100324     domain::domain(double, double, double, double, std::string) [34]
+                0.00    0.00  106492/22100324     domain::initTriangulateAdvance() [6]
+                0.00    0.00 21993830/22100324     boundingBox::boundingBox(double, double, double, double) [32]
+[70]     0.0    0.00    0.00 22100324         point::setX(double) [70]
+-----------------------------------------------
+                0.00    0.00 3290831/3290831     domain::basicTriangulate(point) [7]
+[71]     0.0    0.00    0.00 3290831         insertFront(edgeNode*&, edgeNode*) [71]
+-----------------------------------------------
+                0.00    0.00 3290831/3290831     domain::basicTriangulate(point) [7]
+[72]     0.0    0.00    0.00 3290831         createNewNode(edge*) [72]
+-----------------------------------------------
+                0.00    0.00       2/1108776     domain::domain(double, double, double, double, std::string) [34]
+                0.00    0.00 1108774/1108776     domain::basicTriangulate(point) [7]
+[73]     0.0    0.00    0.00 1108776         insertFront(triangleNode*&, triangleNode*) [73]
+-----------------------------------------------
+                0.00    0.00  904279/904279      domain::basicTriangulate(point) [7]
+[74]     0.0    0.00    0.00  904279         createNewNode(triangle*) [74]
+-----------------------------------------------
+                0.00    0.00  904279/904279      domain::basicTriangulate(point) [7]
+[75]     0.0    0.00    0.00  904279         triangle::isBad() [75]
+-----------------------------------------------
+                0.00    0.00  699227/699227      domain::basicTriangulate(point) [7]
+[76]     0.0    0.00    0.00  699227         removeNode(triangleNode*&, triangleNode*&, triangleNode*&) [76]
+-----------------------------------------------
+                0.00    0.00  204495/204495      domain::basicTriangulate(point) [7]
+[77]     0.0    0.00    0.00  204495         extractNode(triangleNode*&, triangleNode*, triangleNode*&) [77]
+-----------------------------------------------
+                0.00    0.00    4096/4096        domain::domain(double, double, double, double, std::string) [34]
+[78]     0.0    0.00    0.00    4096         partition::partition() [78]
+-----------------------------------------------
+                0.00    0.00    4096/4096        domain::~domain() [129]
+[79]     0.0    0.00    0.00    4096         partition::~partition() [79]
+-----------------------------------------------
+                0.00    0.00    4096/4096        domain::generateActivePartitions() [52]
+[80]     0.0    0.00    0.00    4096         std::pair<std::_Rb_tree_iterator<int>, bool> std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert_unique<int const&>(int const&) [80]
+-----------------------------------------------
+                0.00    0.00      20/20          domain::processDelaunayMPI(int) [12]
+[81]     0.0    0.00    0.00      20         GetWallClockTime() [81]
+-----------------------------------------------
+                0.00    0.00      20/20          domain::processDelaunayMPI(int) [12]
+[82]     0.0    0.00    0.00      20         domain::addFile(std::string, std::string, std::string) [82]
+-----------------------------------------------
+                0.00    0.00      10/10          domain::processDelaunayMPI(int) [12]
+[83]     0.0    0.00    0.00      10         domain::runDelaunayMPI(int) [83]
+                0.00    0.00      10/10          std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [86]
+-----------------------------------------------
+                0.00    0.00      10/10          domain::processDelaunayMPI(int) [12]
+[84]     0.0    0.00    0.00      10         domain::collectStoreTriangleIds() [84]
+-----------------------------------------------
+                0.00    0.00      10/10          domain::processDelaunayMPI(int) [12]
+[85]     0.0    0.00    0.00      10         domain::storeActiveParitionInfo(int, int*, int*, int*) [85]
+-----------------------------------------------
+                0.00    0.00      10/10          domain::runDelaunayMPI(int) [83]
+[86]     0.0    0.00    0.00      10         std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [86]
+-----------------------------------------------
+                                 197             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [87]
+                0.00    0.00       1/7           domain::~domain() [129]
+                0.00    0.00       6/7           domain::updateTriangleArr() [3]
+[87]     0.0    0.00    0.00       7+197     std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [87]
+                                 197             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [87]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[88]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z13createNewNodeP4edge [88]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[89]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN11boundingBoxC2E5pointS0_ [89]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[90]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN4edgeC2ERK5pointS2_ [90]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[91]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN5pointC2Eddy [91]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[92]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6domainC2EddddSs [92]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[93]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN9gridBoundC2E11gridElementS0_ [93]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[94]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN9partitionC2Ev [94]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[95]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [95]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [146]
+[96]     0.0    0.00    0.00       1         _GLOBAL__sub_I_max [96]
+-----------------------------------------------
+                0.00    0.00       1/1           domain::triangleTransform() [37]
+[97]     0.0    0.00    0.00       1         addLinkList(triangleNode*&, triangleNode*&) [97]
+-----------------------------------------------
+                0.00    0.00       1/1           domain::domain(double, double, double, double, std::string) [34]
+[98]     0.0    0.00    0.00       1         boundingBox::setLowPoint(point) [98]
+-----------------------------------------------
+                0.00    0.00       1/1           domain::domain(double, double, double, double, std::string) [34]
+[99]     0.0    0.00    0.00       1         domain::readPointPartFileInfo() [99]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [88] _GLOBAL__sub_I__Z13createNewNodeP4edge [30] gridElement::gridElement(int, int) [31] domain::updateConflictPartitions()
+  [89] _GLOBAL__sub_I__ZN11boundingBoxC2E5pointS0_ [46] edge::edge(point const&, point const&) [18] domain::generateConflictPartitions()
+  [90] _GLOBAL__sub_I__ZN4edgeC2ERK5pointS2_ [54] edge::edge(edge const&) [5] domain::mapLow(boundingBox, double, double)
+  [91] _GLOBAL__sub_I__ZN5pointC2Eddy [13] edge::operator==(edge const&) [82] domain::addFile(std::string, std::string, std::string)
+  [92] _GLOBAL__sub_I__ZN6domainC2EddddSs [25] point::set(point) [11] domain::mapHigh(boundingBox, double, double)
+  [93] _GLOBAL__sub_I__ZN9gridBoundC2E11gridElementS0_ [15] point::getX() [42] triangle::getFarestCoorX()
+  [94] _GLOBAL__sub_I__ZN9partitionC2Ev [17] point::getY() [14] triangle::computeCenterRadius()
+  [95] _GLOBAL__sub_I_main    [70] point::setX(double)    [21] triangle::circumCircleContains(point)
+  [96] _GLOBAL__sub_I_max     [47] point::setY(double)    [55] triangle::area()
+  [76] removeNode(triangleNode*&, triangleNode*&, triangleNode*&) [39] point::getId() [75] triangle::isBad()
+  [48] removeNode(edgeNode*&, edgeNode*&, edgeNode*&) [50] point::setId(unsigned long long) [43] triangle::inside(boundingBox)
+  [97] addLinkList(triangleNode*&, triangleNode*&) [4] point::point(point const&) [59] triangle::colinear()
+  [77] extractNode(triangleNode*&, triangleNode*, triangleNode*&) [24] point::point() [56] triangle::getEdge1()
+  [73] insertFront(triangleNode*&, triangleNode*) [28] point::point(double, double) [57] triangle::getEdge2()
+  [71] insertFront(edgeNode*&, edgeNode*) [35] point::point(double, double, unsigned long long) [58] triangle::getEdge3()
+  [72] createNewNode(edge*)   [38] point::operator==(point) [19] triangle::intersect(boundingBox)
+  [74] createNewNode(triangle*) [2] domain::boundingGrid(boundingBox) [16] triangle::triangle(triangle const&)
+  [49] removeLinkList(edgeNode*&) [83] domain::runDelaunayMPI(int) [61] triangle::triangle(point const&, point const&, point const&)
+  [81] GetWallClockTime()      [7] domain::basicTriangulate(point) [86] std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  [51] size(triangleNode*)    [10] domain::deliverTriangles() [53] gridBound::elementCount()
+   [9] boundingBox::getLowPoint() [37] domain::triangleTransform() [26] gridBound::getLowGridElement()
+  [98] boundingBox::setLowPoint(point) [3] domain::updateTriangleArr() [27] gridBound::getHighGridElement()
+   [8] boundingBox::getHighPoint() [12] domain::processDelaunayMPI(int) [33] gridBound::gridBound(gridElement, gridElement)
+  [36] boundingBox::setHighPoint(point) [1] domain::generateIntersection() [78] partition::partition()
+  [29] boundingBox::boundingBox(point, point) [20] domain::storeActiveParitions(int*, int, unsigned int) [79] partition::~partition()
+  [32] boundingBox::boundingBox(double, double, double, double) [99] domain::readPointPartFileInfo() [40] std::list<unsigned int, std::allocator<unsigned int> >::sort()
+  [41] gridElement::getX()     [6] domain::initTriangulateAdvance() [22] std::list<unsigned int, std::allocator<unsigned int> >::operator=(std::list<unsigned int, std::allocator<unsigned int> > const&)
+  [44] gridElement::getY()    [84] domain::collectStoreTriangleIds() [80] std::pair<std::_Rb_tree_iterator<int>, bool> std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_insert_unique<int const&>(int const&)
+  [45] gridElement::setY(int) [85] domain::storeActiveParitionInfo(int, int*, int*, int*) [87] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*)
+  [23] gridElement::gridElement(gridElement const&) [52] domain::generateActivePartitions()

@@ -1,0 +1,1 @@
+gcc -O3 -ansi -fpic  rbox.c libqhull.c geom.c geom2.c global.c io.c mem.c merge.c poly.c poly2.c qset.c random.c rboxlib.c stat.c user.c usermem.c userprintf.c userprintf_rbox.c -o rbox -lm

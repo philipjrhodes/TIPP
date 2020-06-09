@@ -1,0 +1,37 @@
+
+
+
+class DataMover
+    
+    responsibilities:
+        send data to/from workers and masters
+        
+        if data is too large to be sent in one message, this class
+        should send multiple messages transparently.
+        
+        
+    methods:
+        toMaster(array, offset, numelements, element size)
+            // on master, receives data into array
+            // on worker, sends data from array
+        
+        toWorker(WORKERID, array, offset, numelements, element size)
+            // on master, sends data into array
+            // on worker, receives data from array
+       
+        gather( array, offset, numelements, element size) // offset should be > 32 bits
+        scatter(array, offset, numelements, element size)
+        
+    
+    data members:
+        MasterID
+        myID
+}
+
+NFSDataMover extends DataMover{
+    
+}
+
+MPIDataMover extends DataMover{
+
+}

@@ -1,0 +1,96 @@
+
+
+datasources: 15Kvertices
+Multiple-Master & Distributed version
+datasources: 15Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0843902
+Update time: 0.313143
+Master + Update time: 0.397533
+Store time: 0.178815
+MPI time: 26.5729
+Total time: 27.1492
+
+
+datasources: 15Kvertices
+Multiple-Master & Distributed version
+datasources: 15Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0939004
+Update time: 0.3586
+Master + Update time: 0.4525
+Store time: 0.20672
+MPI time: 27.4621
+Total time: 28.1213
+
+
+datasources: 15Kvertices
+Multiple-Master & Distributed version
+datasources: 15Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0744724
+Update time: 0.221117
+Master + Update time: 0.295589
+Store time: 0.202823
+MPI time: 28.5329
+Total time: 29.0313
+
+
+datasources: 20Kvertices
+Multiple-Master & Distributed version
+datasources: 20Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.102773
+Update time: 0.246858
+Master + Update time: 0.349631
+Store time: 0.225335
+MPI time: 25.7439
+Total time: 26.3189
+
+
+datasources: 20Kvertices
+Multiple-Master & Distributed version
+datasources: 20Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.116526
+Update time: 0.189894
+Master + Update time: 0.306419
+Store time: 0.232771
+MPI time: 28.8292
+Total time: 29.3684
+
+
+datasources: 20Kvertices
+Multiple-Master & Distributed version
+datasources: 20Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.0748746
+Update time: 0.171233
+Master + Update time: 0.246108
+Store time: 0.265373
+MPI time: 25.9273
+Total time: 26.4388
+
+
+datasources: 20Kvertices
+Multiple-Master & Distributed version
+datasources: 20Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.111042
+Update time: 0.191846
+Master + Update time: 0.302889
+Store time: 0.239982
+MPI time: 8.37143
+Total time: 8.9143
+
+
+datasources: 20Kvertices
+Multiple-Master & Distributed version
+datasources: 20Kvertices
+Delaunay triangulation: 4 x 4 x 4 x 4
+Master time: 0.10134
+Update time: 0.246478
+Master + Update time: 0.347818
+Store time: 0.236347
+MPI time: 9.24221
+Total time: 9.82638

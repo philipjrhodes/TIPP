@@ -1,0 +1,196 @@
+
+
+datasources: ../dataSources/500Kvertices/
+Delaunay triangulation: 8 x 8 = 64
+MPI time: 31.8302
+Management time: 181.156
+Total time: 212.986
+
+
+datasources: ../dataSources/500Kvertices/
+Delaunay triangulation: 8 x 8 = 64
+MPI time: 6.0493
+Management time: 0.262381
+Total time: 6.31169
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.3424
+Management time: 1.47701
+Total time: 1.81941
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.332636
+Management time: 5.07466
+Total time: 5.40729
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.334
+Management time: 1.29461
+Total time: 1.62861
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.375234
+Management time: 1.89076
+Total time: 2.266
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.337863
+Management time: 2.68154
+Total time: 3.0194
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.389403
+Management time: 1.8617
+Total time: 2.2511
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.364528
+Management time: 4.56768
+Total time: 4.93221
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.365607
+Management time: 4.51661
+Total time: 4.88222
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.340261
+Management time: 4.36769
+Total time: 4.70795
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.386988
+Management time: 8.8764
+Total time: 9.26339
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.351007
+Management time: 2.41994
+Total time: 2.77095
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.422221
+Management time: 2.41114
+Total time: 2.83336
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 0.390754
+Management time: 2.61619
+Total time: 3.00694
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.29211
+Management time: 4.72469
+Total time: 6.0168
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.13243
+Management time: 3.85368
+Total time: 4.98611
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 5.78675
+Management time: 0.470105
+Total time: 6.25686
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 4.34663
+Management time: 4.85244
+Total time: 9.19907
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 3.97252
+Management time: 0.0519331
+Total time: 4.02445
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 5.27518
+Management time: 5.04468
+Total time: 10.3199
+
+
+datasources: ../dataSources/1Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.94232
+Management time: 0.339085
+Total time: 2.28141
+
+
+datasources: ../dataSources/300vertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 5.8437
+Management time: 8.17851
+Total time: 14.0222
+
+
+datasources: ../dataSources/600vertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.68428
+Management time: 6.9036
+Total time: 8.58787
+
+
+datasources: ../dataSources/900vertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.92197
+Management time: 6.95968
+Total time: 8.88165
+
+
+datasources: ../dataSources/1.5Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 2.18793
+Management time: 4.7675
+Total time: 6.95543
+
+
+datasources: ../dataSources/1.5Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 1.60311
+Management time: 4.92974
+Total time: 6.53285
+
+
+datasources: ../dataSources/2Kvertices/
+Delaunay triangulation: 4 x 4 = 16
+MPI time: 2.16113
+Management time: 4.97562
+Total time: 7.13675

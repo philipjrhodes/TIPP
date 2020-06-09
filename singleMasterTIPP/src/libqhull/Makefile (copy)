@@ -1,0 +1,79 @@
+DESTDIR = /usr/local
+BINDIR	= $(DESTDIR)/bin
+INCDIR	= $(DESTDIR)/include
+LIBDIR	= $(DESTDIR)/lib
+DOCDIR	= $(DESTDIR)/share/doc/qhull
+MANDIR	= $(DESTDIR)/share/man/man1
+
+# if you do not have enscript, try a2ps or just use lpr.  The files are text.
+PRINTMAN = enscript -2rl
+PRINTC = enscript -2r
+M32       = -m32
+CC        = gcc
+CC_OPTS1  = -O3 -ansi -I../../src -fpic $(CC_WARNINGS) ${M32}
+
+# For loader, ld, 
+CC_OPTS2 = $(CC_OPTS1)
+
+# Default targets for make
+all: qhull_all
+
+help:
+	head -n 51 Makefile
+
+clean:
+	rm -f *.o 
+	# Delete linked files from other directories [qhull_links]
+	rm -f qconvex.c unix.c qdelaun.c qhalf.c qvoronoi.c rbox.c
+	rm -f user_eg.c user_eg2.c testqset.c
+	
+cleanall: clean
+	rm -f qconvex qdelaunay qhalf qvoronoi qhull *.exe
+	rm -f core user_eg user_eg2 testqset libqhullstatic.a
+
+doc: 
+	$(PRINTMAN) $(TXTFILES) $(DOCFILES)
+
+install:
+	mkdir -p $(BINDIR)
+	mkdir -p $(DOCDIR)
+	mkdir -p $(INCDIR)/libqhull
+	mkdir -p $(LIBDIR)
+	mkdir -p $(MANDIR)
+	cp -p qconvex qdelaunay qhalf qhull qvoronoi rbox $(BINDIR)
+	cp -p libqhullstatic.a $(LIBDIR)
+	cp -p ../../html/qhull.man $(MANDIR)/qhull.1
+	cp -p ../../html/rbox.man $(MANDIR)/rbox.1
+	cp -p ../../html/* $(DOCDIR)
+	cp *.h $(INCDIR)/libqhull
+
+new:	cleanall all
+
+# LIBQHULL_OBJS_1 ordered by frequency of execution with small files at end.  Better locality.
+# Same definitions as ../../Makefile
+
+LIBQHULLS_OBJS_1= global.o stat.o geom2.o poly2.o merge.o \
+	libqhull.o geom.o poly.o qset.o mem.o random.o 
+
+LIBQHULLS_OBJS_2= $(LIBQHULLS_OBJS_1) usermem.o userprintf.o io.o user.o
+
+LIBQHULLS_OBJS= $(LIBQHULLS_OBJS_2)  rboxlib.o userprintf_rbox.o
+
+LIBQHULL_HDRS= user.h libqhull.h qhull_a.h geom.h \
+	io.h mem.h merge.h poly.h random.h \
+	qset.h stat.h
+
+# CFILES for 'printc', ordered alphabetically after libqhull.c 
+CFILES= libqhull.c geom.c geom2.c global.c io.c \
+	mem.c merge.c poly.c poly2.c random.c rboxlib.c \
+	qset.c stat.c user.c usermem.c userprintf.c
+
+.c.o:
+	$(CC) -c $(CC_OPTS1) -o $@ $<
+
+# compile qhull without using bin/libqhullstatic.a
+qhull_all:
+	$(CC) -o rbox $(CC_OPTS2) -lm $(LIBQHULLS_OBJS) rbox.o
+	-ar -rs libqhullstatic.a $(LIBQHULLS_OBJS)
+
+# end of Makefile

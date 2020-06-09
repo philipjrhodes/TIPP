@@ -1,0 +1,53 @@
+class FileMover
+    
+    responsibilities:
+        send files to/from senders and receivers
+        
+        if data is too large to be sent in one message, this class
+        should send multiple messages transparently.
+        
+        Should handle file offsets larger than 32 bits
+        
+    methods:
+        setAsReceiver() // set this process as a receiver
+        setAsSender() // set this process as a sender
+        
+        setBufferSize(int) // size of transfer buffer
+        
+        transfer(srcfile, dstfile)  // called by both senders and receivers
+                    // may take multiple rounds of transfers to
+                    // handle large data
+                    {
+                        MPI_open(srcfile,..., &fh)  // "localData$rank"
+                        
+                        for() {
+                            MPI_read_all(buffer, .... fh, &numread)
+                            MPI_gather(numread)
+                            
+                            //  Assume one receiver for now
+                            // On receiver:
+                                make offsets[] from numread
+                                
+                            MPI_gatherv(buffer,...,offsets)  
+                            
+                            On receiver:
+                                write buffer to dstfile
+                        }
+                        
+                        MPI_close()
+                            
+                    }
+                    
+        
+}
+
+class ?? {
+    
+
+
+}
+    
+        
+    
+        
+        

@@ -1,0 +1,33 @@
+#include "myMpi.h"
+
+#define MASTER_RANK 0
+
+//write triangles to file
+void mpiParallelWrite(int world_rank, int world_size, unsigned long long *triangleIdArr, unsigned triangleNum, std::string fileNameStr){
+	MPI_File fh;
+
+	//number of store triangles of each process
+	unsigned *storeTriangleNumArr = NULL;
+	//based on storeTriangleNumArr, compute storeTriangleNumOffsetArr
+	unsigned *storeTriangleNumOffsetArr = NULL;
+	unsigned storeTriangleNumOffset;
+	
+	if(world_rank == MASTER_RANK) //only master process
+		storeTriangleNumArr = new unsigned[world_size];
+
+	MPI_Gather(&triangleNum, 1, MPI_UNSIGNED, storeTriangleNumArr, 1, MPI_INT, MASTER_RANK, MPI_COMM_WORLD);
+
+	if(my_rank == MASTER_RANK){
+		storeTriangleNumOffsetArr = new unsigned[world_size];
+		storeTriangleNumOffsetArr[0] = 0;
+		for(unsigned i=1; i<world_size; i++)
+			storeTriangleNumOffsetArr[i] = storeTriangleNumOffsetArr[i-1] + storeTriangleNumArr[i-1];
+	}
+	MPI_Scatter(storeTriangleNumOffsetArr, 1, MPI_UNSIGNED, &storeTriangleNumOffset, 1, MPI_UNSIGNED, MASTER_RANK, MPI_COMM_WORLD);
+
+	MPI_File_open(MPI_COMM_WORLD, fileNameStr.c_str(), MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
+	MPI_File_set_view(fh, storeTriangleNumOffset * 3 * sizeof(unsigned long long), MPI_UNSIGNED_LONG_LONG, MPI_UNSIGNED_LONG_LONG, "native", MPI_INFO_NULL);
+	MPI_File_write(fh, triangleIdArr, triangleNum*3, MPI_UNSIGNED_LONG_LONG, MPI_STATUS_IGNORE);
+	MPI_File_close(&fh);
+
+}

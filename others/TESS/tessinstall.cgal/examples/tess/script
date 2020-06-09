@@ -1,0 +1,7 @@
+#./rd 16 &> 1024-16p-48nodes.out
+./rd 32 &> 1024-32p-48nodes.out
+./rd 64 &> 1024-64p-48nodes.out
+./rd 128 &> 1024-128p-48nodes.out
+./rd 256 &> 1024-256p-48nodes.out
+./rd 512 &> 1024-512p-48nodes.out
+#./rd 1024 &> 1024-1024p-48nodes.out
