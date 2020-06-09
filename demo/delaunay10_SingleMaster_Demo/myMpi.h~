@@ -1,5 +1,0 @@
-#include <string>
-
-//write triangles to file
-void mpiParallelWrite(int world_rank, int world_size, unsigned long long *triangleIdArr, unsigned triangleNum, std::string fileNameStr);
-
