@@ -15,6 +15,6 @@ The makefile in the pdf directory will work on OSX without modification, but nee
 
  brew install autoconf automake libtool libpng
 
-and the makefile should work. An alternative is to use cmake, but the makefile doesn't use that tool.
+and the makefile should work.
 
  
