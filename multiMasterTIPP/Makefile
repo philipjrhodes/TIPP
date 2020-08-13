@@ -23,22 +23,22 @@ OBJ = $($(BUILD_DIR)/%.o)
 CXXFLAGS = -std=gnu++11 -O3 -w
 #CFLAGS = -c -O3 -ansi -fpic -m32
 CFLAGS = -c -O3
-all:  $(RBOX_EXE) $(TIPP_EXE) $(TIPP_NON_SHARED_FOLDER_EXE) $(NON_UNIFORM_DISTRIBUTE_EXE) $(UNIFORM_DISTRIBUTE_EXE) $(NON_UNIFORM_DISTRIBUTE_APDAPTIVE_EXE) $(DRAW_EXE)
+all:  dirs $(RBOX_EXE) $(TIPP_EXE) $(TIPP_NON_SHARED_FOLDER_EXE) $(NON_UNIFORM_DISTRIBUTE_EXE) $(UNIFORM_DISTRIBUTE_EXE) $(NON_UNIFORM_DISTRIBUTE_APDAPTIVE_EXE) #$(DRAW_EXE)
 
 
 #$(EXE): $(BUILD_DIR)/*.o
 #	$(CXX) $(CXXFLAGS) -o $@ $^
 
 
-$(DRAW_EXE): $(BUILD_DIR)/drawDomain.o $(BUILD_DIR)/drawMesh.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/io.o $(BUILD_DIR)/common.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/point.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/edge.o
-	$(CXX) $(CXXFLAGS) -o $@ $^  -lgraph
-
-#use -I to point out the folder containing the including files
-$(BUILD_DIR)/drawDomain.o: $(SRC_DRAW_DIR)/drawDomain.cpp
-	$(CXX) -c -o $@ $< $(CXXFLAGS)  -I $(SRC_TIPP_DIR) -lgraph
-
-$(BUILD_DIR)/drawMesh.o: $(SRC_DRAW_DIR)/drawMesh.cpp
-	$(CXX) -c -o $@ $< $(CXXFLAGS)  -I $(SRC_TIPP_DIR) -lgraph
+# $(DRAW_EXE): $(BUILD_DIR)/drawDomain.o $(BUILD_DIR)/drawMesh.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/io.o $(BUILD_DIR)/common.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/point.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/triangle.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/edge.o
+# 	$(CXX) $(CXXFLAGS) -o $@ $^  -lgraph
+# 
+# #use -I to point out the folder containing the including files
+# $(BUILD_DIR)/drawDomain.o: $(SRC_DRAW_DIR)/drawDomain.cpp
+# 	$(CXX) -c -o $@ $< $(CXXFLAGS)  -I $(SRC_TIPP_DIR) -lgraph
+# 
+# $(BUILD_DIR)/drawMesh.o: $(SRC_DRAW_DIR)/drawMesh.cpp
+# 	$(CXX) -c -o $@ $< $(CXXFLAGS)  -I $(SRC_TIPP_DIR) -lgraph
 
 
 
@@ -210,8 +210,9 @@ $(BUILD_DIR)/stat.o: $(SRC_QHULLLIB_DIR)/stat.c
 
 
 
-dir:
+dirs:
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(BIN_DIR)
 
 clean:
 	rm -rf $(BIN_DIR)/* $(BUILD_DIR)/*o

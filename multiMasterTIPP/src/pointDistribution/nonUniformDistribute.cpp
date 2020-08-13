@@ -73,7 +73,7 @@ void distribute::readMapData(){
 	std::ifstream readMapFile(mapFileStr.c_str());
 	std::string strItem;
 	if(!readMapFile){
-		std::cout<<"There is no filename : "<<readMapFile;
+		std::cout<<"There is no filename : " << mapFileStr;
 		exit(1);
 	}
 

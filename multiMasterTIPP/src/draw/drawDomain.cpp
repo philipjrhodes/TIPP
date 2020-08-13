@@ -30,7 +30,7 @@ void readMapData(double *&mapPointCoorArr, unsigned &mapPointNum, unsigned long 
 	std::ifstream readMapFile(mapFileStr.c_str());
 	std::string strItem;
 	if(!readMapFile){
-		std::cout<<"There is no filename "<<readMapFile;
+		std::cout<<"There is no filename " << mapFileStr;
 		exit(1);
 	}
 

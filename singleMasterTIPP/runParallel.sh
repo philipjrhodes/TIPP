@@ -126,12 +126,14 @@ else
 	rm $6/$7/triangleIds.*
 	if [ "$9" = "nonSharedFolder" -o "$9" = "sharedFolder" ]; then
 		if [ "$9" = "nonSharedFolder" ]; then
-			echo "mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 0"
- 			mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 0
+			echo "mpiexec -n $3 --machinefile machinefile ./bin/TIPP $5/$7/ $6/$7 $1 0"
+ 			#mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 0
+ 			mpiexec -n $3 --machinefile machinefile ./bin/TIPP $5/$7/ $6/$7 $1 0
 		else 
 			if [ "$9" = "sharedFolder" ]; then
-				echo "mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 1"
-		 		mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 1
+				echo "mpiexec -n $3 --machinefile machinefile ./bin/TIPP $5/$7/ $6/$7 $1 1"				
+		 		#mpiexec -n $3 -f machinefile ./bin/TIPP $5/$7/ $6/$7 $1 1
+		 		mpiexec -n $3 --machinefile machinefile ./bin/TIPP $5/$7/ $6/$7 $1 1
 			fi
 		fi
 	else
