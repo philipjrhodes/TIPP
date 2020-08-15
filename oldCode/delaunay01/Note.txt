@@ -1,1 +1,0 @@
-This version use linklist (not in built-in linklist of C++)
