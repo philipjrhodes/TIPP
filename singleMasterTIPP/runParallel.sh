@@ -155,7 +155,7 @@ echo "./bin/posProcessData $5/$7/ $6/$7/ $1 $1 10000000"
 #compile, g++ -std=gnu++11 point.cpp edge.cpp triangle.cpp boundingBox.cpp drawMesh.cpp drawDomain.cpp -o drawDomain -lgraph
 #should install libgraph (see below reference)
 echo "./bin/drawDomain $5/$7/ $6/$7/ $1 $1 3"
-./bin/drawDomain $5/$7/ $6/$7/ $1 $1 3
+#./bin/drawDomain $5/$7/ $6/$7/ $1 $1 3
 
 
 #sudo apt-get install build-essential

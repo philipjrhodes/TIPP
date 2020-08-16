@@ -23,7 +23,7 @@ OBJ = $($(BUILD_DIR)/%.o)
 CFLAGS = -c -O3
 #CXXFLAGS = -std=gnu++11 -Wall -pg
 CXXFLAGS = -std=gnu++11 -O3 -w
-all: $(RBOX_EXE) $(TIPP_EXE) $(SERIAL_TIPP_EXE) $(NON_UNIFORM_DISTRIBUTE_EXE) $(UNIFORM_DISTRIBUTE_EXE) #$(DRAW_EXE)
+all: dirs $(RBOX_EXE) $(TIPP_EXE) $(SERIAL_TIPP_EXE) $(NON_UNIFORM_DISTRIBUTE_EXE) $(UNIFORM_DISTRIBUTE_EXE) #$(DRAW_EXE)
 #all: $(RBOX_EXE)
 
 #$(EXE): $(BUILD_DIR)/*.o
@@ -45,7 +45,7 @@ all: $(RBOX_EXE) $(TIPP_EXE) $(SERIAL_TIPP_EXE) $(NON_UNIFORM_DISTRIBUTE_EXE) $(
 
 
 
-$(UNIFORM_DISTRIBUTE_EXE): $(BUILD_DIR)/uniformDistributeMain.o $(BUILD_DIR)/uniformDistribute.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/io.o $(BUILD_DIR)/common.o $(BUILD_DIR)/point.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/triangle.o
+$(UNIFORM_DISTRIBUTE_EXE):  $(BUILD_DIR)/uniformDistributeMain.o $(BUILD_DIR)/uniformDistribute.o $(BUILD_DIR)/boundingBox.o $(BUILD_DIR)/io.o $(BUILD_DIR)/common.o $(BUILD_DIR)/point.o $(BUILD_DIR)/gridBound.o $(BUILD_DIR)/gridElement.o $(BUILD_DIR)/linkList.o $(BUILD_DIR)/edge.o $(BUILD_DIR)/triangle.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(BUILD_DIR)/uniformDistributeMain.o: $(SRC_DISTRIBUTION_DIR)/uniformDistributeMain.cpp
@@ -195,8 +195,9 @@ $(BUILD_DIR)/stat.o: $(SRC_QHULLLIB_DIR)/stat.c
 
 
 
-dir:
+dirs:
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(BIN_DIR)
 
 clean:
 	rm -rf $(BIN_DIR)/* $(BUILD_DIR)/*o
